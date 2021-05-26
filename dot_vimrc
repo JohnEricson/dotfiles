@@ -304,3 +304,7 @@ command! -range=% HtmlClip silent call CopyFormatted(<line1>,<line2>)
 " Method 2 (works only on ms-windows vim63):
 :set guioptions+=a
 
+" Disable annoying beeping
+set noerrorbells
+set vb t_vb=
+
