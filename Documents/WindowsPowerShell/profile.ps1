@@ -27,6 +27,7 @@ if (Test-Path($ChocolateyProfile)) {
 # implement a function instead.
 New-Alias vi vim
 New-Alias ssh ssh.ps1
+New-Alias cm chezmoi 
 
 # Functions.
 function vagrant { vagrant.exe --color $args }
