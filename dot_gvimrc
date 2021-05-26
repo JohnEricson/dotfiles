@@ -4,6 +4,8 @@
 "set bg=light		" background (light/dark). Reload syntax to initialize
 						" settings.
 
+colo torte 
+
 " This font i shipped with Window 7.
 set guifont=Consolas:h12:cANSI
 
