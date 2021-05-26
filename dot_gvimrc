@@ -1,0 +1,13 @@
+" Configuration file for gvim
+" Written by high
+
+"set bg=light		" background (light/dark). Reload syntax to initialize
+						" settings.
+
+" This font i shipped with Window 7.
+set guifont=Consolas:h12:cANSI
+
+" Remove the toolbar.
+set go-=T
+
+:syntax on			" reload syntax
