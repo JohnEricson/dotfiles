@@ -1,0 +1,306 @@
+" Configuration file for vim
+" Written for Debian GNU/Linux by W.Akkerman <wakkerma@debian.org>
+" Some modifications by J.H.M. Dassen <jdassen@wi.LeidenUniv.nl>
+" Modified by high / John Ericson.
+
+" To make nvim work with my listchars with special characters. nvim requires .vimrc to be in utf-8 format.
+set encoding=utf-8
+
+" Set english language
+"
+
+" Help language
+set helplang=en
+
+" Vim language
+" This doesn't work on my installation of Vim x64.
+"language en
+
+" Sets the language in the menubar of gvim to english instead of the default
+" on the system. This must be done before loading menus, switching on filetype
+" detection or syntax highlighting.
+set langmenu=none
+
+
+" Normally we use vim-extensions. If you want true vi-compatibility
+" remove change the following statements
+set nocompatible	" Use Vim defaults (much better!)
+" use Q for formatting, not ex-mode:
+map Q gq
+set backspace=2		" allow backspacing over everything in insert mode
+
+" Now we set some defaults for the editor
+set autoindent		" always set autoindenting on
+set textwidth=0	" Don't wrap words by default
+						" Good to have setuped to 75 when writing mail.
+"set backup		" keep a backup file
+set nobackup	" Don't keep a backup file
+set viminfo='20,\"50	" read/write a .viminfo file, don't store more than
+							" 50 lines of registers
+set history=50    " keep 50 lines of command line history
+
+" Tabs
+set ts=3          " number of spaces a <Tab> in the text stands for
+set sw=3          " number of spaces used for each step of (auto)indent
+"set sts=3         " if non-zero, number of spaces to insert for a <Tab>
+set nosta sta     " a <Tab> in an indent inserts 'shiftwidth' spaces
+"set noet	et       " expand <Tab> to spaces in Insert mode
+set nosi	si       " do clever autoindenting
+set nocin cin     " enable specific indenting for C code 
+
+set mouse=a			" enable mouse
+
+set bg=dark			" background (light/dark). Reload syntax to initialize
+						" settings.
+
+" Suffixes that get lower priority when doing tab completion for filenames.
+" These are files we are not likely to want to edit or read.
+set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
+
+" Make vim consult the external termcap entries first, so we get all of
+" Debian's termcap settings correct. This will be fixed upstream in 5.4
+" This doesn't work in vim 6.4 in win32 / High
+"set nottybuiltin term=$TERM
+
+" We know xterm-debian is a color terminal
+"if &term =~ "xterm-debian" || &term =~ "xterm-xfree86"
+"  set t_Co=16
+"  set t_Sf=[3%dm
+"  set t_Sb=[4%dm
+"endif
+
+" Vim5 comes with syntaxhighlighting. If you want to enable syntaxhightlighting
+" by default uncomment the next three lines. 
+if !has('nvim')
+	if has("syntax")
+	  syntax on		" Default to no syntax highlightning 
+	endif
+endif
+
+" Debian uses compressed helpfiles. We must inform vim that the main
+" helpfiles is compressed. Other helpfiles are stated in the tags-file.
+" This isn't needed on my windows install.
+"set helpfile=$VIMRUNTIME/doc/help.txt.gz
+
+if has("autocmd")
+
+" Set some sensible defaults for editing C-files
+augroup cprog
+  " Remove all cprog autocommands
+  au!
+
+  " When starting to edit a file:
+  "   For *.c and *.h files set formatting of comments and set C-indenting on.
+  "   For other files switch it off.
+  "   Don't change the order, it's important that the line with * comes first.
+  autocmd BufRead *       set formatoptions=tcql nocindent comments&
+  autocmd BufRead *.c,*.h set formatoptions=croql cindent comments=sr:/*,mb:*,el:*/,://
+augroup END
+
+" Also, support editing of gzip-compressed files. DO NOT REMOVE THIS!
+" This is also used when loading the compressed helpfiles.
+augroup gzip
+  " Remove all gzip autocommands
+  au!
+
+  " Enable editing of gzipped files
+  "	  read:	set binary mode before reading the file
+  "		uncompress text in buffer after reading
+  "	 write:	compress file after writing
+  "	append:	uncompress file, append, compress file
+  autocmd BufReadPre,FileReadPre	*.gz set bin
+  autocmd BufReadPre,FileReadPre	*.gz let ch_save = &ch|set ch=2
+  autocmd BufReadPost,FileReadPost	*.gz '[,']!gunzip
+  autocmd BufReadPost,FileReadPost	*.gz set nobin
+  autocmd BufReadPost,FileReadPost	*.gz let &ch = ch_save|unlet ch_save
+  autocmd BufReadPost,FileReadPost	*.gz execute ":doautocmd BufReadPost " . expand("%:r")
+
+  autocmd BufWritePost,FileWritePost	*.gz !mv <afile> <afile>:r
+  autocmd BufWritePost,FileWritePost	*.gz !gzip <afile>:r
+
+  autocmd FileAppendPre			*.gz !gunzip <afile>
+  autocmd FileAppendPre			*.gz !mv <afile>:r <afile>
+  autocmd FileAppendPost		*.gz !mv <afile> <afile>:r
+  autocmd FileAppendPost		*.gz !gzip <afile>:r
+augroup END
+
+augroup bzip2
+  " Remove all bzip2 autocommands
+  au!
+
+  " Enable editing of bzipped files
+  "       read: set binary mode before reading the file
+  "             uncompress text in buffer after reading
+  "      write: compress file after writing
+  "     append: uncompress file, append, compress file
+  autocmd BufReadPre,FileReadPre        *.bz2 set bin
+  autocmd BufReadPre,FileReadPre        *.bz2 let ch_save = &ch|set ch=2
+  autocmd BufReadPost,FileReadPost      *.bz2 |'[,']!bunzip2
+  autocmd BufReadPost,FileReadPost      *.bz2 let &ch = ch_save|unlet ch_save
+  autocmd BufReadPost,FileReadPost      *.bz2 execute ":doautocmd BufReadPost " . expand("%:r")
+
+  autocmd BufWritePost,FileWritePost    *.bz2 !mv <afile> <afile>:r
+  autocmd BufWritePost,FileWritePost    *.bz2 !bzip2 <afile>:r
+
+  autocmd FileAppendPre                 *.bz2 !bunzip2 <afile>
+  autocmd FileAppendPre                 *.bz2 !mv <afile>:r <afile>
+  autocmd FileAppendPost                *.bz2 !mv <afile> <afile>:r
+  autocmd FileAppendPost                *.bz2 !bzip2 -9 --repetitive-best <afile>:r
+augroup END
+
+endif " has ("autocmd")
+
+" The following are commented out as they cause vim to behave a lot
+" different from regular vi. They are highly recommended though.
+"set showcmd		" Show (partial) command in status line.
+"set showmatch		" Show matching brackets.
+set ruler		" Show the line and column numbers of the cursor 
+"set ignorecase		" Do case insensitive matching
+"set incsearch		" Incremental search
+"set autowrite		" Automatically save before commands like :next and :make
+
+set wrap    " long lines wrap.
+"set lbr     " wrap long lines at a character in 'breakat' (local to window).
+"set brk=\ \ " which characters might cause a line break.
+
+let g:LargeFile=100
+
+" http://stackoverflow.com/questions/5698284/in-my-vimrc-how-can-i-check-for-the-existence-of-a-color-scheme/5702498#5702498
+try 
+	" Needs to be locally installed.
+	colo molokai
+catch /^Vim\%((\a\+)\)\=:E185/
+	" Default.
+	colo torte
+endtry
+
+set incsearch " Search while you type.
+
+set nolist " Don't Show special characters like tab and newlines.
+set listchars=tab:¬\ ,eol:¶
+
+set colorcolumn=81 " Displays a line at 80 characters.
+" Set color of colorcolumn to very dark blue. Overrides colorscheme.
+" http://stackoverflow.com/questions/2440149/override-colorscheme/7383051#7383051
+" autocmd ColorScheme * hi ColorColumn ctermbg=darkgrey guibg=#051021
+
+"set noswapfile
+
+" For swap files. Only store files here if the directories exists.
+" If it doesn't exist Vim will say 'Unable to open cache file' when opening
+" file.
+" /Temp is for Windows.
+set backupdir=$HOME/.tmp/vim/,/tmp/,/Temp//
+set directory=$HOME/.tmp/vim/,/tmp/,/Temp/
+set undodir=$HOME/.tmp/vim/,/tmp/,/Temp//
+
+" Activate modeline.
+set modeline
+
+" Be able to set specific settings per file in ftdetect.
+filetype plugin on
+
+" Plugin Neocomplete
+"Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+
+" Define dictionary.
+let g:neocomplete#sources#dictionary#dictionaries = {
+    \ 'default' : '',
+    \ 'vimshell' : $HOME.'/.vimshell_hist',
+    \ 'scheme' : $HOME.'/.gosh_completions'
+        \ }
+
+" Define keyword.
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+" Plugin key-mappings.
+inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
+
+if exists(':NeoComplete')
+	" Recommended key-mappings.
+	" <CR>: close popup and save indent.
+	inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+	function! s:my_cr_function()
+	  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+	  " For no inserting <CR> key.
+	  "return pumvisible() ? "\<C-y>" : "\<CR>"
+	endfunction
+	" <TAB>: completion.
+	inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+	" <C-h>, <BS>: close popup and delete backword char.
+	inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+	inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+	" Close popup by <Space>.
+	"inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
+endif
+
+" AutoComplPop like behavior.
+"let g:neocomplete#enable_auto_select = 1
+
+" Shell like behavior(not recommended).
+"set completeopt+=longest
+"let g:neocomplete#enable_auto_select = 1
+"let g:neocomplete#disable_auto_complete = 1
+"inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" Enable heavy omni completion.
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
+endif
+"let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+"let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+"let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+
+" For perlomni.vim setting.
+" https://github.com/c9s/perlomni.vim
+let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+
+" Copy With Syntax Highlighting.
+" https://vi.stackexchange.com/a/18979
+"
+" Run like this:
+"  :HtmlClip
+function! CopyFormatted(line1, line2)
+    execute a:line1 . "," . a:line2 . "TOhtml"
+    %yank *
+    !start /min powershell -noprofile "gcb | scb -as"
+    bwipeout!
+endfunction
+
+command! -range=% HtmlClip silent call CopyFormatted(<line1>,<line2>)
+
+
+" Auto copy the mouse selection
+" https://vim.fandom.com/wiki/Auto_copy_the_mouse_selection
+
+" Not pleased with how Method 1 works. Method 2 works a lot better. 
+" Method 1 (for Xwindows and mswindows), this map is different from the one shown in vim documentation:
+
+" Only copies in Vim not, to System wide clipboard on Windows.
+":noremap <LeftRelease> "+y<LeftRelease>
+" Copies to System wide clipboard on Windows.
+":noremap <LeftRelease> "*y<LeftRelease>
+
+" Method 2 (works only on ms-windows vim63):
+:set guioptions+=a
+
