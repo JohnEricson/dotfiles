@@ -163,7 +163,7 @@ set wrap    " long lines wrap.
 
 let g:LargeFile=100
 
-colo default
+"colo default
 
 set incsearch " Search while you type.
 
