@@ -50,8 +50,6 @@ set nocin cin     " enable specific indenting for C code
 
 set mouse=a			" enable mouse
 
-set bg=dark			" background (light/dark). Reload syntax to initialize
-						" settings.
 
 " Suffixes that get lower priority when doing tab completion for filenames.
 " These are files we are not likely to want to edit or read.
@@ -165,14 +163,7 @@ set wrap    " long lines wrap.
 
 let g:LargeFile=100
 
-" http://stackoverflow.com/questions/5698284/in-my-vimrc-how-can-i-check-for-the-existence-of-a-color-scheme/5702498#5702498
-try 
-	" Needs to be locally installed.
-	colo molokai
-catch /^Vim\%((\a\+)\)\=:E185/
-	" Default.
-	colo torte
-endtry
+colo default
 
 set incsearch " Search while you type.
 
@@ -307,4 +298,7 @@ command! -range=% HtmlClip silent call CopyFormatted(<line1>,<line2>)
 " Disable annoying beeping
 set noerrorbells
 set vb t_vb=
+
+set bg=dark			" background (light/dark). Reload syntax to initialize
+						" settings.
 
