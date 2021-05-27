@@ -1,5 +1,9 @@
 # Alias definitions.
 # Loaded by .bashrc.
 
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
 alias cm='chezmoi'
 

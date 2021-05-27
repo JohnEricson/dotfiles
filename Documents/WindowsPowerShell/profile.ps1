@@ -32,6 +32,10 @@ New-Alias cm chezmoi
 # Functions.
 function vagrant { vagrant.exe --color $args }
 
+function .. { cd .. }
+function ... { cd ..\.. }
+function .... { cd ..\..\.. }
+
 # Variables:
 # Should be number of this computers Etherned adapter that is used to access LAN. 
 # Number is listen when you run command 'route print'.
