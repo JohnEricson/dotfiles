@@ -64,6 +64,12 @@ function prompt {
 	return ' '
 }
 
+# Modules.
+
+# Ensures Windows PowerShell modules are also available for PowerShell Core.
+# This only adds the path if it doesn't already exists in PSModulePath.
+$env:PSModulePath = $env:PSModulePath + "$([System.IO.Path]::PathSeparator)$($env:ProgramFiles)\WindowsPowerShell\Modules"
+
 # Colors in PowerShell.
 # https://github.com/joonro/Get-ChildItemColor
 If (!(Test-Path Variable:PSise)) {  # Only run this in the console and not in the ISE
