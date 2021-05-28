@@ -1,0 +1,10 @@
+{{ if eq .chezmoi.os "linux" -}}
+#!/bin/sh
+# Script to install and configure new machine.
+#
+# This script needs to be idempotent, that is, it needs to be runnable multiple 
+# times without producing an error on consequent runs.
+
+sudo apt update
+sudo apt install vim
+{{ end -}}
