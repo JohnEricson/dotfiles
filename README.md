@@ -12,7 +12,7 @@ sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply JohnEricson
 ```
 
 ### Windows
-Recommended way is to install [chezmoi] using [Chocolatey](https://chocolatey.org/install#individual). First make sure Chocolatey is installed and then run this command as Administrator: 
+Recommended way is to install chezmoi using [Chocolatey](https://chocolatey.org/install#individual). First make sure Chocolatey is installed and then run this command as Administrator: 
 ```console
 choco install chezmoi
 ```
