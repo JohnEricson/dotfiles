@@ -20,3 +20,12 @@ Then as your normal user run:
 ```console
 chezmoi init --apply JohnEricson
 ```
+
+## Manage configuration
+This configuration creates an alias `cm` that calls the `chezmoi` command. This is to make chezmoi easier to work with.
+
+### Update configuration to latest version on a machine
+As your normal user run:
+```console
+cm update
+```
