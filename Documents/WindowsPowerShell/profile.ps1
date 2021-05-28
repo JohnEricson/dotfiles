@@ -1,5 +1,30 @@
+# Modules.
+
+# Ensures Windows PowerShell modules are also available for PowerShell Core.
+# This only adds the path if it doesn't already exists in PSModulePath.
+$env:PSModulePath = $env:PSModulePath + "$([System.IO.Path]::PathSeparator)$($env:ProgramFiles)\WindowsPowerShell\Modules"
+
+# Colors in PowerShell.
+# https://github.com/joonro/Get-ChildItemColor
 # PowerShell module get-childitemcolor must be installed. Install like this:
 # choco install get-childitemcolor
+If (!(Test-Path Variable:PSise)) {  # Only run this in the console and not in the ISE
+
+	Import-Module Get-ChildItemColor -ErrorAction SilentlyContinue
+
+	if (!(Get-Module "Get-ChildItemColor")) {
+		# Note that you need -AllowClobber option so Get-ChildItemColor may override the existing command Out-Default.
+		Install-Module Get-ChildItemColor -AllowClobber # -Scope CurrentUser
+		Import-Module Get-ChildItemColor
+	}
+
+	Set-Alias ll Get-ChildItem -option AllScope
+	Set-Alias ls Get-ChildItemColorFormatWide -option AllScope
+	Set-Alias l Get-ChildItemColorFormatWide -option AllScope
+
+	# Customize colors.
+	$GetChildItemColorTable.File['Directory'] = "Magenta"
+}
 
 if ($host.Name -eq 'ConsoleHost') {
 	# If you can't install the module. Just copy them from Johns-notebook directory
@@ -62,32 +87,6 @@ function prompt {
 	Write-Host "$pwd_last_dir" -NoNewLine -ForegroundColor Magenta
 	Write-Host '$' -NoNewLine -ForegroundColor White
 	return ' '
-}
-
-# Modules.
-
-# Ensures Windows PowerShell modules are also available for PowerShell Core.
-# This only adds the path if it doesn't already exists in PSModulePath.
-$env:PSModulePath = $env:PSModulePath + "$([System.IO.Path]::PathSeparator)$($env:ProgramFiles)\WindowsPowerShell\Modules"
-
-# Colors in PowerShell.
-# https://github.com/joonro/Get-ChildItemColor
-If (!(Test-Path Variable:PSise)) {  # Only run this in the console and not in the ISE
-
-	Import-Module Get-ChildItemColor -ErrorAction SilentlyContinue
-
-	if (!(Get-Module "Get-ChildItemColor")) {
-		# Note that you need -AllowClobber option so Get-ChildItemColor may override the existing command Out-Default.
-		Install-Module Get-ChildItemColor -AllowClobber # -Scope CurrentUser
-		Import-Module Get-ChildItemColor
-	}
-
-	Set-Alias ll Get-ChildItem -option AllScope
-	Set-Alias ls Get-ChildItemColorFormatWide -option AllScope
-	Set-Alias l Get-ChildItemColorFormatWide -option AllScope
-
-	# Customize colors.
-	$GetChildItemColorTable.File['Directory'] = "Magenta"
 }
 
 # Autosize text in Format-Table by default.
