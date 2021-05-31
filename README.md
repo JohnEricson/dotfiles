@@ -1,6 +1,7 @@
 # John's dotfiles
 
-Personal config files for Bash, Vim, Windows PowerShell and PowerShell Core. Works on Linux/Cygwin/WSL/Windows.
+Personal config files for Bash, Windows PowerShell, PowerShell Core and Vim/Neovim. Works on Linux/Cygwin/WSL/Windows.
+Good cross platform configuration that works similar on different operatingsystems.
 
 ## Install
 To install these dotfiles and [chezmoi](https://www.chezmoi.io) which is the software used to easily manage them, just run these commands on a new machine:
