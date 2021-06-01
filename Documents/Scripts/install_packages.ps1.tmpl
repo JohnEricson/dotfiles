@@ -7,6 +7,7 @@
 # Set environment variables for user.
 # If you have a Windows Terminal window open you need to restart it in order for the new environments to load.
 [Environment]::SetEnvironmentVariable('LANG', 'en_US.UTF8', [System.EnvironmentVariableTarget]::User)
+[Environment]::SetEnvironmentVariable('EDITOR', 'vim', [System.EnvironmentVariableTarget]::User)
 
 # Self-elevate the script if required.
 if (-Not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] 'Administrator')) {
