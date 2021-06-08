@@ -22,6 +22,19 @@ Then as your normal user run:
 chezmoi init --apply JohnEricson
 ```
 
+#### Install default programs and do additional configuration of the machine
+This is optional but recommended. Without this you may get an error message in the Windows Terminal that the default profile doesn't work. This is because this one uses pwsh as shell.
+
+Ensure we are allowed to run PowerShell scripts:
+```console
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
+```
+
+Install default programs and do additional configuration of the machine
+```console
+~\Documents\Scripts\install_packages.ps1
+```
+
 ## Manage configuration
 This configuration creates an alias `cm` that calls the `chezmoi` command. This is to make chezmoi easier to work with.
 
