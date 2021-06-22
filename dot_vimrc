@@ -76,8 +76,8 @@ set nosta sta     " a <Tab> in an indent inserts 'shiftwidth' spaces
 set nosi	si       " do clever autoindenting
 set nocin cin     " enable specific indenting for C code 
 
-if IsWSL()
-  set mouse=v        " use visual selection on WSL.
+if IsWSL() || exists("$SSH_CONNECTION")
+  set mouse=v        " Use visual selection when not running locally, such as WSL/SSH.
 else
   set mouse=a			" enable mouse
 endif
