@@ -30,6 +30,9 @@ choco install lockhunter
 # Configure Windows.
 
 # Show file extensions by default.
-Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "HideFileExt" 0
+Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "HideFileExt" 0
+
+# Replace Command Prompt with Windows PowerShell in the menu when right-click on Start button.
+Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" DontUsePowerShellOnWinX 0
 
 {{ end -}}
