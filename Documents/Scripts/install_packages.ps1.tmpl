@@ -27,4 +27,9 @@ choco install vim
 choco install neovim
 choco install lockhunter
 
+# Configure Windows.
+
+# Show file extensions by default.
+Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "HideFileExt" 0
+
 {{ end -}}
