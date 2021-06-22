@@ -3,15 +3,43 @@
 " Some modifications by J.H.M. Dassen <jdassen@wi.LeidenUniv.nl>
 " Modified by high / John Ericson.
 
+" Functions
+
+" Copy With Syntax Highlighting.
+" https://vi.stackexchange.com/a/18979
+"
+" Run like this:
+"  :HtmlClip
+function! CopyFormatted(line1, line2)
+    execute a:line1 . "," . a:line2 . "TOhtml"
+    %yank *
+    !start /min powershell -noprofile "gcb | scb -as"
+    bwipeout!
+endfunction
+
+command! -range=% HtmlClip silent call CopyFormatted(<line1>,<line2>)
+
+" https://stackoverflow.com/a/57020870/2903596
+function! IsWSL()
+  if has("unix")
+    let lines = readfile("/proc/version")
+    if lines[0] =~ "microsoft"
+      return 1
+    endif
+  endif
+  return 0
+endfunction
+
+
 " To make nvim work with my listchars with special characters. nvim requires .vimrc to be in utf-8 format.
 set encoding=utf-8
 
 " Set english language
 "
-
+	
 " Help language
 set helplang=en
-
+	
 " Vim language
 " This doesn't work on my installation of Vim x64.
 "language en
@@ -48,8 +76,11 @@ set nosta sta     " a <Tab> in an indent inserts 'shiftwidth' spaces
 set nosi	si       " do clever autoindenting
 set nocin cin     " enable specific indenting for C code 
 
-set mouse=a			" enable mouse
-
+if IsWSL()
+  set mouse=v        " use visual selection on WSL.
+else
+  set mouse=a			" enable mouse
+endif
 
 " Suffixes that get lower priority when doing tab completion for filenames.
 " These are files we are not likely to want to edit or read.
@@ -262,21 +293,6 @@ endif
 " For perlomni.vim setting.
 " https://github.com/c9s/perlomni.vim
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
-
-" Copy With Syntax Highlighting.
-" https://vi.stackexchange.com/a/18979
-"
-" Run like this:
-"  :HtmlClip
-function! CopyFormatted(line1, line2)
-    execute a:line1 . "," . a:line2 . "TOhtml"
-    %yank *
-    !start /min powershell -noprofile "gcb | scb -as"
-    bwipeout!
-endfunction
-
-command! -range=% HtmlClip silent call CopyFormatted(<line1>,<line2>)
-
 
 " Auto copy the mouse selection
 " https://vim.fandom.com/wiki/Auto_copy_the_mouse_selection
