@@ -1,5 +1,5 @@
 
-. ./Documents/PowerShell/environments.ps1
+. ./Documents/WindowsPowerShell/environments.ps1
 
 # Modules.
 
