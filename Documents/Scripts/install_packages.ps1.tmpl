@@ -4,6 +4,15 @@
 # This script needs to be idempotent, that is, it needs to be runnable multiple 
 # times without producing an error on consequent runs.
 
+# In case you have reconfigured the location of your virtual folder Documents,
+# then we will copy directories to your location to ensure scripts still works.
+# TODO: This is required as chezmoi doesn't understand/support Windows virtual folders.
+$documents_path = [Environment]::GetFolderPath("MyDocuments")
+if ($documents_path -ne "$($env:USERPROFILE)\Documents") { 
+	cp -Recurse -Force $env:USERPROFILE\Documents\WindowsPowerShell $documents_path 
+	cp -Recurse -Force $env:USERPROFILE\Documents\Scripts $documents_path 
+}
+
 # Set environment variables for user.
 # If you have a Windows Terminal window open you need to restart it in order for the new environments to load.
 [Environment]::SetEnvironmentVariable('LANG', 'en_US.UTF8', [System.EnvironmentVariableTarget]::User)
