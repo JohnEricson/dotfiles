@@ -1,8 +1,7 @@
-# Modules.
 
-# Ensures Windows PowerShell modules are also available for PowerShell Core.
-# This only adds the path if it doesn't already exists in PSModulePath.
-$env:PSModulePath = $env:PSModulePath + "$([System.IO.Path]::PathSeparator)$($env:ProgramFiles)\WindowsPowerShell\Modules"
+. ./Documents/PowerShell/environments.ps1
+
+# Modules.
 
 # Colors in PowerShell.
 # https://github.com/joonro/Get-ChildItemColor
