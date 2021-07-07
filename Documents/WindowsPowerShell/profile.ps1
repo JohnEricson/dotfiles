@@ -1,5 +1,6 @@
 
-. ./Documents/WindowsPowerShell/environments.ps1
+$documents_path = [Environment]::GetFolderPath("MyDocuments")
+. $documents_path/WindowsPowerShell/environments.ps1
 
 # Modules.
 
