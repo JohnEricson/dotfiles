@@ -1,4 +1,5 @@
 dot_bash_aliases eol=lf
 dot_profile eol=lf
 dot_bashrc eol=lf
+dot_environments eol=lf
 
