@@ -55,6 +55,7 @@ New-Alias cm chezmoi
 
 # Functions.
 function vagrant { vagrant.exe --color $args }
+function wsle { wsl /bin/sh -c ". ~/.environments && $args" }
 
 function .. { cd .. }
 function ... { cd ..\.. }
