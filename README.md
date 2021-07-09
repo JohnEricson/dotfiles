@@ -1,6 +1,6 @@
 # John's dotfiles
 
-Personal config files for Bash, Windows PowerShell, PowerShell Core and Vim/Neovim. Works on Linux/Cygwin/WSL/Windows.
+Personal config files for Bash, Windows PowerShell, PowerShell Core and Vim/Neovim. Works on Linux/Windows/WSL/Cygwin/Git Bash.
 Good cross platform configuration that works similar on different operatingsystems.
 
 ## Install
