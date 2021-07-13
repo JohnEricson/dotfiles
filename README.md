@@ -7,7 +7,7 @@ Good cross platform configuration that works similar on different operatingsyste
 To install these dotfiles and [chezmoi](https://www.chezmoi.io) which is the software used to easily manage them, just run these commands on a new machine:
 
 ### Unix
-As your normal user run:
+As your normal user in your home dir run:
 ```console
 sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply JohnEricson
 ```
