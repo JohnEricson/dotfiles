@@ -31,6 +31,10 @@ if (-Not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
 # This is safe even if Chocolatey is already installed. 
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
+# Configure Chocolatey.
+choco feature enable -n allowGlobalConfirmation
+
+# Install packages.
 choco install pwsh
 choco install vim
 choco install neovim
