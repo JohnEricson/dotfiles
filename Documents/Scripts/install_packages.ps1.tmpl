@@ -56,6 +56,9 @@ Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" Search
 # Hide Cortana button on Taskbar.
 Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" ShowCortanaButton 0
 
+# Hide the Windows Ink Workspae button on Taskbar.
+Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\\PenWorkspace" PenWorkspaceButtonDesiredVisibility 0
+
 # Hide files.
 
 # Hide all Unix dot files. dot files are automatically hidden on Unix.
