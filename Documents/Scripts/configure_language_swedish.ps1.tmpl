@@ -1,6 +1,9 @@
 {{ if eq .chezmoi.os "windows" -}}
 # Script to configure language and localisation settings. 
 #
+# As it configures Windows settings it needs to be ran in
+# Windows PowerShell and not PowerShell Core.
+#
 # This script needs to be idempotent, that is, it needs to be runnable multiple 
 # times without producing an error on consequent runs.
 
