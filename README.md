@@ -13,11 +13,15 @@ sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply JohnEricson
 ```
 
 ### Windows
-Recommended way is to install chezmoi using [Chocolatey](https://chocolatey.org/install#individual). First make sure Chocolatey is installed and then run this command as Administrator: 
+Recommended way is to install chezmoi using [Chocolatey](https://chocolatey.org/install#individual). First make sure Chocolatey is installed by running this command as Administrator:
+```console
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+```
+After this as Administrator run:
 ```console
 choco install chezmoi
 ```
-Then as your normal user run:
+After this start new PowerShell as your normal user and run:
 ```console
 chezmoi init --apply JohnEricson
 ```
