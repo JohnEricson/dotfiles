@@ -58,6 +58,10 @@ New-Alias cm chezmoi
 function vagrant { vagrant.exe --color $args }
 function wsle { wsl /bin/sh -c ". ~/.environments && $args" }
 
+# Make ps work more in the same way as on Unix.
+Remove-Item alias:ps
+function ps { Get-CimInstance Win32_Process | ft ProcessId, Name, HandleCount, WorkingSetSize, VirtualSize, CommandLine }
+
 function .. { cd .. }
 function ... { cd ..\.. }
 function .... { cd ..\..\.. }
