@@ -22,17 +22,17 @@ After this as Administrator run:
 choco install chezmoi
 ```
 After this start new PowerShell as your normal user and run:
+Ensure we are allowed to run PowerShell scripts:
+```console
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
+```
+Then finally in the same PowerShell window run:
 ```console
 chezmoi init --apply JohnEricson
 ```
 
 #### Install default programs and do additional configuration of the machine
 This is optional but recommended. Without this you may get an error message in the Windows Terminal that the default profile doesn't work. This is because this one uses pwsh as shell.
-
-Ensure we are allowed to run PowerShell scripts:
-```console
-Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
-```
 
 Install default programs and do additional configuration of the machine
 ```console
