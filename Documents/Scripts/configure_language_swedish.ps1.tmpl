@@ -5,11 +5,11 @@
 # times without producing an error on consequent runs.
 
 # Based on https://superuser.com/a/1190440/1136290
-$langlist = New-WinUserLanguageList sv-SE
-$langlist += New-WinUserLanguageList en-US
-$langlist[1].InputMethodTips.Clear()
+$langlist = New-WinUserLanguageList en-US
+$langlist += New-WinUserLanguageList sv-SE
+$langlist[0].InputMethodTips.Clear()
 # Use Swedish keyboard on English language.
-$langlist[1].InputMethodTips.Add('0409:0000041D')
+$langlist[0].InputMethodTips.Add('0409:0000041D')
 Set-WinUserLanguageList $langlist -Force
 
 # Set Swedish keyboard as default.
