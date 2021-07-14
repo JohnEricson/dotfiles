@@ -50,6 +50,8 @@ Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advan
 # Replace Command Prompt with Windows PowerShell in the menu when right-click on Start button.
 Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" DontUsePowerShellOnWinX 0
 
+Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" SearchBoxTaskbarMode 1 -Type DWord -Force
+
 # Hide files.
 
 # Hide all Unix dot files. dot files are automatically hidden on Unix.
