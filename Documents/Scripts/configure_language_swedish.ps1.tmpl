@@ -1,0 +1,15 @@
+{{ if eq .chezmoi.os "windows" -}}
+# Script to configure language and localisation settings. 
+#
+# This script needs to be idempotent, that is, it needs to be runnable multiple 
+# times without producing an error on consequent runs.
+
+# Based on https://superuser.com/a/1190440/1136290
+$langlist = New-WinUserLanguageList sv-SE
+$langlist += New-WinUserLanguageList en-US
+$langlist[1].InputMethodTips.Clear()
+# Use Swedish keyboard on English language.
+$langlist[1].InputMethodTips.Add('041D:0000041D')
+Set-WinUserLanguageList $langlist -Force
+
+{{ end -}}
