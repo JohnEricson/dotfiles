@@ -9,7 +9,15 @@ $langlist = New-WinUserLanguageList sv-SE
 $langlist += New-WinUserLanguageList en-US
 $langlist[1].InputMethodTips.Clear()
 # Use Swedish keyboard on English language.
-$langlist[1].InputMethodTips.Add('041D:0000041D')
+$langlist[1].InputMethodTips.Add('0409:0000041D')
 Set-WinUserLanguageList $langlist -Force
+
+# Set Swedish keyboard as default.
+#Set-WinDefaultInputMethodOverride '041D:0000041D'
+
+# Set regional language to Swedish.
+# Based on: https://scribbleghost.net/2018/04/30/add-keyboard-language-to-windows-10-with-powershell/
+Set-WinCultureFromLanguageListOptOut -OptOut $True
+Set-Culture -CultureInfo sv-SE
 
 {{ end -}}
