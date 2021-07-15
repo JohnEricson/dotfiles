@@ -22,7 +22,6 @@ After this as Administrator run:
 choco install chezmoi
 ```
 After this start new PowerShell as your normal user and run:
-Ensure we are allowed to run PowerShell scripts:
 ```console
 Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
 ```
