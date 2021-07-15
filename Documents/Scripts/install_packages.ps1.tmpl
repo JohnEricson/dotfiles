@@ -59,6 +59,9 @@ Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advan
 # Hide the Windows Ink Workspae button on Taskbar.
 Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\\PenWorkspace" PenWorkspaceButtonDesiredVisibility 0
 
+# Hide News and Interests on Taskbar.
+Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Feeds" ShellFeedsTaskbarViewMode 2
+
 # Hide files.
 
 # Hide all Unix dot files. dot files are automatically hidden on Unix.
