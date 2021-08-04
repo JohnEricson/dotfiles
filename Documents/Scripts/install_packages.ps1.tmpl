@@ -62,6 +62,11 @@ Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\\PenWorkspace"
 # Hide News and Interests on Taskbar.
 Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Feeds" ShellFeedsTaskbarViewMode 2
 
+# Turn off OneDrive On this day notification.
+# https://www.thewindowsclub.com/turn-off-onedrive-on-this-day-notification
+Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\OneDrive\Accounts\Personal" OnThisDayPhotoNotificationDisabled 1
+
+
 # Hide files.
 
 # Hide all Unix dot files. dot files are automatically hidden on Unix.
