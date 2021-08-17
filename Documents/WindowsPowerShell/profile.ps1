@@ -66,6 +66,9 @@ function .. { cd .. }
 function ... { cd ..\.. }
 function .... { cd ..\..\.. }
 
+# Puppet development.
+function pdk-lint { & pdk bundle exec puppet-lint --relative --fail-on-warnings --no-double_quoted_strings-check --no-80chars-check --no-variable_scope-check --no-quoted_booleans-check --no-140chars-check --no-inherits_across_namespaces-check --no-documentation-check --no-case_without_default-check --no-selector_inside_resource-check --no-parameter_order-check . }
+
 # Variables:
 # Should be number of this computers Etherned adapter that is used to access LAN. 
 # Number is listen when you run command 'route print'.
