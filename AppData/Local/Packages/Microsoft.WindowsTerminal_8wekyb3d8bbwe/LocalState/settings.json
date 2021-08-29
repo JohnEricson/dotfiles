@@ -69,6 +69,13 @@
                 "icon": "C:\\Program Files\\Git\\mingw64\\share\\git\\git-for-windows.ico",
                 "name": "Git Bash",
                 "startingDirectory": "%USERPROFILE%"
+            },
+            {
+                "commandline": "\"C:\\Program Files (x86)\\Google\\Cloud SDK\\google-cloud-sdk\\bin\\gcloud.cmd\" beta interactive",
+                "hidden": false,
+                "icon": "C:\\Program Files (x86)\\Google\\Cloud SDK\\supercloud-16x16.ico",
+                "name": "Google Cloud Shell",
+                "startingDirectory": "%USERPROFILE%"
             }
         ]
     },
