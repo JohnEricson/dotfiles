@@ -51,7 +51,7 @@ if (Test-Path($ChocolateyProfile)) {
 # Aliases. If you want to pass arguments to commands in aliases you need to 
 # implement a function instead.
 New-Alias vi vim
-New-Alias ssh ssh.ps1
+New-Alias sshl ssh.ps1
 New-Alias cm chezmoi 
 
 # Functions.
