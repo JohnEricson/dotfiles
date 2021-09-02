@@ -42,6 +42,9 @@ choco install lockhunter
 choco install 7zip
 choco install microsoft-windows-terminal
 
+# Install Windows features
+Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
+
 # Configure Windows.
 
 # Show file extensions by default.
