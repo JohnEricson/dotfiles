@@ -1,9 +1,10 @@
 {
     "$schema": "https://aka.ms/terminal-profiles-schema",
+    "actions": [],
     "alwaysShowTabs": false,
+    "copyFormatting": "html",
     "copyOnSelect": true,
     "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
-    "keybindings": [],
     "profiles": 
     {
         "defaults": 
@@ -11,8 +12,11 @@
             "acrylicOpacity": 0.75,
             "closeOnExit": "graceful",
             "colorScheme": "Johns Campbell",
-            "fontFace": "Consolas",
-            "fontSize": 10,
+            "font": 
+            {
+                "face": "Consolas",
+                "size": 10
+            },
             "padding": "1, 1, 1, 1"
         },
         "list": 
