@@ -57,6 +57,7 @@ New-Alias cm chezmoi
 # Functions.
 function vagrant { vagrant.exe --color $args }
 function wsle { wsl /bin/sh -c ". ~/.environments && $args" }
+. $documents_path\Scripts\Get-VMNetworkAdapterIP\Get-VMNetworkAdapterIP.ps1
 
 # Make ps work more in the same way as on Unix.
 Remove-Item alias:ps
