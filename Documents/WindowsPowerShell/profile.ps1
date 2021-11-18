@@ -71,11 +71,9 @@ function .... { cd ..\..\.. }
 function pdk-lint { & pdk bundle exec puppet-lint --relative --fail-on-warnings --no-double_quoted_strings-check --no-80chars-check --no-variable_scope-check --no-quoted_booleans-check --no-140chars-check --no-inherits_across_namespaces-check --no-documentation-check --no-case_without_default-check --no-selector_inside_resource-check --no-parameter_order-check . }
 
 # Variables:
-# Should be number of this computers Etherned adapter that is used to access LAN. 
-# Number is listen when you run command 'route print'.
-# Used to configure route table to be able to still access LAN resources while
-# connected with VPN'ns.
-$env:LAN_ETH = 127
+if (Test-Path("$documents_path\Scripts\set_environment_for_network_devices.ps1")) {
+	. $documents_path\Scripts\set_environment_for_network_devices.ps1
+}
 
 # Set the same prompt as on Linux.
 # Based on: https://ss64.com/ps/syntax-prompt.html
