@@ -1,0 +1,6 @@
+Include config.d/*
+
+Host *
+	ServerAliveInterval 300
+	ServerAliveCountMax 2
+
