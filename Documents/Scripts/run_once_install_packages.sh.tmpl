@@ -5,9 +5,17 @@
 # This script needs to be idempotent, that is, it needs to be runnable multiple 
 # times without producing an error on consequent runs.
 
+{{ if eq .chezmoi.osRelease.idLike "debian" -}}
 sudo apt update
 sudo apt install vim
 sudo apt install htop
 sudo apt install ncdu
 sudo apt install tree
+{{ else if eq .chezmoi.osRelease.idLike "fedora" -}}
+sudo yum -y install vim
+sudo yum -y install htop
+sudo yum -y install ncdu
+sudo yum -y install tree
+sudo yum -y install git
+{{ end -}}
 {{ end -}}
