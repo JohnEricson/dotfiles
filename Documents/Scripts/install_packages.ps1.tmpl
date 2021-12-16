@@ -41,6 +41,7 @@ choco install neovim
 choco install lockhunter
 choco install 7zip
 choco install microsoft-windows-terminal
+choco install puretext
 
 # Install Windows features
 Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
@@ -68,6 +69,11 @@ Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Feeds" ShellFe
 # Turn off OneDrive On this day notification.
 # https://www.thewindowsclub.com/turn-off-onedrive-on-this-day-notification
 Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\OneDrive\Accounts\Personal" OnThisDayPhotoNotificationDisabled 1
+
+# Configure program PureText.
+Set-ItemProperty "HKCU:\SOFTWARE\PureText" HotKey 393302
+Set-ItemProperty "HKCU:\SOFTWARE\PureText" Paste 1
+Set-ItemProperty "HKCU:\SOFTWARE\PureText" Sound 0
 
 
 # Hide files.
