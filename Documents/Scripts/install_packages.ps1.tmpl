@@ -80,6 +80,7 @@ Set-ItemProperty "HKCU:\SOFTWARE\PureText" Sound 0
 # Hide files.
 
 # Hide all Unix dot files. dot files are automatically hidden on Unix.
-attrib +h $env:USERPROFILE\.*
+gci $env:USERPROFILE\.* | foreach { $_.Attributes = $_.Attributes -bor "Hidden" }
+gci $env:USERPROFILE\_* | foreach { $_.Attributes = $_.Attributes -bor "Hidden" }
 
 {{ end -}}
