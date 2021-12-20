@@ -53,6 +53,7 @@ if (Test-Path($ChocolateyProfile)) {
 New-Alias vi vim
 New-Alias sshl ssh.ps1
 New-Alias cm chezmoi 
+New-Alias whereis Get-Command
 
 # Functions.
 function vagrant { vagrant.exe --color $args }
