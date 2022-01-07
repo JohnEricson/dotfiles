@@ -76,6 +76,9 @@ Set-ItemProperty "HKCU:\SOFTWARE\PureText" HotKey 393302
 Set-ItemProperty "HKCU:\SOFTWARE\PureText" Paste 1
 Set-ItemProperty "HKCU:\SOFTWARE\PureText" Sound 0
 
+# Turn off "When I snap a window, show what I can snap next to it".
+Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" SnapAssist 0 
+
 
 # Hide files.
 
