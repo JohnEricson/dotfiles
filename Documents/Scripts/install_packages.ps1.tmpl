@@ -79,6 +79,11 @@ Set-ItemProperty "HKCU:\SOFTWARE\PureText" Sound 0
 # Turn off "When I snap a window, show what I can snap next to it".
 Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" SnapAssist 0 
 
+# Turn off animations/fading/sliding.
+Set-ItemProperty -Path "HKCU:\Control Panel\Desktop" -Name "UserPreferencesMask" -Type Binary -Value ([byte[]](158,30,7,128,18,0,0,0))
+Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer" -Name "ShellState" -Type Binary -Value ([byte[]](36,0,0,0,54,56,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,19,0,0,0,0,0,0,0,106,0,0,0))
+# Do not Animate windows when minimizing and maximizing.
+Set-ItemProperty -Path "HKCU:\Control Panel\Desktop\WindowMetrics" -Name "MinAnimate" -Type String -Value 1
 
 # Hide files.
 
