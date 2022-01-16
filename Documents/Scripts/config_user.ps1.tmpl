@@ -57,6 +57,8 @@ Set-ItemProperty -Path "HKCU:\Control Panel\Desktop" -Name "UserPreferencesMask"
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer" -Name "ShellState" -Type Binary -Value ([byte[]](36,0,0,0,54,56,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,19,0,0,0,0,0,0,0,106,0,0,0))
 # Do not Animate windows when minimizing and maximizing.
 Set-ItemProperty -Path "HKCU:\Control Panel\Desktop\WindowMetrics" -Name "MinAnimate" -Type String -Value 1
+# Show window contents while dragging.
+Set-ItemProperty -Path "HKCU:\Control Panel\Desktop" -Name "DragFullWindows" -Type String -Value 1
 
 # Hide files.
 
