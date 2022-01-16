@@ -1,0 +1,67 @@
+{{ if eq .chezmoi.os "windows" -}}
+# Script to install and configure new machine.
+#
+# This script needs to be idempotent, that is, it needs to be runnable multiple 
+# times without producing an error on consequent runs.
+
+# In case you have reconfigured the location of your virtual folder Documents,
+# then we will copy directories to your location to ensure scripts still works.
+# TODO: This is required as chezmoi doesn't understand/support Windows virtual folders.
+$documents_path = [Environment]::GetFolderPath("MyDocuments")
+if ($documents_path -ne "$($env:USERPROFILE)\Documents") { 
+	cp -Recurse -Force $env:USERPROFILE\Documents\WindowsPowerShell $documents_path 
+	cp -Recurse -Force $env:USERPROFILE\Documents\Scripts $documents_path 
+}
+
+# Set environment variables for user.
+# If you have a Windows Terminal window open you need to restart it in order for the new environments to load.
+[Environment]::SetEnvironmentVariable('LANG', 'en_US.UTF8', [System.EnvironmentVariableTarget]::User)
+[Environment]::SetEnvironmentVariable('EDITOR', 'vim', [System.EnvironmentVariableTarget]::User)
+
+
+# Configure Windows.
+
+# Show file extensions by default.
+Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "HideFileExt" 0
+
+# Replace Command Prompt with Windows PowerShell in the menu when right-click on Start button.
+Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" DontUsePowerShellOnWinX 0
+
+# Change Search box on Taskbar to a button.
+Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" SearchBoxTaskbarMode 1 -Type DWord -Force
+
+# Hide Cortana button on Taskbar.
+Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" ShowCortanaButton 0
+
+# Hide the Windows Ink Workspae button on Taskbar.
+Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\\PenWorkspace" PenWorkspaceButtonDesiredVisibility 0
+
+# Hide News and Interests on Taskbar.
+Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Feeds" ShellFeedsTaskbarViewMode 2
+
+# Turn off OneDrive On this day notification.
+# https://www.thewindowsclub.com/turn-off-onedrive-on-this-day-notification
+Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\OneDrive\Accounts\Personal" OnThisDayPhotoNotificationDisabled 1
+
+# Configure program PureText.
+New-item -Path "HKCU:\SOFTWARE\PureText" -Force
+Set-ItemProperty "HKCU:\SOFTWARE\PureText" HotKey 393302
+Set-ItemProperty "HKCU:\SOFTWARE\PureText" Paste 1
+Set-ItemProperty "HKCU:\SOFTWARE\PureText" Sound 0
+
+# Turn off "When I snap a window, show what I can snap next to it".
+Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" SnapAssist 0 
+
+# Turn off animations/fading/sliding.
+Set-ItemProperty -Path "HKCU:\Control Panel\Desktop" -Name "UserPreferencesMask" -Type Binary -Value ([byte[]](158,30,7,128,18,0,0,0))
+Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer" -Name "ShellState" -Type Binary -Value ([byte[]](36,0,0,0,54,56,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,19,0,0,0,0,0,0,0,106,0,0,0))
+# Do not Animate windows when minimizing and maximizing.
+Set-ItemProperty -Path "HKCU:\Control Panel\Desktop\WindowMetrics" -Name "MinAnimate" -Type String -Value 1
+
+# Hide files.
+
+# Hide all Unix dot files. dot files are automatically hidden on Unix.
+gci $env:USERPROFILE\.* | foreach { $_.Attributes = $_.Attributes -bor "Hidden" }
+gci $env:USERPROFILE\_* | foreach { $_.Attributes = $_.Attributes -bor "Hidden" }
+
+{{ end -}}
