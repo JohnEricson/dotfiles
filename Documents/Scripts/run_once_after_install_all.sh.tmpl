@@ -1,0 +1,10 @@
+{{ if eq .chezmoi.os "linux" -}}
+#!/bin/sh
+# Script to install and configure new machine.
+# User needs to have sudo * permissions to run this.
+#
+# This script needs to be idempotent, that is, it needs to be runnable multiple 
+# times without producing an error on consequent runs.
+
+. ~/Documents/Scripts/install_packages.sh
+{{ end -}}
