@@ -17,6 +17,7 @@ if ($documents_path -ne "$($env:USERPROFILE)\Documents") {
 # If you have a Windows Terminal window open you need to restart it in order for the new environments to load.
 [Environment]::SetEnvironmentVariable('LANG', 'en_US.UTF8', [System.EnvironmentVariableTarget]::User)
 [Environment]::SetEnvironmentVariable('EDITOR', 'vim', [System.EnvironmentVariableTarget]::User)
+[Environment]::SetEnvironmentVariable('HOME', $env:USERPROFILE, [System.EnvironmentVariableTarget]::User)
 
 
 # Configure Windows.
