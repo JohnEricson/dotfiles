@@ -12,7 +12,7 @@ sudo apt install vim
 sudo apt install htop
 sudo apt install ncdu
 sudo apt install tree
-{{ else if eq .chezmoi.osRelease.idLike "fedora" -}}
+{{ else if or (eq .chezmoi.osRelease.idLike "fedora") (eq .chezmoi.osRelease.id "centos") -}}
 sudo yum -y install vim
 sudo yum -y install htop
 sudo yum -y install ncdu
