@@ -45,7 +45,7 @@ Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Feeds" ShellFe
 Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\OneDrive\Accounts\Personal" OnThisDayPhotoNotificationDisabled 1
 
 # Configure program PureText.
-New-item -Path "HKCU:\SOFTWARE\PureText" -Force >$null
+New-item -Path "HKCU:\SOFTWARE\PureText" -Force > $null
 Set-ItemProperty "HKCU:\SOFTWARE\PureText" HotKey 393302
 Set-ItemProperty "HKCU:\SOFTWARE\PureText" Paste 1
 Set-ItemProperty "HKCU:\SOFTWARE\PureText" Sound 0
