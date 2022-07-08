@@ -44,6 +44,13 @@ Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Feeds" ShellFe
 # https://www.thewindowsclub.com/turn-off-onedrive-on-this-day-notification
 Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\OneDrive\Accounts\Personal" OnThisDayPhotoNotificationDisabled 1
 
+# Configure colors in default PowerShell.
+# Based on: https://stackoverflow.com/a/18686048/2903596
+Push-Location
+Set-Location "HKCU:\Console\%SystemRoot%_System32_WindowsPowerShell_v1.0_powershell.exe"
+New-ItemProperty . ColorTable00 -force -type DWORD -value 0x00000000
+Pop-Location
+
 # Configure program PureText.
 New-item -Path "HKCU:\SOFTWARE\PureText" -Force > $null
 Set-ItemProperty "HKCU:\SOFTWARE\PureText" HotKey 393302
