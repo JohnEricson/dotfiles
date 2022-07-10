@@ -1,4 +1,5 @@
 {
+    "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
     "actions": [],
     "alwaysShowTabs": false,
@@ -9,7 +10,6 @@
     {
         "defaults": 
         {
-            "acrylicOpacity": 0.75,
             "closeOnExit": "graceful",
             "colorScheme": "Johns Campbell",
             "font": 
@@ -17,12 +17,13 @@
                 "face": "Consolas",
                 "size": 10
             },
-            "padding": "1, 1, 1, 1"
+            "opacity": 100,
+            "padding": "1, 1, 1, 1",
+            "useAcrylic": false
         },
         "list": 
         [
             {
-                "commandline": "powershell.exe",
                 "cursorColor": "#FFFFFF",
                 "cursorShape": "vintage",
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
@@ -34,7 +35,6 @@
                 "useAcrylic": false
             },
             {
-                "commandline": "cmd.exe",
                 "cursorColor": "#FFFFFF",
                 "cursorShape": "vintage",
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
@@ -70,12 +70,14 @@
             },
             {
                 "commandline": "\"C:/Program Files/Git/bin/bash.exe\" --login",
+                "guid": "{d15b228a-05d7-50d1-8472-f60aaba86efc}",
                 "icon": "C:\\Program Files\\Git\\mingw64\\share\\git\\git-for-windows.ico",
                 "name": "Git Bash",
                 "startingDirectory": "%USERPROFILE%"
             },
             {
                 "commandline": "\"C:\\Program Files (x86)\\Google\\Cloud SDK\\google-cloud-sdk\\bin\\gcloud.cmd\" beta interactive",
+                "guid": "{740fee19-28ed-5302-afa4-a16d2ab98b77}",
                 "hidden": false,
                 "icon": "C:\\Program Files (x86)\\Google\\Cloud SDK\\supercloud-16x16.ico",
                 "name": "Google Cloud Shell",
