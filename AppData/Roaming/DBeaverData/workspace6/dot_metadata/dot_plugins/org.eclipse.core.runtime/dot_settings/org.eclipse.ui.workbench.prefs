@@ -1,0 +1,12 @@
+//org.eclipse.ui.commands/state/org.eclipse.ui.navigator.resources.nested.changeProjectPresentation/org.eclipse.ui.commands.radioState=false
+ColorsAndFontsPreferencePage.expandedCategories=Torg.jkiss.dbeaver.ui.presentation.sql
+ColorsAndFontsPreferencePage.selectedElement=Corg.jkiss.dbeaver.sql.editor.color.text.foreground
+eclipse.preferences.version=1
+org.eclipse.ui.ide.systemDefault.org.jkiss.dbeaver.sql.editor.color.keyword.foreground=192,192,192
+org.eclipse.ui.ide.systemDefault.org.jkiss.dbeaver.sql.editor.color.text.foreground=255,255,255
+org.eclipse.ui.workbench.ACTIVE_NOFOCUS_TAB_BG_END=255,255,255
+org.eclipse.ui.workbench.ACTIVE_NOFOCUS_TAB_BG_START=255,255,255
+org.eclipse.ui.workbench.ACTIVE_NOFOCUS_TAB_TEXT_COLOR=16,16,16
+org.eclipse.ui.workbench.ACTIVE_TAB_BG_END=255,255,255
+org.eclipse.ui.workbench.ACTIVE_TAB_BG_START=255,255,255
+org.eclipse.ui.workbench.INACTIVE_TAB_BG_START=242,242,242
