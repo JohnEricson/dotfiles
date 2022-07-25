@@ -1,4 +1,5 @@
 README.md
+install.sh
 {{- if ne .chezmoi.os "windows" }}
 AppData
 {{- end }}
