@@ -7,11 +7,11 @@
 # times without producing an error on consequent runs.
 
 {{ if or (eq .chezmoi.osRelease.id "debian") (eq .chezmoi.osRelease.idLike "debian") -}}
-sudo --preserve-env apt update
-sudo --preserve-env apt install vim
-sudo --preserve-env apt install htop
-sudo --preserve-env apt install ncdu
-sudo --preserve-env apt install tree
+sudo --preserve-env apt-get update
+sudo --preserve-env apt-get install -y vim
+sudo --preserve-env apt-get install -y htop
+sudo --preserve-env apt-get install -y ncdu
+sudo --preserve-env apt-get install -y tree
 {{ else if or (eq .chezmoi.osRelease.idLike "fedora") (eq .chezmoi.osRelease.id "centos") -}}
 sudo --preserve-env yum -y install vim
 sudo --preserve-env yum -y install htop
