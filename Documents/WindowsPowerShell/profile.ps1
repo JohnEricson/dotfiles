@@ -70,6 +70,12 @@ function .. { cd .. }
 function ... { cd ..\.. }
 function .... { cd ..\..\.. }
 
+# Load extra modules (functions) in modules.d directory.
+if (Test-Path("${env:USERPROFILE}\Documents\Scripts\modules.d")) {
+	$modules = "${env:USERPROFILE}\Documents\Scripts\modules.d\*.psm1"
+	Import-Module $modules
+}
+
 # Puppet development.
 function pdk-lint { & pdk bundle exec puppet-lint --relative --fail-on-warnings --no-double_quoted_strings-check --no-80chars-check --no-variable_scope-check --no-quoted_booleans-check --no-140chars-check --no-inherits_across_namespaces-check --no-documentation-check --no-case_without_default-check --no-selector_inside_resource-check --no-parameter_order-check . }
 
