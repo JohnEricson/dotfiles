@@ -71,9 +71,10 @@ function ... { cd ..\.. }
 function .... { cd ..\..\.. }
 
 # Load extra modules (functions) in modules.d directory.
-if (Test-Path("${env:USERPROFILE}\Documents\Scripts\modules.d")) {
-	$modules = "${env:USERPROFILE}\Documents\Scripts\modules.d\*.psm1"
-	Import-Module $modules
+# Directory must exists.
+$modules = gci "${env:USERPROFILE}\Documents\Scripts\modules.d\*.psm1"
+foreach ( $module in $modules) {
+	Import-Module $module
 }
 
 # Puppet development.
