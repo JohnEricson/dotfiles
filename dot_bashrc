@@ -73,7 +73,7 @@ fi
 if [ "$color_prompt" = yes ]; then
     #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 	 # Fix dark blue colour in Windows 10 bash on prompt. Also makes it shorter.
-	 PS1='\e[37;1m${debian_chroot:+($debian_chroot)}\u@\e[1;35m\W\e[0m\$ '
+	 PS1='\[\033[37;1m\]${debian_chroot:+($debian_chroot)}\u@\[\033[1;35m\]\W\[\033[37;1m\]\$ '
 else
     #PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
     PS1='${debian_chroot:+($debian_chroot)}\u@\W\$ '
