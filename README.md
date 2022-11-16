@@ -11,6 +11,10 @@ As your normal user in your home dir run:
 ```console
 sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply JohnEricson
 ```
+If you get questions about entering username/password try this command instead:
+```console
+sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply --guess-repo-url=false https://github.com/JohnEricson/dotfiles.git
+```
 
 ### Windows
 Recommended way is to install chezmoi using [Chocolatey](https://chocolatey.org/install#individual). First make sure Chocolatey is installed by running this command as Administrator:
