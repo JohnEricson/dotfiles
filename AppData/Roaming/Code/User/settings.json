@@ -1,0 +1,105 @@
+{
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "window.titleBarStyle": "custom",
+    
+    // Enable neovim.
+    "vim.enableNeovim": false,
+    //"vim.neovimPath": "C:\\tools\\neovim\\nvim-win64\\bin\\nvim.exe",
+    "vim.disableAnnoyingNeovimMessage": true,
+    "vim.statusBarColorControl": true,
+    "workbench.sideBar.location": "left",
+    
+    "vim.hlsearch": true,
+    "vim.useSystemClipboard": true,
+    
+    "vim.handleKeys": {
+        "<C-k>": false,
+        // Allowes to show/hide panel in VSCode.
+        "<C-j>": false
+    },
+    "editor.renderWhitespace": "none",
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#005f5f",
+        "statusBar.noFolderBackground": "#005f5f",
+        "statusBar.debuggingBackground": "#005f5f",
+        "terminal.foreground": "#CCCCCC",
+        "terminal.background": "#0C0C0C"
+    },
+    "workbench.editor.showTabs": true,
+    "editor.insertSpaces": true,
+
+    "puppet.installType": "pdk",
+    "todo-tree.tree.showScanModeButton": false,
+    "vim.smartcase": false,
+    "gitlens.views.repositories.files.layout": "tree",
+    "window.autoDetectColorScheme": true,
+    "vim.foldfix": true,
+    "editor.wordWrap": "off",
+    "editor.tabSize": "3",
+    "todo-tree.general.tags": [
+        "BUG",
+        "HACK",
+        "FIXME",
+        "TODO",
+        "XXX",
+        "[ ]",
+        "[x]"
+    ],
+    "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "puppet.editorService.formatOnType.enable": true,
+    "ruby.intellisense": "rubyLocate",
+    "ruby.codeCompletion": "rcodetools",
+    "[ruby]": {
+        "editor.defaultFormatter": "rebornix.ruby"
+    },
+    "terminal.external.windowsExec": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "[python]": {
+    
+        "gitlens.codeLens.symbolScopes": [
+            "!Module"
+        ],
+        "editor.wordBasedSuggestions": false,
+        "editor.insertSpaces": false,
+    },
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "redhat.telemetry.enabled": true,
+    "explorer.confirmDelete": false,
+    "editor.wordSeparators": "hej",
+    "vim.normalModeKeyBindingsNonRecursive": [
+    
+    ],
+    "files.associations": {
+        "*.yml": "ansible"
+    },
+    "gitlens.plusFeatures.enabled": false,
+    "git.ignoreWindowsGit27Warning": true,
+    "terminal.integrated.copyOnSelection": true,
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.cursorBlinking": true,
+    "dotfiles.repository": "JohnEricson/dotFiles",
+    "dotfiles.targetPath": "~/.dotfiles",
+    "dotfiles.installCommand": "~/.dotfiles/install.sh",
+    "editor.stickyScroll.enabled": true,
+    "[terraform]": {
+    "editor.tabSize": 2
+    },
+    "trunk.trunkGrayOutNonBlockingIssues": false,
+    "editor.renderControlCharacters": false,
+    "window.zoomLevel": -1,
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["u"],
+            "commands": [
+                "undo",
+            ]
+        }
+    ]
+}
