@@ -12,7 +12,7 @@ sudo --preserve-env apt-get install -y vim
 sudo --preserve-env apt-get install -y htop
 sudo --preserve-env apt-get install -y ncdu
 sudo --preserve-env apt-get install -y tree
-{{ else if or (eq .chezmoi.osRelease.idLike "fedora") (eq .chezmoi.osRelease.id "centos") -}}
+{{ else if or (eq .chezmoi.osRelease.idLike "fedora") (eq .chezmoi.osRelease.id "centos" "rocky") -}}
 sudo --preserve-env yum -y install vim
 sudo --preserve-env yum -y install htop
 sudo --preserve-env yum -y install ncdu
