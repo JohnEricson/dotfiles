@@ -5,5 +5,12 @@
 #   "dotfiles.targetPath": "~/.dotfiles",
 #   "dotfiles.installCommand": "~/.dotfiles/install.sh"
 
+# Make sure we are in home directory. 
+cd ~
+
+# Install dotfiles.
 sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply JohnEricson
+
+# Refresh shell with our new config.
+. ~/.bashrc
 
