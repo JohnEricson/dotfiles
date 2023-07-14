@@ -15,6 +15,10 @@ If you get questions about entering username/password try this command instead:
 ```console
 sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply --guess-repo-url=false https://github.com/JohnEricson/dotfiles.git
 ```
+The new config for bash will be used next time you login. To refresh your current session with the new config run:
+```console
+. ~/.bashrc
+```
 
 ### Windows
 Recommended way is to install chezmoi using [Chocolatey](https://chocolatey.org/install#individual). First make sure Chocolatey is installed by running this command as Administrator:
