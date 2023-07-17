@@ -6,7 +6,7 @@
     "vim.enableNeovim": false,
     //"vim.neovimPath": "C:\\tools\\neovim\\nvim-win64\\bin\\nvim.exe",
     "vim.disableAnnoyingNeovimMessage": true,
-    "vim.statusBarColorControl": true,
+    "vim.statusBarColorControl": false, 
     "workbench.sideBar.location": "left",
     
     "vim.hlsearch": true,
@@ -18,13 +18,15 @@
         "<C-j>": false
     },
     "editor.renderWhitespace": "none",
-    "workbench.colorCustomizations": {
+    /*
+	 "workbench.colorCustomizations": {
         "statusBar.background": "#005f5f",
         "statusBar.noFolderBackground": "#005f5f",
         "statusBar.debuggingBackground": "#005f5f",
         "terminal.foreground": "#CCCCCC",
         "terminal.background": "#0C0C0C"
     },
+	 */
     "workbench.editor.showTabs": true,
     "editor.insertSpaces": true,
 
@@ -61,6 +63,7 @@
         ],
         "editor.wordBasedSuggestions": false,
         "editor.insertSpaces": false,
+        "editor.formatOnType": true,
     },
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
@@ -101,5 +104,16 @@
                 "undo",
             ]
         }
-    ]
+    ],
+    "workbench.iconTheme": "vscode-icons",
+    "git.openRepositoryInParentFolders": "never",
+    "terminal.integrated.smoothScrolling": true,
+    "terminal.integrated.tabs.enableAnimation": false,
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "vsicons.dontShowNewVersionMessage": true,
+    "vs-kubernetes": {
+        "vscode-kubernetes.helm-path.linux": "/root/.local/state/vs-kubernetes/tools/helm/linux-amd64/helm",
+        "vscode-kubernetes.minikube-path.linux": "/root/.local/state/vs-kubernetes/tools/minikube/linux-amd64/minikube"
+    },
+    "workbench.colorTheme": "Default Light Modern"
 }
