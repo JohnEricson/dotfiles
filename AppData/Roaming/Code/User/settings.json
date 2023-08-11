@@ -76,7 +76,6 @@
     },
     "redhat.telemetry.enabled": true,
     "explorer.confirmDelete": false,
-    "editor.wordSeparators": "hej",
     "vim.normalModeKeyBindingsNonRecursive": [
     
     ],
