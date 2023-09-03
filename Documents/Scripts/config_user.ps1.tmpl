@@ -1,7 +1,7 @@
 {{ if eq .chezmoi.os "windows" -}}
 # Script to install and configure new machine.
 #
-# This script needs to be idempotent, that is, it needs to be runnable multiple 
+# This script needs to be idempotent, that is, it needs to be runnable multiple
 # times without producing an error on consequent runs.
 
 # In case you have reconfigured the location of your virtual folder Documents,
@@ -38,14 +38,17 @@ Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advan
 Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\\PenWorkspace" PenWorkspaceButtonDesiredVisibility 0
 
 # Hide News and Interests on Taskbar.
+New-item -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Feeds" -Force > $null
 Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Feeds" ShellFeedsTaskbarViewMode 2
 
 # Turn off OneDrive On this day notification.
 # https://www.thewindowsclub.com/turn-off-onedrive-on-this-day-notification
+New-item -Path "HKCU:\SOFTWARE\Microsoft\OneDrive\Accounts\Personal" -Force > $null
 Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\OneDrive\Accounts\Personal" OnThisDayPhotoNotificationDisabled 1
 
 # Configure colors in default PowerShell.
 # Based on: https://stackoverflow.com/a/18686048/2903596
+New-item -Path "HKCU:\Console\%SystemRoot%_System32_WindowsPowerShell_v1.0_powershell.exe" -Force > $null
 Push-Location
 Set-Location "HKCU:\Console\%SystemRoot%_System32_WindowsPowerShell_v1.0_powershell.exe"
 New-ItemProperty . ColorTable00 -force -type DWORD -value 0x00000000 > $null
