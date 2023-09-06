@@ -42,14 +42,6 @@ Then run:
 ```
 Close your PowerShell window and open a new one to refresh your shell with the new config.
 
-#### Install default programs and do additional configuration of the machine
-This is optional but recommended. Without this you may get an error message in the Windows Terminal that the default profile doesn't work. This is because this one uses pwsh as shell.
-
-Install default programs and do additional configuration of the machine
-```powershell
-~/Documents/Scripts/install_packages.ps1
-```
-
 ## Manage configuration
 This configuration creates an alias `cm` that calls the `chezmoi` command. This is to make chezmoi easier to work with.
 
