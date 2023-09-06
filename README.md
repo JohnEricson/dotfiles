@@ -28,18 +28,19 @@ This both installs these dotfiles and [chezmoi](https://www.chezmoi.io) as well 
 ### Windows
 This installs [chezmoi](https://www.chezmoi.io) in the official way in your `~/bin` dir. Same way as it's installed on Linux.
 
-Start PowerShell as your normal user and in your home dir run, to install [chezmoi](https://www.chezmoi.io):
+Start PowerShell as your normal user and in your home dir run:
 ```powershell
 (irm -useb https://get.chezmoi.io/ps1) | powershell -c -
 ```
-After this run, to allow to run PowerShell script:
+After this run (This allows your user to run *.ps1 scripts):
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
 ```
-Then run, to install these dotfiles:
+Then run:
 ```powershell
 ~/bin/chezmoi init --apply JohnEricson
 ```
+Close your PowerShell window and open a new one to refresh your shell with the new config.
 
 #### Install default programs and do additional configuration of the machine
 This is optional but recommended. Without this you may get an error message in the Windows Terminal that the default profile doesn't work. This is because this one uses pwsh as shell.
