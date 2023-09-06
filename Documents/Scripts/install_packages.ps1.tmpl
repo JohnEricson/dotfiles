@@ -38,6 +38,12 @@ choco install winscp.install
 choco install winscp
 
 # Install Windows features
-Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
-
+try {
+	Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
+}
+catch [System.Runtime.InteropServices.COMException] {
+	if ($_.Exception.ErrorCode -eq 0x80070422) {
+		Write-Warning "Windows capability SSH Client not installed. Installing Windows capabilities is not supported in Windows Sandbox."
+	}
+}
 {{ end -}}
