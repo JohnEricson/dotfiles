@@ -14,8 +14,10 @@
     
     "vim.handleKeys": {
         "<C-k>": false,
-        // Allowes to show/hide panel in VSCode.
-        "<C-j>": false
+        // Allows to show/hide Panel in VS Code.
+        "<C-j>": false,
+        // Allows to show/hide Primary Side Bar in VS Code.
+        "<C-b>": false
     },
     "editor.renderWhitespace": "none",
     /*
