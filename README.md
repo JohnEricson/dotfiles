@@ -28,13 +28,13 @@ This both installs these dotfiles and [chezmoi](https://www.chezmoi.io) as well 
 ### Windows
 This installs [chezmoi](https://www.chezmoi.io) in the official way in your `~/bin` dir. Same way as it's installed on Linux.
 
-Start PowerShell as your normal user and in your home dir run:
-```powershell
-(irm -useb https://get.chezmoi.io/ps1) | powershell -c -
-```
-After this run (This allows your user to run *.ps1 scripts):
+Start PowerShell as your normal user and run:
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
+```
+After this in your home dir run (This allows your user to run *.ps1 scripts):
+```powershell
+(irm -useb https://get.chezmoi.io/ps1) | powershell -c -
 ```
 Then run:
 ```powershell
