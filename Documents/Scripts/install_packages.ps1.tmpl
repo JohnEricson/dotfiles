@@ -5,7 +5,7 @@
 # This script needs to be idempotent, that is, it needs to be runnable multiple
 # times without producing an error on consequent runs.
 
-.  "$PSScriptRoot/config_user.ps1"
+. "$PSScriptRoot/config_user.ps1"
 
 # Self-elevate the script if required.
 if (-Not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] 'Administrator')) {

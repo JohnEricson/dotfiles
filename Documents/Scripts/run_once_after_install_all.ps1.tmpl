@@ -1,0 +1,8 @@
+{{ if eq .chezmoi.os "windows" -}}
+# Script to install and configure new machine.
+#
+# This script needs to be idempotent, that is, it needs to be runnable multiple 
+# times without producing an error on consequent runs.
+
+. ~/Documents/Scripts/install_packages.ps1
+{{ end -}}
