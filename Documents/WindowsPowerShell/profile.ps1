@@ -108,7 +108,7 @@ function prompt {
 
 # Autosize text in Format-Table by default.
 # https://gallery.technet.microsoft.com/scriptcenter/Change-Format-Table-7d49b047
-$PSDefaultParameterValues["Format-Table:Autosize"]=$true
+$PSDefaultParameterValues["Format-Table:Autosize"] = $true
 
 # Detect based on Current Working Directory if we should change to users home directory instead.
 if (
