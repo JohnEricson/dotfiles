@@ -9,7 +9,7 @@
 cd ~
 
 # Install dotfiles.
-sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply JohnEricson
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply JohnEricson
 
 # Refresh shell with our new config.
 . ~/.bashrc

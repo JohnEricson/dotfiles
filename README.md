@@ -9,11 +9,11 @@ To install these dotfiles and [chezmoi](https://www.chezmoi.io) which is the sof
 ### Unix
 As your normal user in your home dir run:
 ```console
-sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply JohnEricson
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply JohnEricson
 ```
 If you get questions about entering username/password try this command instead:
 ```console
-sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply --guess-repo-url=false https://github.com/JohnEricson/dotfiles.git
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply --guess-repo-url=false https://github.com/JohnEricson/dotfiles.git
 ```
 The new config for bash will be used next time you login. To refresh your current session with the new config run:
 ```console
