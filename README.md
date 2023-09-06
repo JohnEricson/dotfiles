@@ -26,21 +26,19 @@ This both installs these dotfiles and [chezmoi](https://www.chezmoi.io) as well 
 ```
 
 ### Windows
-Recommended way is to install chezmoi using [Chocolatey](https://chocolatey.org/install#individual). First make sure Chocolatey is installed by running this command as Administrator:
+This installs [chezmoi](https://www.chezmoi.io) in the official way in your `~/bin` dir. Same way as it's installed on Linux.
+
+Start PowerShell as your normal user and in your home dir run, to install [chezmoi](https://www.chezmoi.io):
 ```powershell
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+(irm -useb https://get.chezmoi.io/ps1) | powershell -c -
 ```
-After this as Administrator run:
-```powershell
-choco install chezmoi
-```
-After this start new PowerShell as your normal user and run:
+After this run, to allow to run PowerShell script:
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
 ```
-Then finally in the same PowerShell window run:
+Then run, to install these dotfiles:
 ```powershell
-chezmoi init --apply JohnEricson
+~/bin/chezmoi init --apply JohnEricson
 ```
 
 #### Install default programs and do additional configuration of the machine
@@ -48,7 +46,7 @@ This is optional but recommended. Without this you may get an error message in t
 
 Install default programs and do additional configuration of the machine
 ```powershell
-~\Documents\Scripts\install_packages.ps1
+~/Documents/Scripts/install_packages.ps1
 ```
 
 ## Manage configuration
