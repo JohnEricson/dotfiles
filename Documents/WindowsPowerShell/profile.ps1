@@ -72,7 +72,7 @@ function .... { cd ..\..\.. }
 
 # Load extra modules (functions) in modules.d directory.
 # Directory must exists.
-$modules = gci "${env:USERPROFILE}\Documents\Scripts\modules.d\*.psm1"
+$modules = gci "$documents_path\Scripts\modules.d\*.psm1"
 foreach ( $module in $modules) {
 	Import-Module $module
 }
