@@ -1,0 +1,4 @@
+["Documents/Scripts/modules.d/test-sandbox.psm1"]
+	type = "file"
+	url = "https://raw.githubusercontent.com/JohnEricson/test-sandbox/main/test-sandbox.psm1"
+	refreshPeriod = "168h"
