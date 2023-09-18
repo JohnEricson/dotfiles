@@ -40,14 +40,13 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 choco feature enable -n allowGlobalConfirmation
 
 # Install packages.
-choco install pwsh
-choco install vim
-choco install neovim
+winget install Microsoft.PowerShell
+winget install vim.vim
+winget install Neovim.Neovim
 winget install CrystalRich.LockHunter
-choco install 7zip
-choco install microsoft-windows-terminal
-choco install winscp.install
-choco install winscp
+winget install 7zip.7zip
+winget install Microsoft.WindowsTerminal
+winget install WinSCP.WinSCP
 winget install Microsoft.PowerToys
 
 # Install Windows features
