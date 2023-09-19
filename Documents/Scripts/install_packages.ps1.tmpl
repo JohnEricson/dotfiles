@@ -32,6 +32,9 @@ if (-Not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
 # Enable Developer Mode to allow regular users to create symbolic links.
 Set-itemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" AllowDevelopmentWithoutDevLicense 1 -Type DWord
 
+# Disable Storing my activity history on this device (Known as Timeline on Windows 10).
+Set-itemProperty "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System" PublishUserActivities 0 -Type DWord
+
 # Microsoft Defender Antivirus will always prompt before sending automatic sample
 # submission to Microsoft.
 Set-MpPreference -SubmitSamplesConsent 0
