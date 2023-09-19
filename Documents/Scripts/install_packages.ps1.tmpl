@@ -32,6 +32,10 @@ if (-Not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
 # Enable Developer Mode to allow regular users to create symbolic links.
 Set-itemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" AllowDevelopmentWithoutDevLicense 1 -Type DWord
 
+# Microsoft Defender Antivirus will always prompt before sending automatic sample
+# submission to Microsoft.
+Set-MpPreference -SubmitSamplesConsent 0
+
 # Install Chocolatey.
 # This is safe even if Chocolatey is already installed. 
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
