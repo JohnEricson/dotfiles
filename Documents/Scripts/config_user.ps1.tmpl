@@ -65,6 +65,9 @@ Pop-Location
 # Turn off "When I snap a window, show what I can snap next to it".
 Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" SnapAssist 0 
 
+# Disable Aero Shake.
+Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" DisallowShaking 1 -Type DWord
+
 # Set Visual Effects in Windows Performance Options to Custom.
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects" -Name VisualFXSetting -Type String -Value 3
 # Turn off animations/fading/sliding.
