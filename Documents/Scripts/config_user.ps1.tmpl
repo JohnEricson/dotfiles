@@ -36,8 +36,8 @@ Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advan
 # Replace Command Prompt with Windows PowerShell in the menu when right-click on Start button.
 Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" DontUsePowerShellOnWinX 0
 
-# Change Search box on Taskbar to a button.
-Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" SearchBoxTaskbarMode 1 -Type DWord -Force
+# Hide Search box on Taskbar.
+Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" SearchBoxTaskbarMode 0 -Type DWord -Force
 
 # Hide Cortana button on Taskbar.
 Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" ShowCortanaButton 0
