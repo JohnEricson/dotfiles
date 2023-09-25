@@ -315,3 +315,6 @@ set vb t_vb=
 set bg=dark			" background (light/dark). Reload syntax to initialize
 						" settings.
 
+" Make vim use the OS clipboard by default.
+set clipboard^=unnamed,unnamedplus
+
