@@ -321,10 +321,10 @@ set clipboard^=unnamed,unnamedplus
 " Install plugins
 call plug#begin()
 
-# Framework for writing vim plugins in Deno (Javascript runtime).
+" Framework for writing vim plugins in Deno (Javascript runtime).
 Plug 'vim-denops/denops.vim'
 
-# Completion framework. Replacement of neocomplete.
+" Completion framework. Replacement of neocomplete.
 Plug 'Shougo/ddc.vim'
 
 " Install your UIs
