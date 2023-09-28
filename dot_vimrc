@@ -241,66 +241,63 @@ Plug 'Shougo/ddc-sorter_rank'
 
 call plug#end()
 
-if exists('ddc#enable()')
-  " Customize global ddc settings.
-  " Based on config from: https://github.com/Shougo/ddc.vim/blob/main/doc/ddc.txt#L563
 
-  " Set the default ui.
-  " NOTE: native ui.
-  " https://github.com/Shougo/ddc-ui-native
-  call ddc#custom#patch_global('ui', 'native')
+" Customize global ddc settings.
+" Based on config from: https://github.com/Shougo/ddc.vim/blob/main/doc/ddc.txt#L563
 
-  " Use around source. This gives you auto completion when editing files.
-  " https://github.com/Shougo/ddc-source-around
-  call ddc#custom#patch_global('sources', ['around'])
+" Set the default ui.
+" NOTE: native ui.
+" https://github.com/Shougo/ddc-ui-native
+call ddc#custom#patch_global('ui', 'native')
 
-  " Use matcher_head and sorter_rank.
-  " https://github.com/Shougo/ddc-matcher_head
-  " https://github.com/Shougo/ddc-sorter_rank
-  call ddc#custom#patch_global('sourceOptions', #{
-        \   _: #{
-        \     matchers: ['matcher_head'],
-        \     sorters: ['sorter_rank']},
-        \   },
-        \ )
+" Use around source. This gives you auto completion when editing files.
+" https://github.com/Shougo/ddc-source-around
+call ddc#custom#patch_global('sources', ['around'])
 
-  " Change source options
-  call ddc#custom#patch_global('sourceOptions', #{
-        \   around: #{ mark: 'A' },
-        \ })
-  call ddc#custom#patch_global('sourceParams', #{
-        \   around: #{ maxSize: 500 },
-        \ })
+" Use matcher_head and sorter_rank.
+" https://github.com/Shougo/ddc-matcher_head
+" https://github.com/Shougo/ddc-sorter_rank
+call ddc#custom#patch_global('sourceOptions', #{
+	  \   _: #{
+	  \     matchers: ['matcher_head'],
+	  \     sorters: ['sorter_rank']},
+	  \   },
+	  \ )
 
-  " Customize settings on a filetype
-  call ddc#custom#patch_filetype(
-      \   ['c', 'cpp'], 'sources', ['around', 'clangd']
-      \ )
-  call ddc#custom#patch_filetype(['c', 'cpp'], 'sourceOptions', #{
-      \   clangd: #{ mark: 'C' },
-      \ })
-  call ddc#custom#patch_filetype('markdown', 'sourceParams', #{
-      \   around: #{ maxSize: 100 },
-      \ })
+" Change source options
+call ddc#custom#patch_global('sourceOptions', #{
+	  \   around: #{ mark: 'A' },
+	  \ })
+call ddc#custom#patch_global('sourceParams', #{
+	  \   around: #{ maxSize: 500 },
+	  \ })
 
-  " Mappings
+" Customize settings on a filetype
+call ddc#custom#patch_filetype(
+	\   ['c', 'cpp'], 'sources', ['around', 'clangd']
+	\ )
+call ddc#custom#patch_filetype(['c', 'cpp'], 'sourceOptions', #{
+	\   clangd: #{ mark: 'C' },
+	\ })
+call ddc#custom#patch_filetype('markdown', 'sourceParams', #{
+	\   around: #{ maxSize: 100 },
+	\ })
 
-  " <TAB>: completion.
-  " NOTE: It does not work for pum.vim
-  inoremap <expr> <TAB>
-  \ pumvisible() ? '<C-n>' :
-  \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
-  \ '<TAB>' : ddc#map#manual_complete()
+" Mappings
 
-  " <S-TAB>: completion back.
-  " NOTE: It does not work for pum.vim
-  inoremap <expr> <S-TAB>  pumvisible() ? '<C-p>' : '<C-h>'
+" <TAB>: completion.
+" NOTE: It does not work for pum.vim
+inoremap <expr> <TAB>
+\ pumvisible() ? '<C-n>' :
+\ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
+\ '<TAB>' : ddc#map#manual_complete()
 
-  " Use ddc.
-  call ddc#enable()
-else
-  " echo 'Plugins are not installed. Please run command: PlugInstall'
-endif
+" <S-TAB>: completion back.
+" NOTE: It does not work for pum.vim
+inoremap <expr> <S-TAB>  pumvisible() ? '<C-p>' : '<C-h>'
+
+" Use ddc.
+call ddc#enable()
 
 
 " Auto copy the mouse selection
