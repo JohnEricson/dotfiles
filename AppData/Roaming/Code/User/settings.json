@@ -17,18 +17,20 @@
         // Allows to show/hide Panel in VS Code.
         "<C-j>": false,
         // Allows to show/hide Primary Side Bar in VS Code.
-        "<C-b>": false
+        "<C-b>": false,
+        // Allows to run "Go to File..." command in VS Code.
+        "<C-p>": false
     },
     "editor.renderWhitespace": "none",
     /*
-	 "workbench.colorCustomizations": {
+    "workbench.colorCustomizations": {
         "statusBar.background": "#005f5f",
         "statusBar.noFolderBackground": "#005f5f",
         "statusBar.debuggingBackground": "#005f5f",
         "terminal.foreground": "#CCCCCC",
         "terminal.background": "#0C0C0C"
     },
-	 */
+    */
     "workbench.editor.showTabs": true,
     "editor.insertSpaces": true,
 
