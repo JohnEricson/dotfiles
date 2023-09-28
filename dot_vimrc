@@ -220,6 +220,12 @@ set modeline
 filetype plugin on
 
 
+" Run PlugInstall if there are missing plugins.
+" Based on: https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation-of-missing-plugins
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \| PlugInstall --sync | source $MYVIMRC
+\| endif
+
 " Install plugins
 call plug#begin()
 
@@ -258,19 +264,19 @@ call ddc#custom#patch_global('sources', ['around'])
 " https://github.com/Shougo/ddc-matcher_head
 " https://github.com/Shougo/ddc-sorter_rank
 call ddc#custom#patch_global('sourceOptions', #{
-	  \   _: #{
-	  \     matchers: ['matcher_head'],
-	  \     sorters: ['sorter_rank']},
-	  \   },
-	  \ )
+	\   _: #{
+	\     matchers: ['matcher_head'],
+	\     sorters: ['sorter_rank']},
+	\   },
+	\ )
 
 " Change source options
 call ddc#custom#patch_global('sourceOptions', #{
-	  \   around: #{ mark: 'A' },
-	  \ })
+	\   around: #{ mark: 'A' },
+	\ })
 call ddc#custom#patch_global('sourceParams', #{
-	  \   around: #{ maxSize: 500 },
-	  \ })
+	\   around: #{ maxSize: 500 },
+	\ })
 
 " Customize settings on a filetype
 call ddc#custom#patch_filetype(
