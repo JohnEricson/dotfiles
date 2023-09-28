@@ -6,6 +6,9 @@
 # This script needs to be idempotent, that is, it needs to be runnable multiple 
 # times without producing an error on consequent runs.
 
+# Used by Vim plugins.
+curl -fsSL https://deno.land/x/install/install.sh | sh
+
 {{ if or (eq .chezmoi.osRelease.id "debian") (eq .chezmoi.osRelease.idLike "debian") -}}
 sudo --preserve-env apt-get update
 sudo --preserve-env apt-get install -y vim
