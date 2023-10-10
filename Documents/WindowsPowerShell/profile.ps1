@@ -31,6 +31,9 @@ if ($host.Name -eq 'ConsoleHost') {
 	# C:\Program Files\WindowsPowerShell\Modules\PSReadline to your homedir.
 	Import-Module PSReadline
 
+	# Set Auto-complete IntelliSense to list several options below the prompt.
+	Set-PSReadLineOption -PredictionViewStyle ListView
+
 	# Disable Beep in terminal when erasing all text at the prompt with backspace.
 	# https://superuser.com/questions/1113429/disable-powershell-beep-on-backspace
 	Set-PSReadlineOption -BellStyle None
