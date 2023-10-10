@@ -1,8 +1,8 @@
 " Config file for Neovim GUI (neovim-qt).
 
-" Show GUI Tabline if several files open.
+" Show text based Tabline if several files open.
 if exists(':GuiTabline')
-    GuiTabline 1
+    GuiTabline 0
 endif
 
 " Show GUI ScrollBar. 
