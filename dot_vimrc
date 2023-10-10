@@ -330,3 +330,9 @@ set bg=dark			" background (light/dark). Reload syntax to initialize
 " Make vim use the OS clipboard by default.
 set clipboard^=unnamed,unnamedplus
 
+
+" Terminal settings
+
+" Allows to use ESC to exit insert-mode in Terminal.
+tnoremap <Esc> <C-\><C-n>
+
