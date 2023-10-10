@@ -1,0 +1,138 @@
+<Objs Version="1.1.0.1" xmlns="http://schemas.microsoft.com/powershell/2004/04">
+  <Obj RefId="0">
+    <TN RefId="0">
+      <T>Microsoft.PowerShell.Commands.PSRepositoryItemInfo</T>
+      <T>System.Management.Automation.PSCustomObject</T>
+      <T>System.Object</T>
+    </TN>
+    <MS>
+      <S N="Name">Get-ChildItemColor</S>
+      <Version N="Version">3.4.0</Version>
+      <S N="Type">Module</S>
+      <S N="Description">Get-ChildItemColor provides colored versions of Get-ChildItem Cmdlet and Get-ChildItem | Format-Wide (ls equivalent)</S>
+      <S N="Author">Joon Ro</S>
+      <S N="CompanyName">joonro</S>
+      <S N="Copyright">(c) 2019 Joon Ro. All rights reserved.</S>
+      <DT N="PublishedDate">2022-06-15T09:18:04+02:00</DT>
+      <Obj N="InstalledDate" RefId="1">
+        <DT>2023-10-10T22:28:30.3302378+02:00</DT>
+        <MS>
+          <Obj N="DisplayHint" RefId="2">
+            <TN RefId="1">
+              <T>Microsoft.PowerShell.Commands.DisplayHintType</T>
+              <T>System.Enum</T>
+              <T>System.ValueType</T>
+              <T>System.Object</T>
+            </TN>
+            <ToString>DateTime</ToString>
+            <I32>2</I32>
+          </Obj>
+        </MS>
+      </Obj>
+      <Nil N="UpdatedDate" />
+      <Nil N="LicenseUri" />
+      <URI N="ProjectUri">https://github.com/joonro/Get-ChildItemColor</URI>
+      <Nil N="IconUri" />
+      <Obj N="Tags" RefId="3">
+        <TN RefId="2">
+          <T>System.Object[]</T>
+          <T>System.Array</T>
+          <T>System.Object</T>
+        </TN>
+        <LST>
+          <S>Get-ChildItem</S>
+          <S>ls</S>
+          <S>Color</S>
+          <S>PSModule</S>
+        </LST>
+      </Obj>
+      <Obj N="Includes" RefId="4">
+        <TN RefId="3">
+          <T>System.Collections.Hashtable</T>
+          <T>System.Object</T>
+        </TN>
+        <DCT>
+          <En>
+            <S N="Key">Cmdlet</S>
+            <Obj N="Value" RefId="5">
+              <TNRef RefId="2" />
+              <LST />
+            </Obj>
+          </En>
+          <En>
+            <S N="Key">Workflow</S>
+            <Ref N="Value" RefId="5" />
+          </En>
+          <En>
+            <S N="Key">RoleCapability</S>
+            <Ref N="Value" RefId="5" />
+          </En>
+          <En>
+            <S N="Key">Function</S>
+            <Obj N="Value" RefId="6">
+              <TNRef RefId="2" />
+              <LST>
+                <S>Get-ChildItemColor</S>
+                <S>Get-ChildItemColorFormatWide</S>
+                <S>Out-ChildItemColor</S>
+              </LST>
+            </Obj>
+          </En>
+          <En>
+            <S N="Key">Command</S>
+            <Obj N="Value" RefId="7">
+              <TNRef RefId="2" />
+              <LST>
+                <S>Get-ChildItemColor</S>
+                <S>Get-ChildItemColorFormatWide</S>
+                <S>Out-ChildItemColor</S>
+              </LST>
+            </Obj>
+          </En>
+          <En>
+            <S N="Key">DscResource</S>
+            <Ref N="Value" RefId="5" />
+          </En>
+        </DCT>
+      </Obj>
+      <Nil N="PowerShellGetFormatVersion" />
+      <Nil N="ReleaseNotes" />
+      <Obj N="Dependencies" RefId="8">
+        <TNRef RefId="2" />
+        <LST />
+      </Obj>
+      <S N="RepositorySourceLocation">https://www.powershellgallery.com/api/v2</S>
+      <S N="Repository">PSGallery</S>
+      <S N="PackageManagementProvider">NuGet</S>
+      <Obj N="AdditionalMetadata" RefId="9">
+        <TN RefId="4">
+          <T>System.Management.Automation.PSCustomObject</T>
+          <T>System.Object</T>
+        </TN>
+        <MS>
+          <S N="copyright">(c) 2019 Joon Ro. All rights reserved.</S>
+          <S N="description">Get-ChildItemColor provides colored versions of Get-ChildItem Cmdlet and Get-ChildItem | Format-Wide (ls equivalent)</S>
+          <S N="requireLicenseAcceptance">False</S>
+          <S N="isLatestVersion">True</S>
+          <S N="isAbsoluteLatestVersion">True</S>
+          <S N="versionDownloadCount">6496</S>
+          <S N="downloadCount">59186</S>
+          <S N="packageSize">10390</S>
+          <S N="published">2022-06-15 09:18:04 +02:00</S>
+          <S N="created">2022-06-15 09:18:04 +02:00</S>
+          <S N="lastUpdated">2023-10-10 19:31:34 +02:00</S>
+          <S N="tags">Get-ChildItem ls Color PSModule PSFunction_Get-ChildItemColor PSCommand_Get-ChildItemColor PSFunction_Get-ChildItemColorFormatWide PSCommand_Get-ChildItemColorFormatWide PSFunction_Out-ChildItemColor PSCommand_Out-ChildItemColor PSIncludes_Function</S>
+          <S N="developmentDependency">False</S>
+          <S N="updated">2023-10-10T19:31:34Z</S>
+          <S N="NormalizedVersion">3.4.0</S>
+          <S N="Authors">Joon Ro</S>
+          <S N="IsPrerelease">false</S>
+          <S N="ItemType">Module</S>
+          <S N="FileList">Get-ChildItemColor.nuspec|ServiceController.ps1|FileInfo.ps1|Get-ChildItemColor.psd1|Get-ChildItemColor.psm1|Get-ChildItemColorTable.ps1|MatchInfo.ps1|ProcessInfo.ps1|PSColorHelper.ps1</S>
+          <S N="GUID">52c0ddeb-6767-42c0-89ad-203df97b22d1</S>
+        </MS>
+      </Obj>
+      <S N="InstalledLocation">\\SFCR021A\UserFolders404$\S3323F\My Documents\PowerShell\Modules\Get-ChildItemColor\3.4.0</S>
+    </MS>
+  </Obj>
+</Objs>

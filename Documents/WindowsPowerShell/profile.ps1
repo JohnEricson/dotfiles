@@ -23,7 +23,15 @@ If (!(Test-Path Variable:PSise)) {  # Only run this in the console and not in th
 	Set-Alias l Get-ChildItemColorFormatWide -option AllScope
 
 	# Customize colors.
+	# As of Get-ChildItemColor version 3.0.0 this no longer applies to Get-ChildItem.
 	$GetChildItemColorTable.File['Directory'] = "Magenta"
+
+	# As of PowerShell version 7.2, PowerShell now has built-in support for colors.
+	$PSStyle.FileInfo.Directory = "`e[95m" # Magenta.
+
+	# Set Table and list color to Magenta.
+	$PSStyle.Formatting.TableHeader = "`e[95m"
+	$PSStyle.Formatting.FormatAccent = "`e[95m"
 }
 
 if ($host.Name -eq 'ConsoleHost') {
