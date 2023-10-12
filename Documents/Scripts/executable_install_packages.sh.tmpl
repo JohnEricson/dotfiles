@@ -6,9 +6,6 @@
 # This script needs to be idempotent, that is, it needs to be runnable multiple 
 # times without producing an error on consequent runs.
 
-# Used by Vim plugins.
-curl -fsSL https://deno.land/x/install/install.sh | sh
-
 {{ if or (eq .chezmoi.osRelease.id "debian") (eq .chezmoi.osRelease.idLike "debian") -}}
 sudo --preserve-env apt-get update
 sudo --preserve-env apt-get install -y vim
@@ -17,6 +14,7 @@ sudo --preserve-env apt-get install -y htop
 sudo --preserve-env apt-get install -y ncdu
 sudo --preserve-env apt-get install -y tree
 {{ else if or (eq .chezmoi.osRelease.idLike "fedora") (eq .chezmoi.osRelease.id "centos" "rocky") -}}
+sudo --preserve-env yum -y install unzip
 sudo --preserve-env yum -y install vim
 sudo --preserve-env yum -y install neovim
 sudo --preserve-env yum -y install htop
@@ -25,3 +23,7 @@ sudo --preserve-env yum -y install tree
 sudo --preserve-env yum -y install git
 {{ end -}}
 {{ end -}}
+
+# Used by Neovim/Vim plugins.
+curl -fsSL https://deno.land/x/install/install.sh | sh
+
