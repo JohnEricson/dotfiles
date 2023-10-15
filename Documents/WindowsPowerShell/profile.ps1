@@ -26,12 +26,15 @@ If (!(Test-Path Variable:PSise)) {  # Only run this in the console and not in th
 	# As of Get-ChildItemColor version 3.0.0 this no longer applies to Get-ChildItem.
 	$GetChildItemColorTable.File['Directory'] = "Magenta"
 
-	# As of PowerShell version 7.2, PowerShell now has built-in support for colors.
-	$PSStyle.FileInfo.Directory = "`e[95m" # Magenta.
+	If ($PSVersionTable.PSEdition -eq 'Core') {
 
-	# Set Table and list color to Magenta.
-	$PSStyle.Formatting.TableHeader = "`e[95m"
-	$PSStyle.Formatting.FormatAccent = "`e[95m"
+		# As of PowerShell version 7.2, PowerShell now has built-in support for colors.
+		$PSStyle.FileInfo.Directory = "`e[95m" # Magenta.
+
+		# Set Table and list color to Magenta.
+		$PSStyle.Formatting.TableHeader = "`e[95m"
+		$PSStyle.Formatting.FormatAccent = "`e[95m"
+	}
 }
 
 if ($host.Name -eq 'ConsoleHost') {
@@ -39,8 +42,10 @@ if ($host.Name -eq 'ConsoleHost') {
 	# C:\Program Files\WindowsPowerShell\Modules\PSReadline to your homedir.
 	Import-Module PSReadline
 
-	# Set Auto-complete IntelliSense to list several options below the prompt.
-	Set-PSReadLineOption -PredictionViewStyle ListView
+	If ($PSVersionTable.PSEdition -eq 'Core') {
+		# Set Auto-complete IntelliSense to list several options below the prompt.
+		Set-PSReadLineOption -PredictionViewStyle ListView
+	}
 
 	# Disable Beep in terminal when erasing all text at the prompt with backspace.
 	# https://superuser.com/questions/1113429/disable-powershell-beep-on-backspace
