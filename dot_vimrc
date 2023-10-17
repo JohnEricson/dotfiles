@@ -226,11 +226,15 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   \| PlugInstall --sync | source $MYVIMRC
 \| endif
 
+
 " Install plugins
 call plug#begin()
 
 " Framework for writing vim plugins in Deno (Javascript runtime).
 Plug 'vim-denops/denops.vim'
+
+" Shared server for denops that make Vim startup faster. Especially on Windows.
+Plug 'vim-denops/denops-shared-server.vim'
 
 " Completion framework. Replacement of neocomplete.
 Plug 'Shougo/ddc.vim'
@@ -246,6 +250,14 @@ Plug 'Shougo/ddc-matcher_head'
 Plug 'Shougo/ddc-sorter_rank'
 
 call plug#end()
+
+
+" call denops_shared_server#install()
+
+" Use shared deno server to speed up startup on Windows.
+" See https://github.com/vim-denops/denops.vim#shared-server.
+let g:denops_server_addr = '127.0.0.1:32123'
+
 
 
 " Customize global ddc settings.
@@ -264,19 +276,19 @@ call ddc#custom#patch_global('sources', ['around'])
 " https://github.com/Shougo/ddc-matcher_head
 " https://github.com/Shougo/ddc-sorter_rank
 call ddc#custom#patch_global('sourceOptions', #{
-	\   _: #{
-	\     matchers: ['matcher_head'],
-	\     sorters: ['sorter_rank']},
-	\   },
-	\ )
+	  \   _: #{
+	  \     matchers: ['matcher_head'],
+	  \     sorters: ['sorter_rank']},
+	  \   },
+	  \ )
 
 " Change source options
 call ddc#custom#patch_global('sourceOptions', #{
-	\   around: #{ mark: 'A' },
-	\ })
+	  \   around: #{ mark: 'A' },
+	  \ })
 call ddc#custom#patch_global('sourceParams', #{
-	\   around: #{ maxSize: 500 },
-	\ })
+	  \   around: #{ maxSize: 500 },
+	  \ })
 
 " Customize settings on a filetype
 call ddc#custom#patch_filetype(
