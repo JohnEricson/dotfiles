@@ -227,7 +227,7 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 \| endif
 
 
-" Install plugins
+" Install plugins.
 call plug#begin()
 
 " Framework for writing vim plugins in Deno (Javascript runtime).
@@ -239,15 +239,18 @@ Plug 'vim-denops/denops-shared-server.vim'
 " Completion framework. Replacement of neocomplete.
 Plug 'Shougo/ddc.vim'
 
-" Install your UIs
+" Install your UIs.
 Plug 'Shougo/ddc-ui-native'
 
-" Install your sources
+" Install your sources.
 Plug 'Shougo/ddc-source-around'
 
-" Install your filters
+" Install your filters.
 Plug 'Shougo/ddc-matcher_head'
 Plug 'Shougo/ddc-sorter_rank'
+
+" Easily rename tabs.
+Plug 'gcmt/taboo.vim'
 
 call plug#end()
 
@@ -345,6 +348,8 @@ set clipboard^=unnamed,unnamedplus
 if has("win32")
 	" Use PowerShell Core as default shell on Windows.
 	set shell=pwsh
+else
+	set shell=bash
 endif
 
 " Terminal settings
