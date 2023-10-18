@@ -342,6 +342,10 @@ set bg=dark			" background (light/dark). Reload syntax to initialize
 " Make vim use the OS clipboard by default.
 set clipboard^=unnamed,unnamedplus
 
+if has("win32")
+	" Use PowerShell Core as default shell on Windows.
+	set shell=pwsh
+endif
 
 " Terminal settings
 
