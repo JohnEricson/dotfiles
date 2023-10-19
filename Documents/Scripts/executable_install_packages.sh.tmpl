@@ -13,6 +13,9 @@ sudo --preserve-env apt-get install -y neovim
 sudo --preserve-env apt-get install -y htop
 sudo --preserve-env apt-get install -y ncdu
 sudo --preserve-env apt-get install -y tree
+
+# Install support for AppImage packages.
+sudo --preserve-env apt-get install fuse
 {{ else if or (eq .chezmoi.osRelease.idLike "fedora") (eq .chezmoi.osRelease.id "centos" "rocky") -}}
 sudo --preserve-env yum -y install unzip
 sudo --preserve-env yum -y install vim
@@ -21,6 +24,9 @@ sudo --preserve-env yum -y install htop
 sudo --preserve-env yum -y install ncdu
 sudo --preserve-env yum -y install tree
 sudo --preserve-env yum -y install git
+
+# Install support for AppImage packages.
+sudo --preserve-env yum -y install fuse fuse-libs
 {{ end -}}
 
 # Used by Neovim/Vim plugins.
