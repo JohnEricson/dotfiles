@@ -126,5 +126,11 @@
     "cloudcode.enableTelemetry": false,
     "cloudcode.autoDependencies": "on",
     "window.zoomLevel": -1,
-    "hediet.vscode-drawio.resizeImages": null
+    "hediet.vscode-drawio.resizeImages": null,
+    "window.density.editorTabHeight": "compact",
+    "explorer.confirmDragAndDrop": false,
+    "terminal.integrated.scrollback": 5000,
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    }
 }
