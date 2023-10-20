@@ -357,3 +357,9 @@ endif
 " Allows to use ESC to exit insert-mode in Terminal.
 tnoremap <Esc> <C-\><C-n>
 
+" Neovim VSCode extension specific stuff.
+if exists('g:vscode')
+	" Enable default VS Code Ctrl+k w keybinding again to close all editors in a group.
+	nnoremap <C-k>w <Cmd>call VSCodeNotify('workbench.action.closeEditorsInGroup')<CR>
+endif
+
