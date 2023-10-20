@@ -370,3 +370,7 @@ if has('nvim')
 	:autocmd TermClose * execute 'bdelete! ' . expand('<abuf>')
 endif
 
+" Remove the "How-to disable mouse" in right click popup menu item and the separator above it.
+aunmenu PopUp.How-to\ disable\ mouse
+aunmenu PopUp.-1-
+
