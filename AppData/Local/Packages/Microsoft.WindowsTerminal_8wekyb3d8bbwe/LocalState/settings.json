@@ -5,7 +5,7 @@
     "alwaysShowTabs": false,
     "copyFormatting": "html",
     "copyOnSelect": true,
-    "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+    "defaultProfile": "{d9586111-1520-439f-b785-ad29a6d101ad}",
     "profiles": 
     {
         "defaults": 
@@ -23,6 +23,16 @@
         },
         "list": 
         [
+            {
+                "commandline": "nvim -c \"startinsert\" +terminal",
+                "guid": "{d9586111-1520-439f-b785-ad29a6d101ad}",
+                "hidden": false,
+                "icon": "C:\\Program Files\\Neovim\\share\\icons\\hicolor\\128x128\\apps\\nvim.png",
+                "name": "Neovim",
+                "scrollbarState": "hidden",
+                "startingDirectory": "%USERPROFILE%",
+                "tabTitle": "Neovim"
+            },
             {
                 "cursorColor": "#FFFFFF",
                 "cursorShape": "vintage",
