@@ -363,3 +363,10 @@ if exists('g:vscode')
 	nnoremap <C-k>w <Cmd>call VSCodeNotify('workbench.action.closeEditorsInGroup')<CR>
 endif
 
+" Neovim specific config.
+if has('nvim')
+	" Avoid reporting "Process exited 0" after exiting PowerShell inside Neovim.
+	" Based on: https://github.com/neovim/neovim/issues/14986#issuecomment-902705190
+	:autocmd TermClose * execute 'bdelete! ' . expand('<abuf>')
+endif
+
