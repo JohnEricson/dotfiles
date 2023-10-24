@@ -230,28 +230,6 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 " Install plugins.
 call plug#begin()
 
-" Remove all plugins that depends on deno, because hard to maintain across different OS's
-" and versions.
-
-" Framework for writing vim plugins in Deno (Javascript runtime).
-" Plug 'vim-denops/denops.vim'
-
-" Shared server for denops that make Vim startup faster. Especially on Windows.
-" Plug 'vim-denops/denops-shared-server.vim'
-
-" Completion framework. Replacement of neocomplete.
-" Plug 'Shougo/ddc.vim'
-
-" Install your UIs.
-" Plug 'Shougo/ddc-ui-native'
-
-" Install your sources.
-" Plug 'Shougo/ddc-source-around'
-
-" Install your filters.
-" Plug 'Shougo/ddc-matcher_head'
-" Plug 'Shougo/ddc-sorter_rank'
-
 " Enable autocompletion, intellisense functionality.
 " Recommended by https://www.youtube.com/watch?v=h4g0m0Iwmys and used by
 " LazyVim (https://www.lazyvim.org/plugins/coding#nvim-cmp).
@@ -273,55 +251,6 @@ Plug 'gcmt/taboo.vim'
 call plug#end()
 
 
-" call denops_shared_server#install()
-
-" Use shared deno server to speed up startup on Windows.
-" See https://github.com/vim-denops/denops.vim#shared-server.
-" let g:denops_server_addr = '127.0.0.1:32123'
-
-
-
-" Customize global ddc settings.
-" Based on config from: https://github.com/Shougo/ddc.vim/blob/main/doc/ddc.txt#L563
-
-" Set the default ui.
-" NOTE: native ui.
-" https://github.com/Shougo/ddc-ui-native
-" call ddc#custom#patch_global('ui', 'native')
-
-" Use around source. This gives you auto completion when editing files.
-" https://github.com/Shougo/ddc-source-around
-" call ddc#custom#patch_global('sources', ['around'])
-
-" Use matcher_head and sorter_rank.
-" https://github.com/Shougo/ddc-matcher_head
-" https://github.com/Shougo/ddc-sorter_rank
-" call ddc#custom#patch_global('sourceOptions', #{
-" 	  \   _: #{
-" 	  \     matchers: ['matcher_head'],
-" 	  \     sorters: ['sorter_rank']},
-" 	  \   },
-" 	  \ )
-
-" Change source options
-" call ddc#custom#patch_global('sourceOptions', #{
-" 	  \   around: #{ mark: 'A' },
-" 	  \ })
-" call ddc#custom#patch_global('sourceParams', #{
-" 	  \   around: #{ maxSize: 500 },
-" 	  \ })
-
-" Customize settings on a filetype
-" call ddc#custom#patch_filetype(
-" 	\   ['c', 'cpp'], 'sources', ['around', 'clangd']
-" 	\ )
-" call ddc#custom#patch_filetype(['c', 'cpp'], 'sourceOptions', #{
-" 	\   clangd: #{ mark: 'C' },
-" 	\ })
-" call ddc#custom#patch_filetype('markdown', 'sourceParams', #{
-" 	\   around: #{ maxSize: 100 },
-" 	\ })
-
 " Mappings
 
 " <TAB>: completion.
@@ -334,9 +263,6 @@ inoremap <expr> <TAB>
 " <S-TAB>: completion back.
 " NOTE: It does not work for pum.vim
 inoremap <expr> <S-TAB>  pumvisible() ? '<C-p>' : '<C-h>'
-
-" Use ddc.
-" call ddc#enable()
 
 
 " Auto copy the mouse selection
