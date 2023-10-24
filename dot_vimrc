@@ -230,24 +230,27 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 " Install plugins.
 call plug#begin()
 
+" Remove all plugins that depends on deno, because hard to maintain across different OS's
+" and versions.
+
 " Framework for writing vim plugins in Deno (Javascript runtime).
-Plug 'vim-denops/denops.vim'
+" Plug 'vim-denops/denops.vim'
 
 " Shared server for denops that make Vim startup faster. Especially on Windows.
-Plug 'vim-denops/denops-shared-server.vim'
+" Plug 'vim-denops/denops-shared-server.vim'
 
 " Completion framework. Replacement of neocomplete.
-Plug 'Shougo/ddc.vim'
+" Plug 'Shougo/ddc.vim'
 
 " Install your UIs.
-Plug 'Shougo/ddc-ui-native'
+" Plug 'Shougo/ddc-ui-native'
 
 " Install your sources.
-Plug 'Shougo/ddc-source-around'
+" Plug 'Shougo/ddc-source-around'
 
 " Install your filters.
-Plug 'Shougo/ddc-matcher_head'
-Plug 'Shougo/ddc-sorter_rank'
+" Plug 'Shougo/ddc-matcher_head'
+" Plug 'Shougo/ddc-sorter_rank'
 
 " Easily rename tabs.
 Plug 'gcmt/taboo.vim'
@@ -259,7 +262,7 @@ call plug#end()
 
 " Use shared deno server to speed up startup on Windows.
 " See https://github.com/vim-denops/denops.vim#shared-server.
-let g:denops_server_addr = '127.0.0.1:32123'
+" let g:denops_server_addr = '127.0.0.1:32123'
 
 
 
@@ -269,40 +272,40 @@ let g:denops_server_addr = '127.0.0.1:32123'
 " Set the default ui.
 " NOTE: native ui.
 " https://github.com/Shougo/ddc-ui-native
-call ddc#custom#patch_global('ui', 'native')
+" call ddc#custom#patch_global('ui', 'native')
 
 " Use around source. This gives you auto completion when editing files.
 " https://github.com/Shougo/ddc-source-around
-call ddc#custom#patch_global('sources', ['around'])
+" call ddc#custom#patch_global('sources', ['around'])
 
 " Use matcher_head and sorter_rank.
 " https://github.com/Shougo/ddc-matcher_head
 " https://github.com/Shougo/ddc-sorter_rank
-call ddc#custom#patch_global('sourceOptions', #{
-	  \   _: #{
-	  \     matchers: ['matcher_head'],
-	  \     sorters: ['sorter_rank']},
-	  \   },
-	  \ )
+" call ddc#custom#patch_global('sourceOptions', #{
+" 	  \   _: #{
+" 	  \     matchers: ['matcher_head'],
+" 	  \     sorters: ['sorter_rank']},
+" 	  \   },
+" 	  \ )
 
 " Change source options
-call ddc#custom#patch_global('sourceOptions', #{
-	  \   around: #{ mark: 'A' },
-	  \ })
-call ddc#custom#patch_global('sourceParams', #{
-	  \   around: #{ maxSize: 500 },
-	  \ })
+" call ddc#custom#patch_global('sourceOptions', #{
+" 	  \   around: #{ mark: 'A' },
+" 	  \ })
+" call ddc#custom#patch_global('sourceParams', #{
+" 	  \   around: #{ maxSize: 500 },
+" 	  \ })
 
 " Customize settings on a filetype
-call ddc#custom#patch_filetype(
-	\   ['c', 'cpp'], 'sources', ['around', 'clangd']
-	\ )
-call ddc#custom#patch_filetype(['c', 'cpp'], 'sourceOptions', #{
-	\   clangd: #{ mark: 'C' },
-	\ })
-call ddc#custom#patch_filetype('markdown', 'sourceParams', #{
-	\   around: #{ maxSize: 100 },
-	\ })
+" call ddc#custom#patch_filetype(
+" 	\   ['c', 'cpp'], 'sources', ['around', 'clangd']
+" 	\ )
+" call ddc#custom#patch_filetype(['c', 'cpp'], 'sourceOptions', #{
+" 	\   clangd: #{ mark: 'C' },
+" 	\ })
+" call ddc#custom#patch_filetype('markdown', 'sourceParams', #{
+" 	\   around: #{ maxSize: 100 },
+" 	\ })
 
 " Mappings
 
@@ -318,7 +321,7 @@ inoremap <expr> <TAB>
 inoremap <expr> <S-TAB>  pumvisible() ? '<C-p>' : '<C-h>'
 
 " Use ddc.
-call ddc#enable()
+" call ddc#enable()
 
 
 " Auto copy the mouse selection
@@ -371,6 +374,15 @@ if has('nvim')
 endif
 
 " Remove the "How-to disable mouse" in right click popup menu item and the separator above it.
-aunmenu PopUp.How-to\ disable\ mouse
-aunmenu PopUp.-1-
+" These complaint when re-sourcing this file. Just ignore this for now.
+" aunmenu PopUp.How-to\ disable\ mouse
+" aunmenu PopUp.-1-
+
+" Config in newer config language Lua.
+" Only parsable by Neovim.
+" https://github.com/nanotee/nvim-lua-guide#using-lua-from-vimscript
+lua << EOF
+
+EOF
+
 
