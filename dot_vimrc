@@ -253,17 +253,6 @@ call plug#end()
 
 " Mappings
 
-" <TAB>: completion.
-" NOTE: It does not work for pum.vim
-inoremap <expr> <TAB>
-\ pumvisible() ? '<C-n>' :
-\ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
-\ '<TAB>' : ddc#map#manual_complete()
-
-" <S-TAB>: completion back.
-" NOTE: It does not work for pum.vim
-inoremap <expr> <S-TAB>  pumvisible() ? '<C-p>' : '<C-h>'
-
 
 " Auto copy the mouse selection
 " https://vim.fandom.com/wiki/Auto_copy_the_mouse_selection
