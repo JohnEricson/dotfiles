@@ -304,9 +304,10 @@ if has('nvim')
 endif
 
 " Remove the "How-to disable mouse" in right click popup menu item and the separator above it.
-" These complaint when re-sourcing this file. Just ignore this for now.
-aunmenu PopUp.How-to\ disable\ mouse
-aunmenu PopUp.-1-
+" It throws errors when items doesn't exist in menu, so we silence it. Good
+" when re-sourcing this file.
+silent! aunmenu PopUp.How-to\ disable\ mouse
+silent! aunmenu PopUp.-1-
 
 " Config in newer config language Lua.
 " Only parsable by Neovim.
