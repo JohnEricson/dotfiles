@@ -305,8 +305,8 @@ endif
 
 " Remove the "How-to disable mouse" in right click popup menu item and the separator above it.
 " These complaint when re-sourcing this file. Just ignore this for now.
-" aunmenu PopUp.How-to\ disable\ mouse
-" aunmenu PopUp.-1-
+aunmenu PopUp.How-to\ disable\ mouse
+aunmenu PopUp.-1-
 
 " Config in newer config language Lua.
 " Only parsable by Neovim.
@@ -361,24 +361,36 @@ lua << EOF
 			{ name = 'buffer' },
 		})
 	})
-
-	-- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
-	cmp.setup.cmdline({ '/', '?' }, {
-		mapping = cmp.mapping.preset.cmdline(),
-		sources = {
-			{ name = 'buffer' }
-		}
-	})
-
-	-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-	cmp.setup.cmdline(':', {
-		mapping = cmp.mapping.preset.cmdline(),
-		sources = cmp.config.sources({
-			{ name = 'path' }
-		}, {
-			{ name = 'cmdline' }
+	
+	if vim.g.vscode then
+		-- Required to make completion work in command mode when Neovim is embedded in VS Code.
+		-- Based on https://github.com/hrsh7th/nvim-cmp/wiki/Menu-Appearance#menu-type
+		cmp.setup({
+			view = {            
+				entries = "native" -- can be "custom" (default), "wildmenu" or "native"
+			}                   
 		})
-	})
+	end
+
+	if not vim.g.vscode then
+		-- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+		cmp.setup.cmdline({ '/', '?' }, {
+			mapping = cmp.mapping.preset.cmdline(),
+			sources = {
+				{ name = 'buffer' }
+			}
+		})
+
+		-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+		cmp.setup.cmdline(':', {
+			mapping = cmp.mapping.preset.cmdline(),
+			sources = cmp.config.sources({
+				{ name = 'path' }
+			}, {
+				{ name = 'cmdline' }
+			})
+		})
+	end
 
 	-- Set up lspconfig.
 	local capabilities = require('cmp_nvim_lsp').default_capabilities()
