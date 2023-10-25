@@ -31,6 +31,7 @@
                 "name": "Neovim",
                 "scrollbarState": "hidden",
                 "startingDirectory": "%USERPROFILE%",
+                "suppressApplicationTitle": true,
                 "tabTitle": "Neovim"
             },
             {
