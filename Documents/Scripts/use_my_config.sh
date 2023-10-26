@@ -9,7 +9,7 @@
 
 script_absolute_path=$(realpath "${BASH_SOURCE[0]}")
 script_dir=$(dirname "${script_absolute_path}")
-home_dir=$(echo $script_dir | sed -e 's/\(\/home\/[[:alnum:]]*\)\/.*/\1/g')
+home_dir=$(echo $script_dir | sed -e 's/\(\/home\/[A-Za-z0-9.\-_]*\)\/.*/\1/g')
 
 # Load config files.
 source "${home_dir}/.bashrc"
