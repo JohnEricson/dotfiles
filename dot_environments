@@ -25,7 +25,3 @@ export LS_COLORS
 # set PATH so it includes user's private bin directories.
 PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 
-# Add Deno installation dir to PATH.
-DENO_INSTALL="$HOME/.deno"
-PATH="$DENO_INSTALL/bin:$PATH"
-
