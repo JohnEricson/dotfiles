@@ -19,3 +19,6 @@ source "${home_dir}/.environments"
 # Override config
 export PATH="${home_dir}/bin:$PATH"
 
+# Override Neovim/Vim config.
+export VIMINIT="so ${home_dir}/.vimrc | set runtimepath^=${home_dir}/.vim"
+
