@@ -15,8 +15,8 @@
         "when": "terminalFocus"
     },
     {
-        "key": "ctrl+escape",
-        "command": "-workbench.action.focusActiveEditorGroup",
-        "when": "terminalFocus"
+        "key": "shift+7",
+        "command": "list.find",
+        "when": "filesExplorerFocus && !inputFocus"
     }
 ]
