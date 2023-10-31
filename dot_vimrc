@@ -248,6 +248,8 @@ Plug 'saadparwaiz1/cmp_luasnip'
 " Easily rename tabs.
 Plug 'gcmt/taboo.vim'
 
+Plug 'hashivim/vim-terraform'
+
 call plug#end()
 
 
