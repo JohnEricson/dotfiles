@@ -298,6 +298,8 @@ if exists('g:vscode')
 	nnoremap <C-k>w <Cmd>call VSCodeNotify('workbench.action.closeEditorsInGroup')<CR>
 	" Enable default VS Code Ctrl+k z keybinding to toggle Zen mode.
 	nnoremap <C-k>z <Cmd>call VSCodeNotify('workbench.action.toggleZenMode')<CR>
+	" Enable my custom VS Code Ctrl+w m keybinding to toogle to maximize current editor.
+	nnoremap <C-w>m <Cmd>call VSCodeNotify('workbench.action.toggleEditorWidths')<CR>
 
 	" Add Vim fold keybindings to VS Code.
 	" Based on: https://github.com/vscode-neovim/vscode-neovim/issues/58#issuecomment-1229279216
