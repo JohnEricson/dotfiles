@@ -292,8 +292,35 @@ tnoremap <Esc> <C-\><C-n>
 
 " Neovim VSCode extension specific stuff.
 if exists('g:vscode')
-	" Enable default VS Code Ctrl+k w keybinding again to close all editors in a group.
+	" Enable default VS Code Ctrl+k w keybinding to close all editors in a group.
 	nnoremap <C-k>w <Cmd>call VSCodeNotify('workbench.action.closeEditorsInGroup')<CR>
+	" Enable default VS Code Ctrl+k z keybinding to toggle Zen mode.
+	nnoremap <C-k>z <Cmd>call VSCodeNotify('workbench.action.toggleZenMode')<CR>
+
+	" Add Vim fold keybindings to VS Code.
+	" Based on: https://github.com/vscode-neovim/vscode-neovim/issues/58#issuecomment-1229279216
+	nnoremap zM :call VSCodeNotify('editor.foldAll')<CR>
+	nnoremap zR :call VSCodeNotify('editor.unfoldAll')<CR>
+	nnoremap zc :call VSCodeNotify('editor.fold')<CR>
+	nnoremap zC :call VSCodeNotify('editor.foldRecursively')<CR>
+	nnoremap zo :call VSCodeNotify('editor.unfold')<CR>
+	nnoremap zO :call VSCodeNotify('editor.unfoldRecursively')<CR>
+	nnoremap za :call VSCodeNotify('editor.toggleFold')<CR>
+
+	" Fixes so you can navigate pass closed folds without VS Code opening them.
+	function! MoveCursor(direction) abort
+		if(reg_recording() == '' && reg_executing() == '')
+			return 'g'.a:direction
+		else
+			return a:direction
+		endif
+	endfunction
+	" Vim navigation keys.
+	nmap <expr> k MoveCursor('k')
+	nmap <expr> j MoveCursor('j')
+	" Cursor navigation keys.
+	nmap <expr> <Up> MoveCursor('k')
+	nmap <expr> <Down> MoveCursor('j')
 endif
 
 " Neovim specific config.
@@ -301,6 +328,31 @@ if has('nvim')
 	" Avoid reporting "Process exited 0" after exiting PowerShell inside Neovim.
 	" Based on: https://github.com/neovim/neovim/issues/14986#issuecomment-902705190
 	:autocmd TermClose * execute 'bdelete! ' . expand('<abuf>')
+
+	if exists('g:vscode')
+		" Neovim Ui Modifier
+		" Required by: https://marketplace.visualstudio.com/items?itemName=JulianIaquinandi.nvim-ui-modifier
+		" THEME CHANGER
+		function! SetCursorLineNrColorInsert(mode)
+			" Insert mode: blue
+			if a:mode == "i"
+				call VSCodeNotify('nvim-theme.insert')
+
+				" Replace mode: red
+			elseif a:mode == "r"
+				call VSCodeNotify('nvim-theme.replace')
+			endif
+		endfunction
+
+		augroup CursorLineNrColorSwap
+			autocmd!
+			autocmd ModeChanged *:[vV\x16]* call VSCodeNotify('nvim-theme.visual')
+			autocmd ModeChanged *:[R]* call VSCodeNotify('nvim-theme.replace')
+			autocmd InsertEnter * call SetCursorLineNrColorInsert(v:insertmode)
+			autocmd InsertLeave * call VSCodeNotify('nvim-theme.normal')
+			autocmd CursorHold * call VSCodeNotify('nvim-theme.normal')
+		augroup END
+	endif
 endif
 
 " Remove the "How-to disable mouse" in right click popup menu item and the separator above it.
@@ -308,6 +360,7 @@ endif
 " when re-sourcing this file.
 silent! aunmenu PopUp.How-to\ disable\ mouse
 silent! aunmenu PopUp.-1-
+
 
 " Config in newer config language Lua.
 " Only parsable by Neovim.
