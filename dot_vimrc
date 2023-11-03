@@ -250,6 +250,10 @@ Plug 'gcmt/taboo.vim'
 
 Plug 'hashivim/vim-terraform'
 
+" Plugin that prevents you from running neovim inside neovim by instead opening
+" new files in the host Neovim.
+Plug 'samjwill/nvim-unception'
+
 call plug#end()
 
 
