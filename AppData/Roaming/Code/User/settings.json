@@ -112,7 +112,7 @@
     "git.openRepositoryInParentFolders": "never",
     "terminal.integrated.smoothScrolling": true,
     "terminal.integrated.tabs.enableAnimation": false,
-    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.defaultProfile.linux": "neovim",
     "vsicons.dontShowNewVersionMessage": true,
     "vs-kubernetes": {
         "vscode-kubernetes.helm-path.linux": "/root/.local/state/vs-kubernetes/tools/helm/linux-amd64/helm",
