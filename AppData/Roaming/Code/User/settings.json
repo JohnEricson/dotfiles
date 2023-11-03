@@ -67,7 +67,7 @@
         "editor.wordBasedSuggestions": false,
         "editor.insertSpaces": true,
         "editor.formatOnType": true,
-        "editor.defaultFormatter": "ms-python.autopep8",
+        "editor.defaultFormatter": "ms-python.python",
         "editor.tabSize": 2
     },
     "editor.suggestSelection": "first",
@@ -133,5 +133,66 @@
     "extensions.experimental.affinity": {
         "asvetliakov.vscode-neovim": 1
     },
-    "vscode-neovim.completionDelay": 0
+    "vscode-neovim.completionDelay": 0,
+    "nvim-ui.nvimColorCustomizationKeys": [
+        "tab.activeBorder",
+        "editorCursor.foreground",
+        "panelTitle.activeBorder",
+        "activityBarBadge.background",
+        "inputValidation.errorBorder",
+        "panel.border",
+        // "panelTitle.activeForeground",
+        "peekView.border",
+        "peekViewTitleLabel.foreground",
+        "tab.activeBorder",
+        "statusBar.border"
+    ],
+    // These colors are changed by extension Neovim Ui Modifier (nvim-ui).
+    "workbench.colorCustomizations": {
+        "tab.activeBorder": "#cecece",
+        "editorCursor.foreground": "#cecece",
+        "panelTitle.activeBorder": "#cecece",
+        "activityBarBadge.background": "#cecece",
+        "inputValidation.errorBorder": "#cecece",
+        "panel.border": "#cecece",
+        "peekView.border": "#cecece",
+        "peekViewTitleLabel.foreground": "#cecece",
+        "statusBar.border": "#cecece"
+    },
+    // Black in Normal mode.
+    "nvim-ui.nvimColorNormal": "#cecece",
+    // Purple in Insert mode.
+    "nvim-ui.nvimColorInsert": "#f200ff",
+    // Cyan in Visual mode.
+    "nvim-ui.nvimColorVisual": "#00d9ff",
+    "terminal.integrated.profiles.linux": {
+        "bash": {
+            "path": "bash",
+            "icon": "terminal-bash"
+        },
+        "neovim": {
+            "path": "nvim",
+            "args": [
+               "-c",
+               "startinsert",
+               "+terminal"
+            ],
+            "overrideName": true,
+            "icon": "edit"
+        },
+        "zsh": {
+            "path": "zsh"
+        },
+        "fish": {
+            "path": "fish"
+        },
+        "tmux": {
+            "path": "tmux",
+            "icon": "terminal-tmux"
+        },
+        "pwsh": {
+            "path": "pwsh",
+            "icon": "terminal-powershell"
+        }
+    }
 }
