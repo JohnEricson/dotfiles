@@ -14,10 +14,19 @@ if ($documents_path -ne "$($env:USERPROFILE)\Documents") {
 }
 
 # Based on: https://poshcode.gitbook.io/powershell-faq/src/getting-started/environment-variables
-function Add-Path($Path) {
-    $Path = [Environment]::GetEnvironmentVariable('Path', [System.EnvironmentVariableTarget]::User) `
-	 		+ [IO.Path]::PathSeparator + $Path
-    [Environment]::SetEnvironmentVariable('Path', $Path, [System.EnvironmentVariableTarget]::User)
+function Add-Path() {
+	param(
+		[Parameter(Mandatory=$true)][string]$Path,
+		[Parameter(Mandatory=$false)][switch]$First
+	)
+    if ($First) {
+		$Path = $Path + [IO.Path]::PathSeparator `
+				+ [Environment]::GetEnvironmentVariable('Path', [System.EnvironmentVariableTarget]::User)
+    } else {
+		$Path = [Environment]::GetEnvironmentVariable('Path', [System.EnvironmentVariableTarget]::User) `
+				+ [IO.Path]::PathSeparator + $Path
+	}
+	[Environment]::SetEnvironmentVariable('Path', $Path, [System.EnvironmentVariableTarget]::User)
 }
 
 # Set environment variables for user.
@@ -26,8 +35,10 @@ function Add-Path($Path) {
 [Environment]::SetEnvironmentVariable('EDITOR', 'nvim', [System.EnvironmentVariableTarget]::User)
 [Environment]::SetEnvironmentVariable('TERM', 'xterm-256color', [System.EnvironmentVariableTarget]::User)
 [Environment]::SetEnvironmentVariable('HOME', $env:USERPROFILE, [System.EnvironmentVariableTarget]::User)
-Add-Path("$env:USERPROFILE\bin")
-
+Add-Path "$env:USERPROFILE\bin"
+# Ensure Windows App Execution aliases are added to our PATH. Needed to run PowerShell Core from our
+# home dir instead of the system one.
+Add-Path "$env:LOCALAPPDATA\Microsoft\WindowsApps" -First
 
 # Configure Windows.
 
