@@ -183,5 +183,9 @@
             "overrideName": true,
             "icon": "vm"
         }
-    }
+    },
+    // Neovim is not suitable to run tasks in, so still use default shell for this.
+    "terminal.integrated.automationProfile.linux": {
+        "path": "/bin/sh"
+    },
 }
