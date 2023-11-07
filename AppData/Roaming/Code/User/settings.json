@@ -31,7 +31,7 @@
         "terminal.background": "#0C0C0C"
     },
     */
-    "workbench.editor.showTabs": true,
+    "workbench.editor.showTabs": "multiple",
     "editor.insertSpaces": true,
 
     "puppet.installType": "pdk",
@@ -119,10 +119,13 @@
         "vscode-kubernetes.minikube-path.linux": "/root/.local/state/vs-kubernetes/tools/minikube/linux-amd64/minikube"
     },
     "workbench.colorTheme": "Default Light Modern",
+    // Deprecated in 1.84.1
+    /*
     "python.formatting.autopep8Args": [
         "--indent-size=2",
         "--ignore=E121"
     ],
+    */
     "cloudcode.enableTelemetry": false,
     "cloudcode.autoDependencies": "on",
     "window.zoomLevel": -1,
