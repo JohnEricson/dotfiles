@@ -371,6 +371,9 @@ endif
 silent! aunmenu PopUp.How-to\ disable\ mouse
 silent! aunmenu PopUp.-1-
 
+" CTRL-C to Copy.
+" Based on: https://github.com/vim/vim/blob/master/runtime/mswin.vim#L32C5-L33C23
+vnoremap <C-C> "+y
 
 " Config in newer config language Lua.
 " Only parsable by Neovim.

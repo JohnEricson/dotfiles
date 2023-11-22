@@ -29,5 +29,15 @@
         "key": "g shift+t",
         "command": "workbench.action.previousEditorInGroup",
         "when": "neovim.mode != insert && activeWebviewPanelId == markdown.preview"
-    }
+   },
+   {
+      "key": "ctrl+c",
+      "command": "-vscode-neovim.escape",
+      "when": "editorTextFocus && neovim.ctrlKeysNormal.c && neovim.init && !dirtyDiffVisible && !findWidgetVisible && !inReferenceSearchEditor && !markersNavigationVisible && !notebookCellFocused && !notificationCenterVisible && !parameterHintsVisible && !referenceSearchVisible && neovim.mode == 'normal' && editorLangId not in 'neovim.editorLangIdExclusions'"
+   },
+   {
+      "key": "ctrl+c",
+      "command": "-vscode-neovim.escape",
+      "when": "editorTextFocus && neovim.ctrlKeysInsert.c && neovim.init && neovim.mode != 'normal' && editorLangId not in 'neovim.editorLangIdExclusions'"
+   }
 ]
