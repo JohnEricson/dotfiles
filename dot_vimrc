@@ -296,6 +296,11 @@ endif
 " Allows to use ESC to exit insert-mode in Terminal.
 tnoremap <Esc> <C-\><C-n>
 
+" Allows to use Ctrl+t ESC to exit insert-mode in Terminal. This is useful in
+" nested Neovim (running Neovim inside Neovim). For example when you in Neovim
+" ssh to another server and run Neovim there.
+tnoremap <C-t><Esc> <Esc>
+
 " Neovim VSCode extension specific stuff.
 if exists('g:vscode')
 	" Enable default VS Code Ctrl+k w keybinding to close all editors in a group.
