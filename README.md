@@ -20,7 +20,7 @@ The new config for bash will be used next time you login. To refresh your curren
 . ~/.bashrc
 ```
 #### Alternative one-liner
-This both installs these dotfiles and [chezmoi](https://www.chezmoi.io) as well as refresh your current session with new bash config:
+This both installs these dotfiles and [chezmoi](https://www.chezmoi.io) as well as refresh your current session with the new bash config:
 ```sh
 . <(curl -sL https://raw.github.com/JohnEricson/dotfiles/main/install.sh)
 ```
