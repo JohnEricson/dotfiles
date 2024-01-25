@@ -92,8 +92,6 @@
     "terminal.integrated.cursorStyle": "line",
     "terminal.integrated.cursorBlinking": true,
     "dotfiles.repository": "JohnEricson/dotFiles",
-    "dotfiles.targetPath": "~/.dotfiles",
-    "dotfiles.installCommand": "~/.dotfiles/install.sh",
     "editor.stickyScroll.enabled": true,
     "[terraform]": {
         "editor.tabSize": 2
@@ -174,7 +172,7 @@
             "icon": "terminal-bash"
         },
         "neovim": {
-            "path": "nvim",
+            "path": "nvim.appimage",
             "args": [
                "-c",
                "startinsert",
@@ -188,4 +186,5 @@
     "terminal.integrated.automationProfile.linux": {
         "path": "/bin/sh"
     },
+    "editor.stickyScroll.enabled": true,
 }
