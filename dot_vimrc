@@ -390,8 +390,10 @@ if !exists('g:vscode')
 	endfunction
 
 
-	nnoremap <leader><Space> :call ToggleComment()<cr>
-	vnoremap <leader><Space> :call ToggleComment()<cr>
+	" Mounted to \ *.
+	" Impossible to mount Ctrl+* because of terminal limitation, see https://stackoverflow.com/a/11664278/2903596.
+	nnoremap <leader-kMultiply> :call ToggleComment()<cr>
+	vnoremap <leader-kMultiply> :call ToggleComment()<cr>
 endif
 
 " Neovim specific config.
