@@ -366,6 +366,7 @@ if !exists('g:vscode')
 		\   "ahk": ';',
 		\   "vim": '"',
 		\   "tex": '%',
+		\   "dockerfile": '#',
 		\ }
 
 	function! ToggleComment()
