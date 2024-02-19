@@ -36,10 +36,10 @@ set encoding=utf-8
 
 " Set english language
 "
-	
+
 " Help language
 set helplang=en
-	
+
 " Vim language
 " This doesn't work on my installation of Vim x64.
 "language en
@@ -340,6 +340,18 @@ endif
 
 " Neovim specific config.
 if has('nvim')
+	" To make VS Code understand the terminal better.
+	" Still doesn't work well in VS Code for remote user running Live Share.
+	" Hide statusbar and cmdline when starting a Terminal.
+	augroup term
+		 autocmd!
+		 autocmd TermOpen * setlocal laststatus=0 | setlocal cmdheight=0
+	augroup END
+	" Hide statusbar and cmdline When a terminal is in focus.
+	autocmd BufEnter term://* setlocal laststatus=0 | setlocal cmdheight=0
+	" Show statusbar and cmdline When a non-terminal buffer is in focus.
+	autocmd BufEnter * if expand('<afile>:p:h') !~ 'term://' | set laststatus=2 | setlocal cmdheight=1 | endif
+
 	" Avoid reporting "Process exited 0" after exiting PowerShell inside Neovim.
 	" Based on: https://github.com/neovim/neovim/issues/14986#issuecomment-902705190
 	:autocmd TermClose * execute 'bdelete! ' . expand('<abuf>')
@@ -380,6 +392,8 @@ silent! aunmenu PopUp.-1-
 " Based on: https://github.com/vim/vim/blob/master/runtime/mswin.vim#L32C5-L33C23
 vnoremap <C-C> "+y
 
+set laststatus=2
+
 " Config in newer config language Lua.
 " Only parsable by Neovim.
 " https://github.com/nanotee/nvim-lua-guide#using-lua-from-vimscript
@@ -389,7 +403,7 @@ lua << EOF
 	-- Recommended by https://www.youtube.com/watch?v=h4g0m0Iwmys and used by
 	-- LazyVim (https://www.lazyvim.org/plugins/coding#nvim-cmp).
 	-- Config based on: https://github.com/hrsh7th/nvim-cmp#recommended-configuration 
-	
+
 	-- Set up nvim-cmp.
 	local cmp = require'cmp'
 
@@ -433,14 +447,14 @@ lua << EOF
 			{ name = 'buffer' },
 		})
 	})
-	
+
 	if vim.g.vscode then
 		-- Required to make completion work in command mode when Neovim is embedded in VS Code.
 		-- Based on https://github.com/hrsh7th/nvim-cmp/wiki/Menu-Appearance#menu-type
 		cmp.setup({
-			view = {            
+			view = {
 				entries = "native" -- can be "custom" (default), "wildmenu" or "native"
-			}                   
+			}
 		})
 	end
 
