@@ -254,6 +254,9 @@ Plug 'hashivim/vim-terraform'
 " new files in the host Neovim.
 Plug 'samjwill/nvim-unception'
 
+" Enable multi-cursors. Works in VS Code as well.
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+
 call plug#end()
 
 
