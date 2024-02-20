@@ -344,13 +344,15 @@ if has('nvim')
 	" Still doesn't work well in VS Code for remote user running Live Share.
 	" Hide statusbar and cmdline when starting a Terminal.
 	augroup term
-		 autocmd!
-		 autocmd TermOpen * setlocal laststatus=0 | setlocal cmdheight=0
+		autocmd!
+		autocmd TermOpen * if winnr('$') == 1 | setlocal laststatus=0 | setlocal cmdheight=0 | endif
+		" Hide statusbar when a terminal is in focus.
+		autocmd BufEnter term://* if winnr('$') == 1 | setlocal laststatus=0 | setlocal cmdheight=0 | endif
+		" Show statusbar when a non-terminal buffer is in focus.
+		autocmd BufEnter * if expand('<afile>:p:h') !~ 'term://' | set laststatus=2 | setlocal cmdheight=1 | endif
+		" Show statusbar when changing to a new tab with several windows
+		autocmd TabEnter * if winnr('$') > 1 | setlocal laststatus=2 | endif
 	augroup END
-	" Hide statusbar and cmdline When a terminal is in focus.
-	autocmd BufEnter term://* setlocal laststatus=0 | setlocal cmdheight=0
-	" Show statusbar and cmdline When a non-terminal buffer is in focus.
-	autocmd BufEnter * if expand('<afile>:p:h') !~ 'term://' | set laststatus=2 | setlocal cmdheight=1 | endif
 
 	" Avoid reporting "Process exited 0" after exiting PowerShell inside Neovim.
 	" Based on: https://github.com/neovim/neovim/issues/14986#issuecomment-902705190
