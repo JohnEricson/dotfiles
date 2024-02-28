@@ -397,6 +397,12 @@ silent! aunmenu PopUp.-1-
 " Based on: https://github.com/vim/vim/blob/master/runtime/mswin.vim#L32C5-L33C23
 vnoremap <C-C> "+y
 
+" Keyboard rebindings to improve on Swedish keyboard.
+"
+
+" Rebind Ctrl+å to Ctrl+] that can't be pressed on Swedish keyboard in terminal.
+map <silent>  <C-]>
+
 set laststatus=2
 
 " Config in newer config language Lua.
