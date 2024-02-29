@@ -398,7 +398,7 @@ silent! aunmenu PopUp.-1-
 vnoremap <C-C> "+y
 
 " Navigate between buffers with Ctrl+l and Ctrl+h in normal mode.
-map <C-l> :bn!<CR>
+map <C-l> :bn!<CR> " Doesn't override Ctrl+l in terminal to reset screen.
 map <C-h> :bp!<CR>
 
 set laststatus=2
