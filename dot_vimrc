@@ -304,6 +304,11 @@ tnoremap <Esc> <C-\><C-n>
 " ssh to another server and run Neovim there.
 tnoremap <C-t><Esc> <Esc>
 
+
+" Navigate between buffers with Ctrl+l and Ctrl+h in normal mode.
+map <C-l> :bn!<CR> " Doesn't override Ctrl+l in terminal to reset screen.
+map <C-h> :bp!<CR>
+
 " Neovim VSCode extension specific stuff.
 if exists('g:vscode')
 	" Enable default VS Code Ctrl+k w keybinding to close all editors in a group.
@@ -341,10 +346,8 @@ if exists('g:vscode')
 	nmap <expr> <Down> MoveCursor('j')
 
 	" Tab navigation in the same way as buffer navigation in my normal Vim.
-	nnoremap <C-l> <Cmd>call <SID>gotoEditor(v:count, 'next')<CR>
-	xnoremap <C-l> <Cmd>call <SID>gotoEditor(v:count, 'next')<CR>
-	nnoremap <C-h> <Cmd>call <SID>switchEditor(v:count, 'prev')<CR>
-	xnoremap <C-h> <Cmd>call <SID>switchEditor(v:count, 'prev')<CR>
+	map <C-l> :call VSCodeNotify('workbench.action.nextEditor')<CR>
+	map <C-h> :call VSCodeNotify('workbench.action.previousEditor')<CR>
 endif
 
 " Neovim specific config.
@@ -402,10 +405,6 @@ silent! aunmenu PopUp.-1-
 " CTRL-C to Copy.
 " Based on: https://github.com/vim/vim/blob/master/runtime/mswin.vim#L32C5-L33C23
 vnoremap <C-C> "+y
-
-" Navigate between buffers with Ctrl+l and Ctrl+h in normal mode.
-map <C-l> :bn!<CR> " Doesn't override Ctrl+l in terminal to reset screen.
-map <C-h> :bp!<CR>
 
 set laststatus=2
 
