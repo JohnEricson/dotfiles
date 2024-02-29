@@ -397,6 +397,10 @@ silent! aunmenu PopUp.-1-
 " Based on: https://github.com/vim/vim/blob/master/runtime/mswin.vim#L32C5-L33C23
 vnoremap <C-C> "+y
 
+" Navigate between buffers with Ctrl+l and Ctrl+h in normal mode.
+map <C-l> :bn!<CR>
+map <C-h> :bp!<CR>
+
 set laststatus=2
 
 " Config in newer config language Lua.
