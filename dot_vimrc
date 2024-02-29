@@ -339,6 +339,12 @@ if exists('g:vscode')
 	" Cursor navigation keys.
 	nmap <expr> <Up> MoveCursor('k')
 	nmap <expr> <Down> MoveCursor('j')
+
+	" Tab navigation in the same way as buffer navigation in my normal Vim.
+	nnoremap <C-l> <Cmd>call <SID>gotoEditor(v:count, 'next')<CR>
+	xnoremap <C-l> <Cmd>call <SID>gotoEditor(v:count, 'next')<CR>
+	nnoremap <C-h> <Cmd>call <SID>switchEditor(v:count, 'prev')<CR>
+	xnoremap <C-h> <Cmd>call <SID>switchEditor(v:count, 'prev')<CR>
 endif
 
 " Neovim specific config.
