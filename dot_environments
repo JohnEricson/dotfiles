@@ -22,6 +22,8 @@ export LC_ALL=en_US.UTF-8
 #fi
 export LS_COLORS
 
+export EDITOR=nvim
+
 # set PATH so it includes user's private bin directories.
 PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 
