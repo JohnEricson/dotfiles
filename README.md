@@ -50,3 +50,45 @@ As your normal user run:
 ```sh
 cm update
 ```
+
+## Git aliases
+
+### Install
+1) Add this to your `~/.gitconfig` file:
+```
+[include]
+   path = .gitaliases
+```
+
+### Aliases
+
+| Alias | Description |
+|-------|-------------|
+| `l`   | Displays a one-line log of commit history, showing commit hash, date, branch, commit message, and author. |
+| `a`   | Shortcut for `git add`. |
+| `ap`  | Interactively adds changes to the staging area. |
+| `c`   | Shortcut for `git commit --verbose`. |
+| `ca`  | Commits all changes, automatically staging tracked files, with verbose mode. |
+| `cm`  | Shortcut for `git commit -m`, allowing you to specify the commit message directly. |
+| `cam` | Commits all changes with a specified commit message. |
+| `m`   | Amends the last commit with the changes made in the current working directory, maintaining the previous commit message. |
+| `d`   | Shows the difference between the working directory and the index. |
+| `ds`  | Shows the diffstat of changes between the working directory and the index. |
+| `dc`  | Shows the difference between the index and the last commit. |
+| `s`   | Displays a short status showing modified, added, and deleted files. |
+| `co`  | Shortcut for `git checkout`. |
+| `cob` | Creates a new branch and switches to it. |
+| `b`   | Lists branches sorted by the last modified date. |
+| `la`  | Lists all git aliases configured in the `.gitconfig` file. |
+
+### How to use
+The git aliases are exposed both in git and in bash so you can for example use `s` for `git status` like this:
+#### bash
+```bash
+gs
+```
+#### git
+```shell
+git s
+```
+
