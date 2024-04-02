@@ -135,6 +135,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
+
+# Load all *.sh files in ~/.profile.d.
 for i in ~/.profile.d/*.sh; do
   if [ -r "$i" ]; then
     if [ "${-#*i}" != "$-" ]; then
