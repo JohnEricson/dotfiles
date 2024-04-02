@@ -15,7 +15,8 @@
 	cm = commit -m
 	cam = commit -a -m
 	m = commit --amend --verbose
-	
+	p = push
+
 	d = diff
 	ds = diff --stat
 	dc = diff --cached
