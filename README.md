@@ -81,6 +81,8 @@ cm update
 | `b`   | Lists branches sorted by the last modified date. |
 | `la`  | Lists all git aliases configured in the `.gitconfig` file. |
 
+Source code for the aliases: [~/.gitaliases](dot_gitaliases)
+
 ### How to use
 The git aliases are exposed both in git and in bash so you can for example use `s` for `git status` like this:
 #### bash
@@ -91,4 +93,3 @@ gs
 ```shell
 git s
 ```
-
