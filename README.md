@@ -81,6 +81,7 @@ cm update
 | `co`  | Switch branch. Shortcut for `git checkout`. |
 | `cob` | Creates a new branch and switches to it. |
 | `b`   | Lists branches sorted by the last modified date. |
+| `bd`  | Delete local branch. Shortcut for `git branch -d` |
 | `la`  | Lists all git aliases configured in the `.gitconfig` file. |
 
 Source code for the aliases: [~/.gitaliases](dot_gitaliases)
