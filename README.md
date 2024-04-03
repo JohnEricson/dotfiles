@@ -72,11 +72,13 @@ cm update
 | `cm`  | Shortcut for `git commit -m`, allowing you to specify the commit message directly. |
 | `cam` | Commits all changes with a specified commit message. |
 | `m`   | Amends the last commit with the changes made in the current working directory, maintaining the previous commit message. |
+| `pl`  | Pull latest changes from remote Shortcut for `git pull` |
+| `p`   | Push local changes to remote. Shortcut for `git push` |
 | `d`   | Shows the difference between the working directory and the index. |
 | `ds`  | Shows the diffstat of changes between the working directory and the index. |
 | `dc`  | Shows the difference between the index and the last commit. |
 | `s`   | Displays a short status showing modified, added, and deleted files. |
-| `co`  | Shortcut for `git checkout`. |
+| `co`  | Switch branch. Shortcut for `git checkout`. |
 | `cob` | Creates a new branch and switches to it. |
 | `b`   | Lists branches sorted by the last modified date. |
 | `la`  | Lists all git aliases configured in the `.gitconfig` file. |

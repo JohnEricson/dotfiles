@@ -15,6 +15,7 @@
 	cm = commit -m
 	cam = commit -a -m
 	m = commit --amend --verbose
+	pl = pull
 	p = push
 
 	d = diff
