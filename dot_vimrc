@@ -366,9 +366,11 @@ if has('nvim')
 		autocmd TabEnter * if winnr('$') > 1 | setlocal laststatus=2 | endif
 	augroup END
 
-	" Avoid reporting "Process exited 0" after exiting PowerShell inside Neovim.
-	" Based on: https://github.com/neovim/neovim/issues/14986#issuecomment-902705190
-	:autocmd TermClose * execute 'bdelete! ' . expand('<abuf>')
+	" Avoid reporting "Process exited 0" after exiting shell (bash/PowerShell) inside Neovim.
+	" Also if no buffers are open then quit Neovim.
+	" Based on: https://github.com/neovim/neovim/issues/14986#issuecomment-902705190 and
+	" https://superuser.com/questions/668528/vim-quit-if-buffer-list-is-empty
+	:autocmd TermClose * execute 'bdelete! ' . expand('<abuf>') | if len(filter(range(1, bufnr('$')), '! empty(bufname(v:val)) && buflisted(v:val)')) == 0 | quit | endif
 
 	if exists('g:vscode')
 		" Neovim Ui Modifier
