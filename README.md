@@ -72,7 +72,7 @@ cm update
 | `cm`  | Shortcut for `git commit -m`, allowing you to specify the commit message directly. |
 | `cam` | Commits all changes with a specified commit message. |
 | `m`   | Amends the last commit with the changes made in the current working directory, maintaining the previous commit message. |
-| `pl`  | Pull latest changes from remote Shortcut for `git pull` |
+| `pl`  | Pull latest changes from remote. Shortcut for `git pull` |
 | `p`   | Push local changes to remote. Shortcut for `git push` |
 | `d`   | Shows the difference between the working directory and the index. |
 | `ds`  | Shows the diffstat of changes between the working directory and the index. |
@@ -92,7 +92,7 @@ The git aliases are exposed both in git and in bash so you can for example use `
 ```bash
 gs
 ```
-#### git
+#### git/PowerShell
 ```shell
 git s
 ```
