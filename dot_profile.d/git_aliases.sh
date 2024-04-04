@@ -12,8 +12,7 @@ function_exists() {
 
 for al in `git --list-cmds=alias`; do
     alias g$al="git $al"
-    
-    complete_func=_git_$(git --list-cmds=alias $al)
+
+    complete_func=_git_$(__git_aliased_command $al)
     function_exists $complete_func && __git_complete g$al $complete_func
 done
-
