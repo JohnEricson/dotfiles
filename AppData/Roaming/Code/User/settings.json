@@ -188,6 +188,7 @@
     "editor.stickyScroll.enabled": true,
     "editor.minimap.enabled": false,
     "editor.lineNumbers": "relative",
+    "files.trimTrailingWhitespace": true,
     "make-task-provider.makefileNames": [
         "Makefile",
         "makefile"
