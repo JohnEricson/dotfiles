@@ -186,6 +186,8 @@
         "path": "/bin/sh"
     },
     "editor.stickyScroll.enabled": true,
+    "editor.minimap.enabled": false,
+    "editor.lineNumbers": "relative",
     "make-task-provider.makefileNames": [
         "Makefile",
         "makefile"
@@ -200,7 +202,6 @@
         "nvim",
         "nvim.appimage"
     ],
-    "editor.minimap.enabled": false,
     "gitlens.views.repositories.showWorktrees": false,
     "gitlens.views.commits.files.layout": "tree",
     "git.confirmSync": false,
