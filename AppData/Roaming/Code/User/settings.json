@@ -116,7 +116,6 @@
         "vscode-kubernetes.helm-path.linux": "/root/.local/state/vs-kubernetes/tools/helm/linux-amd64/helm",
         "vscode-kubernetes.minikube-path.linux": "/root/.local/state/vs-kubernetes/tools/minikube/linux-amd64/minikube"
     },
-    "workbench.colorTheme": "Default Light Modern",
     // Deprecated in 1.84.1
     /*
     "python.formatting.autopep8Args": [
