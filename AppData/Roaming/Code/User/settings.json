@@ -194,5 +194,6 @@
     "editor.minimap.enabled": false,
     "gitlens.views.repositories.showWorktrees": false,
     "gitlens.views.commits.files.layout": "tree",
-    "git.confirmSync": false
+    "git.confirmSync": false,
+    "git.autofetch": true
 }
