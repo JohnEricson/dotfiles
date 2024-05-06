@@ -186,4 +186,8 @@
         "path": "/bin/sh"
     },
     "editor.stickyScroll.enabled": true,
+    "make-task-provider.makefileNames": [
+        "Makefile",
+        "makefile"
+    ]
 }
