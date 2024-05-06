@@ -189,5 +189,6 @@
     "make-task-provider.makefileNames": [
         "Makefile",
         "makefile"
-    ]
+    ],
+	"terminal.integrated.stickyScroll.enabled": true
 }
