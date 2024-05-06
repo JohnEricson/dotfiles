@@ -64,7 +64,7 @@
         "gitlens.codeLens.symbolScopes": [
             "!Module"
         ],
-        "editor.wordBasedSuggestions": false,
+        "editor.wordBasedSuggestions": "off",
         "editor.insertSpaces": true,
         "editor.formatOnType": true,
         "editor.defaultFormatter": "ms-python.python",
