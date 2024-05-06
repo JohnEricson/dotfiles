@@ -39,5 +39,35 @@
       "key": "ctrl+c",
       "command": "-vscode-neovim.escape",
       "when": "editorTextFocus && neovim.ctrlKeysInsert.c && neovim.init && neovim.mode != 'normal' && editorLangId not in 'neovim.editorLangIdExclusions'"
-   }
+},
+{
+    "key": "ctrl+alt+down",
+    "command": "-editor.action.insertCursorBelow",
+    "when": "editorTextFocus"
+},
+{
+    "key": "ctrl+alt+up",
+    "command": "-editor.action.insertCursorAbove",
+    "when": "editorTextFocus"
+},
+{
+    "key": "ctrl+alt+down",
+    "command": "scrollLineDown",
+    "when": "textInputFocus"
+},
+{
+    "key": "ctrl+down",
+    "command": "-scrollLineDown",
+    "when": "textInputFocus"
+},
+{
+    "key": "ctrl+alt+up",
+    "command": "scrollLineUp",
+    "when": "textInputFocus"
+},
+{
+    "key": "ctrl+up",
+    "command": "-scrollLineUp",
+    "when": "textInputFocus"
+}
 ]
