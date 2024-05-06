@@ -190,5 +190,5 @@
         "Makefile",
         "makefile"
     ],
-	"terminal.integrated.stickyScroll.enabled": true
+    "terminal.integrated.stickyScroll.enabled": true
 }
