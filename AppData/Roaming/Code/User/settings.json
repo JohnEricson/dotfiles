@@ -191,5 +191,7 @@
         "makefile"
     ],
     "terminal.integrated.stickyScroll.enabled": true,
-    "editor.minimap.enabled": false
+    "editor.minimap.enabled": false,
+    "gitlens.views.repositories.showWorktrees": false,
+    "gitlens.views.commits.files.layout": "tree"
 }
