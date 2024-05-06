@@ -192,6 +192,14 @@
     ],
     "terminal.integrated.stickyScroll.enabled": true,
     "terminal.integrated.shellIntegration.suggestEnabled": true,
+    "terminal.integrated.localEchoExcludePrograms": [
+        "vim",
+        "vi",
+        "nano",
+        "tmux",
+        "nvim",
+        "nvim.appimage"
+    ],
     "editor.minimap.enabled": false,
     "gitlens.views.repositories.showWorktrees": false,
     "gitlens.views.commits.files.layout": "tree",
