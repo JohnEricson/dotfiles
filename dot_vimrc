@@ -286,7 +286,7 @@ set bg=dark			" background (light/dark). Reload syntax to initialize
 
 " In Neovim 0.10 colors changed to a more gray dark look. This restores my
 " classic vim colors.
-set colorscheme vim
+colorscheme vim
 
 " Make vim use the OS clipboard by default.
 set clipboard^=unnamed,unnamedplus
