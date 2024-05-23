@@ -284,10 +284,6 @@ set vb t_vb=
 set bg=dark			" background (light/dark). Reload syntax to initialize
 						" settings.
 
-" In Neovim 0.10 colors changed to a more gray dark look. This restores my
-" classic vim colors.
-colorscheme vim
-
 " Make vim use the OS clipboard by default.
 set clipboard^=unnamed,unnamedplus
 
@@ -507,6 +503,16 @@ lua << EOF
 	-- require('lspconfig')['<YOUR_LSP_SERVER>'].setup {
 	-- 	capabilities = capabilities
 	-- }
+
+	-- Get the current version of Neovim
+	local version = vim.version()
+
+	-- Check if the version is 0.10 or greater
+	if version.major > 0 or (version.major == 0 and version.minor >= 10) then
+		-- In Neovim 0.10 colors changed to a more gray dark look. This restores my
+		-- classic vim colors.
+		vim.cmd('colorscheme vim')
+	end
 
 EOF
 
