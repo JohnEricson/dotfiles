@@ -82,6 +82,8 @@ cm update
 | `cob` | Creates a new branch and switches to it. |
 | `b`   | Lists branches sorted by the last modified date. |
 | `bd`  | Delete local branch. Shortcut for `git branch -d` |
+| `st`  | Stash modified files. Shortcut for `git stash` |
+| `po`  | Restore stashed files. Use after `st`. Shortcut for `git stash pop` |
 | `la`  | Lists all git aliases configured in the `.gitconfig` file. |
 
 Source code for the aliases: [~/.gitaliases](dot_gitaliases)
