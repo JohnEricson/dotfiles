@@ -56,6 +56,15 @@ if ($host.Name -eq 'ConsoleHost') {
 
 	# Make Ctrl+D send exit just like in Bash.
 	Set-PSReadlineKeyHandler -Key Ctrl+d -Function DeleteCharOrExit
+
+	# Disable command from being saved to history by starting the line with a space (' ' char).
+	# Implements similar functionality as in bash. But unlike bash the command is availabe in the
+	# current terminal's history but not available in a new terminal.
+	# https://github.com/PowerShell/PSReadLine/issues/2698#issuecomment-886130377
+	Set-PSReadLineOption -AddToHistoryHandler {
+		param([string]$line)
+		return $line.Length -gt 3 -and $line[0] -ne ' ' -and $line[0] -ne ';'
+	}
 }
 
 # Chocolatey profile
