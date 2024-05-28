@@ -69,5 +69,15 @@
     "key": "ctrl+up",
     "command": "-scrollLineUp",
     "when": "textInputFocus"
+},
+{
+    "key": "ctrl+alt+j",
+    "command": "scrollLineDown",
+    "when": "textInputFocus"
+},
+{
+    "key": "ctrl+alt+k",
+    "command": "scrollLineUp",
+    "when": "textInputFocus"
 }
 ]
