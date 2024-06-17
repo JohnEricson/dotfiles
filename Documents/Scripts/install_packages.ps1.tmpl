@@ -39,13 +39,6 @@ Set-itemProperty "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System" PublishUserA
 # submission to Microsoft.
 Set-MpPreference -SubmitSamplesConsent 0
 
-# Install Chocolatey.
-# This is safe even if Chocolatey is already installed. 
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-
-# Configure Chocolatey.
-choco feature enable -n allowGlobalConfirmation
-
 # Install packages.
 winget install Microsoft.PowerShell
 winget install vim.vim

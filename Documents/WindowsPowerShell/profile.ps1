@@ -67,12 +67,6 @@ if ($host.Name -eq 'ConsoleHost') {
 	}
 }
 
-# Chocolatey profile
-$ChocolateyProfile = "$Env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
-if (Test-Path($ChocolateyProfile)) {
-  Import-Module "$ChocolateyProfile"
-}
-
 # Aliases. If you want to pass arguments to commands in aliases you need to 
 # implement a function instead.
 New-Alias vi nvim
