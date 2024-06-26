@@ -67,6 +67,18 @@ if ($host.Name -eq 'ConsoleHost') {
 	}
 }
 
+# Install Git auto-completion.
+if (!(Get-Module "posh-git")) {
+	Install-Module -Name posh-git -Scope CurrentUser -Force
+}
+Import-Module posh-git
+
+# Chocolatey profile
+$ChocolateyProfile = "$Env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
+if (Test-Path($ChocolateyProfile)) {
+  Import-Module "$ChocolateyProfile"
+}
+
 # Aliases. If you want to pass arguments to commands in aliases you need to 
 # implement a function instead.
 New-Alias vi nvim
