@@ -70,7 +70,9 @@ cm update
 | `c`   | Shortcut for `git commit --verbose`. |
 | `ca`  | Commits all changes, automatically staging tracked files, with verbose mode. |
 | `cm`  | Shortcut for `git commit -m`, allowing you to specify the commit message directly. |
+| `cmp`  | Same as alias `cm` but also push local changes to remote if commit is successful. |
 | `cam` | Commits all changes with a specified commit message. |
+| `camp` | Same as alias `cam` but also push local changes to remote if commit is successful. |
 | `m`   | Amends the last commit with the changes made in the current working directory, maintaining the previous commit message. |
 | `pl`  | Pull latest changes from remote. Shortcut for `git pull` |
 | `p`   | Push local changes to remote. Shortcut for `git push` |
