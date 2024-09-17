@@ -11,5 +11,6 @@ alias vi='nvim.appimage'
 # Enable to tail rotating log files. Makes tail follow file name instead of file descriptor.
 alias tailf='tail --follow=name --retry'
 
-alias h5="head -n 5"
+alias h="head -n"
+alias h5="h 5"
 
