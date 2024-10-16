@@ -59,5 +59,18 @@
     "key": "ctrl+up",
     "command": "-scrollLineUp",
     "when": "textInputFocus"
+},
+{
+    "key": "ctrl+shift+i",
+    "command": "-workbench.action.quickchat.toggle",
+    "when": "chatIsEnabled"
+},
+{
+    "key": "ctrl+shift+i",
+    "command": "workbench.panel.chatSidebar"
+},
+{
+    "key": "ctrl+e",
+    "command": "-workbench.action.quickOpen"
 }
 ]
