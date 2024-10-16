@@ -154,7 +154,9 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
 fi
 
 # Install Direnv hook.
-eval "$(direnv hook bash)"
+if command -v direnv &> /dev/null; then
+  eval "$(direnv hook bash)"
+fi
 
 # Enable VS Code shell integration.
 # This produces error "__dirname is not defined".
