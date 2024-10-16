@@ -1,17 +1,17 @@
 {
     "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
     "window.titleBarStyle": "custom",
-    
+
     // Enable neovim.
     "vim.enableNeovim": false,
     //"vim.neovimPath": "C:\\tools\\neovim\\nvim-win64\\bin\\nvim.exe",
     "vim.disableAnnoyingNeovimMessage": true,
     "vim.statusBarColorControl": false,
     "workbench.sideBar.location": "left",
-    
+
     "vim.hlsearch": true,
     "vim.useSystemClipboard": true,
-    
+
     "vim.handleKeys": {
         "<C-k>": false,
         // Allows to show/hide Panel in VS Code.
@@ -61,14 +61,17 @@
     },
     "terminal.external.windowsExec": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
     "[python]": {
+
+
+
         "gitlens.codeLens.symbolScopes": [
             "!Module"
         ],
         "editor.wordBasedSuggestions": "off",
         "editor.insertSpaces": true,
         "editor.formatOnType": true,
-        "editor.defaultFormatter": "ms-python.python",
-        "editor.tabSize": 2
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.tabSize": 4
     },
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
@@ -81,7 +84,7 @@
     "redhat.telemetry.enabled": true,
     "explorer.confirmDelete": false,
     "vim.normalModeKeyBindingsNonRecursive": [
-    
+
     ],
     "files.associations": {
         "*.yml": "ansible"
@@ -94,6 +97,7 @@
     "dotfiles.repository": "JohnEricson/dotFiles",
     "editor.stickyScroll.enabled": true,
     "[terraform]": {
+
         "editor.tabSize": 2
     },
     "trunk.trunkGrayOutNonBlockingIssues": false,
@@ -183,11 +187,11 @@
     },
     // Neovim is not suitable to run tasks in, so still use default shell for this.
     "terminal.integrated.automationProfile.linux": {
+
         "path": "/bin/sh"
     },
     "editor.stickyScroll.enabled": true,
     "editor.minimap.enabled": false,
-    "editor.lineNumbers": "relative",
     "files.trimTrailingWhitespace": true,
     "make-task-provider.makefileNames": [
         "Makefile",
@@ -206,5 +210,25 @@
     "gitlens.views.repositories.showWorktrees": false,
     "gitlens.views.commits.files.layout": "tree",
     "git.confirmSync": false,
-    "git.autofetch": true
+    "git.autofetch": true,
+    "terminal.integrated.middleClickBehavior": "paste",
+    "editor.lineNumbers": "relative",
+    "zenMode.hideLineNumbers": false,
+    "editor.accessibilitySupport": "off",
+    "editor.cursorSurroundingLines": 5,
+    // Use Neovim in Dev container instead of local on host.
+    // https://github.com/vscode-neovim/vscode-neovim?tab=readme-ov-file#remote-development
+    // The Disconnect bug with Neovim 0.10.0 and newer also happens in Linux Dev container, besides Windows.
+    /*
+    "remote.extensionKind": {
+        "asvetliakov.vscode-neovim": ["workspace"]
+    },
+    */
+    "vscode-neovim.neovimExecutablePaths.linux": "/root/bin/nvim.appimage",
+    "files.watcherExclude": {
+        "**/.bloop": true,
+        "**/.metals": true,
+        "**/.ammonite": true
+    },
+    "vscode-neovim.neovimExecutablePaths.win32": "C:\\Program Files\\Neovim\\bin\\nvim.exe"
 }
