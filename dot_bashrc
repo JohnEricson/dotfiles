@@ -153,6 +153,13 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
   test -f /etc/profile.d/vte.sh && source /etc/profile.d/vte.sh || source /etc/profile.d/vte-2.91.sh
 fi
 
+# Install Direnv hook.
+eval "$(direnv hook bash)"
+
+# Enable VS Code shell integration.
+# This produces error "__dirname is not defined".
+# [[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path bash)"
+
 # Use real Linux home directory for better performance with a lot of tools, such
 # as Puppet PDK, example "pdk test unit" that improves from 300 to 5 sec.
 #if [ ! -z "$WSL_DISTRO_NAME" ]; then
