@@ -14,3 +14,7 @@ alias tailf='tail --follow=name --retry'
 alias h="head -n"
 alias h5="h 5"
 
+# Make git alias work consistently in both Bash and PowerShell, without gl and gp PowerShell aliases
+# blocking my git aliases.
+alias g="git"
+
