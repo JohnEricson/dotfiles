@@ -89,6 +89,10 @@ New-Alias sshl ssh.ps1
 New-Alias cm chezmoi 
 New-Alias whereis Get-Command
 
+# Make git alias work consistently in both Bash and PowerShell, without gl and gp PowerShell aliases
+# blocking my git aliases.
+New-Alias g git
+
 # Functions.
 function vagrant { vagrant.exe --color $args }
 function wsle { wsl /bin/sh -c ". ~/.environments && $args" }
