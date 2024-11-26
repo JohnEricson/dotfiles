@@ -23,12 +23,12 @@
     {
         "key": "g t",
         "command": "workbench.action.nextEditorInGroup",
-        "when": "neovim.mode != insert && activeWebviewPanelId == markdown.preview"
+        "when": "activeWebviewPanelId == 'markdown.preview' && neovim.mode != 'insert' && !terminalFocus"
     },
     {
         "key": "g shift+t",
         "command": "workbench.action.previousEditorInGroup",
-        "when": "neovim.mode != insert && activeWebviewPanelId == markdown.preview"
+        "when": "activeWebviewPanelId == 'markdown.preview' && neovim.mode != 'insert' && !terminalFocus"
    },
    {
       "key": "ctrl+c",
