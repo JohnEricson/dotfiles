@@ -72,5 +72,10 @@
 {
     "key": "ctrl+e",
     "command": "-workbench.action.quickOpen"
+},
+{
+    "key": "alt+oem_3",
+    "command": "-workbench.action.editorDictation.start",
+    "when": "hasSpeechProvider && !editorReadonly && !speechToTextInProgress"
 }
 ]
