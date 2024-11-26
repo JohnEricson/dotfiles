@@ -91,12 +91,19 @@ cm update
 Source code for the aliases: [~/.gitaliases](dot_gitaliases)
 
 ### How to use
-The git aliases are exposed both in git and in bash so you can for example use `s` for `git status` like this:
-#### bash
+The git aliases are exposed both in git and in bash and PowerShell so you can for example use `s` for `git status` like this:
+#### Bash and PowerShell
+```shell
+g s
+```
+In bash you can also use:
 ```bash
 gs
 ```
-#### git/PowerShell
+with all the aliases. In PowerShell this works with all aliases except the ones already set in PowerShell such as `gl` and `gp`. The `g s` format is recommended for best compatibility.
+
+#### git
+Of course traditional use of aliases in git works as well:
 ```shell
 git s
 ```
