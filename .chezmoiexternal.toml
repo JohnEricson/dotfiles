@@ -6,3 +6,7 @@
 	type = "file"
 	url = "https://raw.githubusercontent.com/JohnEricson/git_aliases/main/git_aliases.psm1"
 	refreshPeriod = "168h"
+["Documents/Scripts/modules.d/head.psm1"]
+	type = "file"
+	url = "https://raw.githubusercontent.com/JohnEricson/head/refs/heads/main/head.psm1"
+	refreshPeriod = "168h"

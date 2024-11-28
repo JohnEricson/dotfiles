@@ -81,6 +81,10 @@ if (Test-Path($ChocolateyProfile)) {
   Import-Module "$ChocolateyProfile"
 }
 
+# Rename default aliases.
+Remove-Alias h
+Set-Alias hi Get-History
+
 
 # Aliases. If you want to pass arguments to commands in aliases you need to 
 # implement a function instead.
