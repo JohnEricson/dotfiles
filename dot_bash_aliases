@@ -5,6 +5,8 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
+alias hi="history"
+
 alias cm='chezmoi'
 alias vi='nvim.appimage'
 
