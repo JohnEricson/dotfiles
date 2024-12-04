@@ -315,6 +315,12 @@ tnoremap <C-t><Esc> <Esc>
 map <C-l> :bn!<CR> " Doesn't override Ctrl+l in terminal to reset screen.
 map <C-h> :bp!<CR>
 
+
+" Move tabs to left and right just like in Windows. Works in Neovim QT but not
+" in Neovim in Windows Terminal because of terminal blocking.
+nnoremap <C-S-PageUp> :tabmove -1<CR> " Move the current tab to the left
+nnoremap <C-S-PageDown> :tabmove +1<CR> " Move the current tab to the right
+
 " Neovim VSCode extension specific stuff.
 if exists('g:vscode')
 	" Enable default VS Code Ctrl+k w keybinding to close all editors in a group.
