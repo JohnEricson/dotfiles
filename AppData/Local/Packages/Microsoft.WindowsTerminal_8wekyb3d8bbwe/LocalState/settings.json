@@ -328,5 +328,12 @@
             "white": "#C0C0C0",
             "yellow": "#808000"
         }
+    ],
+    "actions":
+    [
+        // Remove Page scroll up and down so I instead can use these in Neovim to move tabs.
+        // In Neovim I can use PgUp and PgDn or Ctrl+u and Ctrl+d to do the same thing.
+        { "command": "unbound", "keys": "ctrl+shift+pgdn" },
+        { "command": "unbound", "keys": "ctrl+shift+pgup" }
     ]
 }
