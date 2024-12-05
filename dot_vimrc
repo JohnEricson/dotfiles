@@ -296,6 +296,9 @@ hi TabLineFill cterm=underline
 if has("win32")
 	" Use PowerShell Core as default shell on Windows.
 	set shell=pwsh
+	" This makes :!echo hello work. 
+	lua vim.opt.shellcmdflag = '-NoLogo -Command'
+	lua vim.opt.shellxquote = '' 
 else
 	set shell=bash
 endif
