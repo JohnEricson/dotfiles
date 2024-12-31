@@ -70,6 +70,7 @@ The Win button here is also called the Super button on Linux.
 | Win+Right         | Snap active window to right side of screen |
 | Win+Up            | Maximize active window to full screen |
 | Win+Down          | Restore active maximized window to previous size |
+| Alt+Space         | Activate the window menu |
 
 ### Neovim/Vim
 
