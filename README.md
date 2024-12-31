@@ -11,6 +11,10 @@ As your normal user in your home dir run:
 ```sh
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply JohnEricson
 ```
+On Ubuntu the `curl` command is not installed by default so the equivalent using wget is:
+```sh
+sh -c "$(wget -qO- get.chezmoi.io)" -- init --apply JohnEricson
+```
 If you get questions about entering username/password try this command instead:
 ```sh
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply --guess-repo-url=false https://github.com/JohnEricson/dotfiles.git
