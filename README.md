@@ -59,7 +59,7 @@ cm update
 
 ### Windows/Linux Gnome
 
-Verified to work with Windows 11 and Ubuntu 24.10.
+Verified to work with Windows 11 and Ubuntu 24.10. On Ubuntu, Gnome extension [Dash to Panel](https://extensions.gnome.org/extension/1160/dash-to-panel/) should be installed for best experience, although standard Ubuntu Dock is also customized as good as possbile. 
 The Win button here is also called the Super button on Linux.
 
 | Keyboard Shortcut | Description |
