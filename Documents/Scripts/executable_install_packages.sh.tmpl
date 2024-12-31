@@ -17,7 +17,7 @@ sudo --preserve-env apt-get install -y tree
 sudo --preserve-env apt-get install -y git
 
 # Install support for AppImage packages.
-sudo --preserve-env apt-get install -y fuse
+sudo --preserve-env apt-get install -y fuse libfuse2
 {{ else if or (eq .chezmoi.osRelease.idLike "fedora") (eq .chezmoi.osRelease.id "centos" "rocky") -}}
 sudo --preserve-env yum -y install unzip
 sudo --preserve-env yum -y install vim
