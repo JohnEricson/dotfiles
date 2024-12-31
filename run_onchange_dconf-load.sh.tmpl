@@ -1,3 +1,4 @@
+{{ if eq .chezmoi.os "linux" -}}
 #!/bin/bash
 #
 # Based on: https://www.chezmoi.io/user-guide/use-scripts-to-perform-actions/#run-a-script-when-the-contents-of-another-file-changes
@@ -6,3 +7,4 @@
 # dconf.ini hash: {{ include "dconf.ini" | sha256sum }}
 
 dconf load / < {{ joinPath .chezmoi.sourceDir "dconf.ini" | quote }}
+{{ end -}}
