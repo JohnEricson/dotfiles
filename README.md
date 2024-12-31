@@ -61,6 +61,9 @@ cm update
 The Win button here is also called the Super button on Linux.
 | Keyboard Shortcut | Description |
 |-------------------|-------------|
+| Win               | Open Start meu. Search for apps to start |
+| Alt+Tab           | Switch between open applications |
+| Win+Tab           | Switch between open applications |
 | Win+l             | Lock session |
 | Shift+Win+s       | Take interactive screenshot (Snipping tool in Windows) |
 | Win+1..9          | Switch open application that is pinned to Windows Taskbar/Gnome panel on slot where number 1 to 9 is slot on panel |'
