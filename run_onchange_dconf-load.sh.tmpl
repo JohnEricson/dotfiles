@@ -1,0 +1,8 @@
+#!/bin/bash
+#
+# Based on: https://www.chezmoi.io/user-guide/use-scripts-to-perform-actions/#run-a-script-when-the-contents-of-another-file-changes
+
+# By including the hash in the comment here this script will change if dconf.ini content change, and thus the script is executed.
+# dconf.ini hash: {{ include "dconf.ini" | sha256sum }}
+
+dconf load / < {{ joinPath .chezmoi.sourceDir "dconf.ini" | quote }}
