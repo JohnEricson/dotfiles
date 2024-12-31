@@ -58,7 +58,10 @@ cm update
 ## Keyboard shortcuts
 
 ### Windows/Linux Gnome
+
+Verified to work with Windows 11 and Ubuntu 24.10.
 The Win button here is also called the Super button on Linux.
+
 | Keyboard Shortcut | Description |
 |-------------------|-------------|
 | Win               | Open Start meu. Search for apps to start |
