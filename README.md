@@ -66,6 +66,9 @@ The Win button here is also called the Super button on Linux.
 | Win+1..9          | Switch open application that is pinned to Windows Taskbar/Gnome panel on slot where number 1 to 9 is slot on panel |'
 | Ctrl+Win+Left     | Switch to left workspace |
 | Ctrl+Win+Right    | Switch to right worksapce |
+| Win+Left          | Snap active window to left side of screen |
+| Win+Right         | Snap active window to right side of screen |
+| Win+Up            | Maximize active window to full screen |
 
 ### Neovim/Vim
 
