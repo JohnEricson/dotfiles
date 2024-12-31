@@ -8,6 +8,7 @@
 
 {{ if or (eq .chezmoi.osRelease.id "debian") (eq .chezmoi.osRelease.idLike "debian") -}}
 sudo --preserve-env apt-get update
+sudo --preserve-env apt-get install -y curl
 sudo --preserve-env apt-get install -y vim
 sudo --preserve-env apt-get install -y neovim
 sudo --preserve-env apt-get install -y htop
