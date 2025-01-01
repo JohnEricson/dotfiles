@@ -74,8 +74,8 @@ Set-Location "HKCU:\Console\%SystemRoot%_System32_WindowsPowerShell_v1.0_powersh
 New-ItemProperty . ColorTable00 -force -type DWORD -value 0x00000000 > $null
 Pop-Location
 
-# Turn off "When I snap a window, show what I can snap next to it".
-Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" SnapAssist 0 
+# Turn on "When I snap a window, show what I can snap next to it".
+Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" SnapAssist 1 
 
 # Disable Aero Shake.
 Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" DisallowShaking 1 -Type DWord
