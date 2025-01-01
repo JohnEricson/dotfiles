@@ -77,8 +77,8 @@
     "key": "alt+oem_3",
     "command": "-workbench.action.editorDictation.start",
     "when": "hasSpeechProvider && !editorReadonly && !speechToTextInProgress"
-}{{- if stat (joinPath .chezmoi.homeDir ".chezmoi_local_machine/AppData/Roaming/Code/User/keybindings.json") }},
+}{{- if stat (joinPath .chezmoi.homeDir ".chezmoi_local_machine/.config/Code/User/keybindings.json") }},
 
-{{ include (joinPath .chezmoi.homeDir ".chezmoi_local_machine/AppData/Roaming/Code/User/keybindings.json") }}
+{{ include (joinPath .chezmoi.homeDir ".chezmoi_local_machine/.config/Code/User/keybindings.json") }}
 {{- end }}
 ]
