@@ -6,5 +6,9 @@
 # By including the hash in the comment here this script will change if dconf.ini content change, and thus the script is executed.
 # dconf.ini hash: {{ include "dconf.ini" | sha256sum }}
 
-dconf load / < {{ joinPath .chezmoi.sourceDir "dconf.ini" | quote }}
+# Only load dconf config if command dconf exists.
+if command -v dconf &> /dev/null
+then
+    dconf load / < {{ joinPath .chezmoi.sourceDir "dconf.ini" | quote }}
+fi
 {{ end -}}
