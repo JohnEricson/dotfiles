@@ -117,8 +117,8 @@
     "terminal.integrated.defaultProfile.linux": "neovim",
     "vsicons.dontShowNewVersionMessage": true,
     "vs-kubernetes": {
-        "vscode-kubernetes.helm-path.linux": "{{ .chezmoi.homeDir }}/.local/state/vs-kubernetes/tools/helm/linux-amd64/helm",
-        "vscode-kubernetes.minikube-path.linux": "{{ .chezmoi.homeDir }}/.local/state/vs-kubernetes/tools/minikube/linux-amd64/minikube"
+        "vscode-kubernetes.helm-path.linux": "{{ if eq .chezmoi.os "windows" }}/root{{ else }}{{ .chezmoi.homeDir }}{{ end }}/.local/state/vs-kubernetes/tools/helm/linux-amd64/helm",
+        "vscode-kubernetes.minikube-path.linux": "{{ if eq .chezmoi.os "windows" }}/root{{ else }}{{ .chezmoi.homeDir }}{{ end }}/.local/state/vs-kubernetes/tools/minikube/linux-amd64/minikube"
     },
     // Deprecated in 1.84.1
     /*
@@ -175,7 +175,7 @@
             "icon": "terminal-bash"
         },
         "neovim": {
-            "path": "{{ .chezmoi.homeDir }}/bin/nvim.appimage",
+            "path": "{{ if eq .chezmoi.os "windows" }}/root{{ else }}{{ .chezmoi.homeDir }}{{ end }}/bin/nvim.appimage",
             "args": [
                "-c",
                "startinsert",
@@ -224,7 +224,7 @@
         "asvetliakov.vscode-neovim": ["workspace"]
     },
     */
-    "vscode-neovim.neovimExecutablePaths.linux": "{{ .chezmoi.homeDir }}/bin/nvim.appimage",
+    "vscode-neovim.neovimExecutablePaths.linux": "{{ if eq .chezmoi.os "windows" }}/root{{ else }}{{ .chezmoi.homeDir }}{{ end }}/bin/nvim.appimage",
     "files.watcherExclude": {
         "**/.bloop": true,
         "**/.metals": true,
