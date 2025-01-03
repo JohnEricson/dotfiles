@@ -152,7 +152,8 @@ The Win button here is also called the Super button on Linux.
 | Ctrl+w q          | Close focused editor, or misc. windows such as Markdown preview, Keyboard shortcuts |
 | Ctrl+k w          | Close all editors in group |
 | Ctrl+k z          | Enter Zen mode |
-| Ctrl+ö            | Show Terminal |
+| Ctrl+ö            | Toggle Terminal. Toogle between show and focus terminal/hide and focus editor |
+| Alt+ö             | Focus last used editor from terminal and keep terminal open |
 | Ctrl+Shift+b      | Build default task |
 | Ctrl+Shift+m      | Toggle showing Problems |
 | Ctrl+Shift+u      | Toggle showing Output |
