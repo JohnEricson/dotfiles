@@ -73,6 +73,23 @@
     "key": "alt+oem_3",
     "command": "-workbench.action.editorDictation.start",
     "when": "hasSpeechProvider && !editorReadonly && !speechToTextInProgress"
+},
+// Requires extension rebornix.toggle to work.
+{
+    "key": "alt+x",
+    "command": "toggle",
+    "when": "editorTextFocus",
+    "args": {
+        "id": "minimap",
+        "value": [
+            {
+                "editor.lineNumbers": "relative"
+            },
+            {
+                "editor.lineNumbers": "on"
+            }
+        ]
+    }
 }{{- if stat (joinPath .chezmoi.homeDir ".chezmoi_local_machine/.config/Code/User/keybindings.json") }},
 
 {{ include (joinPath .chezmoi.homeDir ".chezmoi_local_machine/.config/Code/User/keybindings.json") }}
