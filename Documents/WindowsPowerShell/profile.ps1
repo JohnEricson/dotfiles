@@ -82,7 +82,9 @@ if (Test-Path($ChocolateyProfile)) {
 }
 
 # Rename default aliases.
-Remove-Alias h
+if ($PSVersionTable.PSVersion -ge [Version]"6.0") {
+	Remove-Alias h
+}
 Set-Alias hi Get-History
 
 
