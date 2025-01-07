@@ -145,6 +145,7 @@ The Win button here is also called the Super button on Linux.
 | Alt+Down          | Move current line or selected lines down one row |
 | Ctrl+Tab          | List and switch to another tab in focused editor group |
 | Alt+z             | Word wrap |
+| Alt+x             | Toggle between normal and relative line numbering |
 | Ctrl+w Ctrl+up, down, left, right | Move focused editor to another/new editor group |
 | Ctrl+w + up, down, left, right | Move focused editor to another/new editor group |
 | Ctrl+w Shift+Left or Right | Move editor group |
