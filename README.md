@@ -111,8 +111,11 @@ The Win button here is also called the Super button on Linux.
 | :tabnew \| term   | Open a new terminal in a new tab. From: https://stackoverflow.com/questions/64584698/how-to-open-a-terminal-in-new-tab-in-neovim-with-only-one-command-without-remap |
 | :tcd              | Like :cd, but only set the directory for the current tab |
 | Ctrl+g            | Get filename and row for current buffer |
-| Ctrl+d, Ctrl+f, PgDn | Page down. In VS Code this also works in hover opened with gh and focused using shift+k |
-| Ctrl+u, Ctrl+b, PgUp | Page up. In VS Code this also works in hover opened with gh  and focused using shift+k. |
+| Ctrl+d            | Half page down. In VS Code this also works in hover opened with gh and focused using shift+k |
+| Ctrl+u            | Half page up. In VS Code this also works in hover opened with gh  and focused using shift+k |
+| Ctrl+f, PgDn      | Page down. In VS Code this also works in hover opened with gh and focused using shift+k |
+| Ctrl+b, PgUp      | Page up. In VS Code this also works in hover opened with gh  and focused using shift+k |
+| M                 | Move cursor to middle of screen |
 | u                 | Undo |
 | Ctrl+r            | Redo |
 
