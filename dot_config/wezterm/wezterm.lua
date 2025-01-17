@@ -20,6 +20,9 @@ wezterm.on('gui-startup', function(cmd)
 	tab:set_title 'Neovim'
 end)
 
+-- Hide windows title. Windows keyboard shortcut still works. Double click title maximizes window.
+config.window_decorations = "RESIZE"
+
 -- and finally, return the configuration to wezterm
 return config
 
