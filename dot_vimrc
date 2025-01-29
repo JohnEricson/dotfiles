@@ -296,9 +296,11 @@ hi TabLineFill cterm=underline
 if has("win32")
 	" Use PowerShell Core as default shell on Windows.
 	set shell=pwsh
-	" This makes :!echo hello work. 
-	lua vim.opt.shellcmdflag = '-NoLogo -Command'
-	lua vim.opt.shellxquote = '' 
+	if has("lua")
+		" This makes :!echo hello work.
+		lua vim.opt.shellcmdflag = '-NoLogo -Command'
+		lua vim.opt.shellxquote = ''
+	endif
 else
 	set shell=bash
 endif
@@ -425,6 +427,7 @@ vnoremap <C-C> "+y
 
 set laststatus=2
 
+if has("lua")
 " Config in newer config language Lua.
 " Only parsable by Neovim.
 " https://github.com/nanotee/nvim-lua-guide#using-lua-from-vimscript
@@ -525,6 +528,6 @@ lua << EOF
 		-- classic vim colors.
 		vim.cmd('colorscheme vim')
 	end
-
 EOF
+endif
 
