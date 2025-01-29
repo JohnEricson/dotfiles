@@ -296,7 +296,7 @@ hi TabLineFill cterm=underline
 if has("win32")
 	" Use PowerShell Core as default shell on Windows.
 	set shell=pwsh
-	if has("lua")
+	if has("lua") || has('nvim')
 		" This makes :!echo hello work.
 		lua vim.opt.shellcmdflag = '-NoLogo -Command'
 		lua vim.opt.shellxquote = ''
@@ -427,7 +427,7 @@ vnoremap <C-C> "+y
 
 set laststatus=2
 
-if has("lua")
+if has("lua") || has('nvim')
 " Config in newer config language Lua.
 " Only parsable by Neovim.
 " https://github.com/nanotee/nvim-lua-guide#using-lua-from-vimscript
