@@ -201,7 +201,7 @@ set incsearch " Search while you type.
 set nolist " Don't Show special characters like tab and newlines.
 set listchars=tab:¬\ ,eol:¶
 
-set colorcolumn=101 " Displays a line at 80 characters.
+set colorcolumn=101 " Displays a line at 100 characters.
 " Set color of colorcolumn to very dark blue. Overrides colorscheme.
 " http://stackoverflow.com/questions/2440149/override-colorscheme/7383051#7383051
 " autocmd ColorScheme * hi ColorColumn ctermbg=darkgrey guibg=#051021
@@ -289,9 +289,6 @@ set bg=dark			" background (light/dark). Reload syntax to initialize
 
 " Make vim use the OS clipboard by default.
 set clipboard^=unnamed,unnamedplus
-
-" Remove white background from tabline when several tabs are open.
-hi TabLineFill cterm=underline
 
 if has("win32")
 	" Use PowerShell Core as default shell on Windows.
@@ -530,4 +527,7 @@ lua << EOF
 	end
 EOF
 endif
+
+" Remove white background from tabline when several tabs are open.
+hi TabLineFill cterm=underline gui=underline
 
