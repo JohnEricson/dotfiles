@@ -59,13 +59,14 @@ cm update
 
 ### Windows/Linux Gnome
 
-Verified to work with Windows 11 and Ubuntu 24.10. On Ubuntu, Gnome extension [Dash to Panel](https://extensions.gnome.org/extension/1160/dash-to-panel/) should be installed for best experience, although standard Ubuntu Dock is also customized as good as possbile. 
+Verified to work with Windows 11 and Ubuntu 24.10. On Ubuntu, Gnome extension [Dash to Panel](https://extensions.gnome.org/extension/1160/dash-to-panel/) should be installed for best experience, although standard Ubuntu Dock is also customized as good as possbile.
 The Win button here is also called the Super button on Linux.
 
 | Keyboard Shortcut | Description |
 |-------------------|-------------|
 | Win               | Open Start meu. Search for apps to start |
 | Alt+Tab           | Switch between open applications |
+| Ctrl+Alt+Tab      | Same as Alt+Tab but allows changing app with keyboard cursors and enter (Unsure about Linux) |
 | Win+Tab           | Switch between open applications |
 | Win+l             | Lock session |
 | Shift+Win+s       | Take interactive screenshot (Snipping tool in Windows) |
@@ -77,6 +78,18 @@ The Win button here is also called the Super button on Linux.
 | Win+Up            | Maximize active window to full screen |
 | Win+Down          | Restore active maximized window to previous size |
 | Alt+Space         | Activate the window menu |
+| Win+n             | Show notifications (Unsure about Linux) |
+| Win+Shift+v       | Set focus to a notification (toast) on screen (Unsure about Linux) |
+
+### Microsoft PowerToys
+
+These requires program [Microsoft PowerToys](https://github.com/microsoft/PowerToys) to be installed.
+
+| Keyboard Shortcut | Description |
+|-------------------|-------------|
+| Win+Alt+Space     | Show PowerToys Run launcher |
+| Shift+Win+h       | Toggle highlighting clicks on screen. Good for presentations |
+| Win+Ctrl+t        | Pin active window to always stay on top |
 
 ### Neovim/Vim
 
