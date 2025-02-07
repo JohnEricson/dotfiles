@@ -128,7 +128,9 @@ These requires program [Microsoft PowerToys](https://github.com/microsoft/PowerT
 | Ctrl+u            | Half page up. In VS Code this also works in hover opened with gh  and focused using shift+k |
 | Ctrl+f, PgDn      | Page down. In VS Code this also works in hover opened with gh and focused using shift+k |
 | Ctrl+b, PgUp      | Page up. In VS Code this also works in hover opened with gh  and focused using shift+k |
-| M                 | Move cursor to middle of screen |
+| H                 | Nove cursor to top (H for high) of the screen |
+| M                 | Move cursor to middle (M for middle) of the screen |
+| L                 | Nove cursor to bottom (L for low) of the screen |
 | u                 | Undo |
 | Ctrl+r            | Redo |
 
