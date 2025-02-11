@@ -98,11 +98,16 @@ set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.i
 "  set t_Sb=[4%dm
 "endif
 
-" Vim5 comes with syntaxhighlighting.
-" Do not enable when Neovim is used in VS Code.
+" Syntax highlighting of files.
+" Default to off in Vim and on in Neovim.
+" " Do not enable when Neovim is used in VS Code.
 if !exists('g:vscode')
 	if has("syntax")
-		syntax on		" Default to no syntax highlightning 
+		syntax on		 
+	endif
+else
+	if has('nvim')
+		syntax off
 	endif
 endif
 
