@@ -530,6 +530,10 @@ lua << EOF
 		-- classic vim colors.
 		vim.cmd('colorscheme vim')
 	end
+
+	-- Bind keyboard shortcut g$ to go to last tab. Same binding as in Vimium for this.
+	vim.api.nvim_set_keymap('n', 'g$', ':$tabnext<CR>', { noremap = true, silent = true })
+
 EOF
 endif
 
