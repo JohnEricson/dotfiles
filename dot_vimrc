@@ -328,47 +328,6 @@ map <C-h> :bp!<CR>
 nnoremap <C-S-PageUp> :tabmove -1<CR> " Move the current tab to the left
 nnoremap <C-S-PageDown> :tabmove +1<CR> " Move the current tab to the right
 
-" Neovim VSCode extension specific stuff.
-if exists('g:vscode')
-	" Enable default VS Code Ctrl+k w keybinding to close all editors in a group.
-	nnoremap <C-k>w <Cmd>call VSCodeNotify('workbench.action.closeEditorsInGroup')<CR>
-	" Enable default VS Code Ctrl+k z keybinding to toggle Zen mode.
-	nnoremap <C-k>z <Cmd>call VSCodeNotify('workbench.action.toggleZenMode')<CR>
-	" Enable default VS Code Ctrl+k Ctrl+m keybinding to maximize editor group.
-	nnoremap <C-k> <C-m> <Cmd>call VSCodeNotify('workbench.action.toggleMaximizeEditorGroup')<CR>
-	" Enable my custom VS Code Ctrl+w m keybinding to toogle to maximize current editor.
-	nnoremap <C-w>m <Cmd>call VSCodeNotify('workbench.action.toggleEditorWidths')<CR>
-
-	" Add Vim fold keybindings to VS Code.
-	" Based on: https://github.com/vscode-neovim/vscode-neovim/issues/58#issuecomment-1229279216
-	nnoremap zM :call VSCodeNotify('editor.foldAll')<CR>
-	nnoremap zR :call VSCodeNotify('editor.unfoldAll')<CR>
-	nnoremap zc :call VSCodeNotify('editor.fold')<CR>
-	nnoremap zC :call VSCodeNotify('editor.foldRecursively')<CR>
-	nnoremap zo :call VSCodeNotify('editor.unfold')<CR>
-	nnoremap zO :call VSCodeNotify('editor.unfoldRecursively')<CR>
-	nnoremap za :call VSCodeNotify('editor.toggleFold')<CR>
-
-	" Fixes so you can navigate pass closed folds without VS Code opening them.
-	function! MoveCursor(direction) abort
-		if(reg_recording() == '' && reg_executing() == '')
-			return 'g'.a:direction
-		else
-			return a:direction
-		endif
-	endfunction
-	" Vim navigation keys.
-	nmap <expr> k MoveCursor('k')
-	nmap <expr> j MoveCursor('j')
-	" Cursor navigation keys.
-	nmap <expr> <Up> MoveCursor('k')
-	nmap <expr> <Down> MoveCursor('j')
-
-	" Tab navigation in the same way as buffer navigation in my normal Vim.
-	map <C-l> :call VSCodeNotify('workbench.action.nextEditor')<CR>
-	map <C-h> :call VSCodeNotify('workbench.action.previousEditor')<CR>
-endif
-
 " Neovim specific config.
 if has('nvim')
 	" To make VS Code understand the terminal better.
@@ -535,6 +494,50 @@ lua << EOF
 	vim.api.nvim_set_keymap('n', 'g$', ':$tabnext<CR>', { noremap = true, silent = true })
 
 EOF
+endif
+
+" Neovim VSCode extension specific stuff.
+if exists('g:vscode')
+	" Enable default VS Code Ctrl+k w keybinding to close all editors in a group.
+	nnoremap <C-k>w <Cmd>call VSCodeNotify('workbench.action.closeEditorsInGroup')<CR>
+	" Enable default VS Code Ctrl+k z keybinding to toggle Zen mode.
+	nnoremap <C-k>z <Cmd>call VSCodeNotify('workbench.action.toggleZenMode')<CR>
+	" Enable default VS Code Ctrl+k Ctrl+m keybinding to maximize editor group.
+	nnoremap <C-k> <C-m> <Cmd>call VSCodeNotify('workbench.action.toggleMaximizeEditorGroup')<CR>
+	" Enable my custom VS Code Ctrl+w m keybinding to toogle to maximize current editor.
+	nnoremap <C-w>m <Cmd>call VSCodeNotify('workbench.action.toggleEditorWidths')<CR>
+
+	" Add Vim fold keybindings to VS Code.
+	" Based on: https://github.com/vscode-neovim/vscode-neovim/issues/58#issuecomment-1229279216
+	nnoremap zM :call VSCodeNotify('editor.foldAll')<CR>
+	nnoremap zR :call VSCodeNotify('editor.unfoldAll')<CR>
+	nnoremap zc :call VSCodeNotify('editor.fold')<CR>
+	nnoremap zC :call VSCodeNotify('editor.foldRecursively')<CR>
+	nnoremap zo :call VSCodeNotify('editor.unfold')<CR>
+	nnoremap zO :call VSCodeNotify('editor.unfoldRecursively')<CR>
+	nnoremap za :call VSCodeNotify('editor.toggleFold')<CR>
+
+	" Go to last tab. Same as in Vimium.
+	nnoremap g$ :call VSCodeNotify('workbench.action.lastEditorInGroup')<CR>
+
+	" Fixes so you can navigate pass closed folds without VS Code opening them.
+	function! MoveCursor(direction) abort
+		if(reg_recording() == '' && reg_executing() == '')
+			return 'g'.a:direction
+		else
+			return a:direction
+		endif
+	endfunction
+	" Vim navigation keys.
+	nmap <expr> k MoveCursor('k')
+	nmap <expr> j MoveCursor('j')
+	" Cursor navigation keys.
+	nmap <expr> <Up> MoveCursor('k')
+	nmap <expr> <Down> MoveCursor('j')
+
+	" Tab navigation in the same way as buffer navigation in my normal Vim.
+	map <C-l> :call VSCodeNotify('workbench.action.nextEditor')<CR>
+	map <C-h> :call VSCodeNotify('workbench.action.previousEditor')<CR>
 endif
 
 " Remove white background from tabline when several tabs are open.
