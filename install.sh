@@ -3,7 +3,7 @@
 # Configure in VS Code like this:
 #   "dotfiles.repository": "JohnEricson/dotFiles",
 #   "dotfiles.targetPath": "~/.dotfiles",
-#   "dotfiles.installCommand": "~/.dotfiles/install.sh"
+#   "dotfiles.installCommand": ""
 
 # Make sure we are in home directory. 
 cd ~
