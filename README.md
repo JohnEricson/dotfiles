@@ -87,7 +87,7 @@ These requires program [Microsoft PowerToys](https://github.com/microsoft/PowerT
 
 | Keyboard Shortcut | Description |
 |-------------------|-------------|
-| Win+Alt+Space     | Show PowerToys Run launcher |
+| Win+Alt+Space     | Show Windows Command Palette |
 | Shift+Win+h       | Toggle highlighting clicks on screen. Good for presentations |
 | Win+Ctrl+t        | Pin active window to always stay on top |
 
@@ -95,6 +95,8 @@ These requires program [Microsoft PowerToys](https://github.com/microsoft/PowerT
 
 | Keyboard Shortcut | Description |
 |-------------------|-------------|
+| i                 | Enter insert mode |
+| jj                | Press quickly in insert mode to exit to normal-mode. Not enabled in Terminal as that would break nested Neovim (running Neovim inside Neovim) |
 | *                 | Search forward for word under cursor |
 | #                 | Search backward for word under cursor |
 | .                 | Repeat the last buffer operation. For example add same inputted text or do same manipulation as before |
@@ -223,6 +225,18 @@ These requires program [Microsoft PowerToys](https://github.com/microsoft/PowerT
 | mi                | Select multiple rows with visual block to get multiple cursors at the beginning of the selection |
 | Hold Alt and click| To place multiple cursors |
 | z=                | Open quickfix menu for spelling corrections and refactoring |
+
+
+### vim_ahk
+
+[vim_ahk](https://github.com/rcmdnk/vim_ahk) emulates Vim bindings in Windows program.
+These requires program [vim_ahk](https://github.com/rcmdnk/vim_ahk) to be installed.
+Only configured to be used in OneNote.
+
+| Keyboard Shortcut | Description |
+|-------------------|-------------|
+| Ctrl+Alt+Shift+s  | Suspend/restart vim_ahk |
+| jj                | Press quickly in insert-mode to exit to normal-mode |
 
 ## Git aliases
 

@@ -307,6 +307,11 @@ else
 	set shell=bash
 endif
 
+" Allows to press jj quickly to exit insert-mode. Not enabled in Terminal as that would break
+" nested Neovim (running Neovim inside Neovim).
+" Works consistently with vim_ahk.
+imap jj <Esc>
+
 " Terminal settings
 
 " Allows to use ESC to exit insert-mode in Terminal.
