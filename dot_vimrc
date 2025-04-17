@@ -314,13 +314,51 @@ imap jj <Esc>
 
 " Terminal settings
 
-" Allows to use ESC to exit insert-mode in Terminal.
-tnoremap <Esc> <C-\><C-n>
+" Define a variable to track toggle state
+let g:jj_toggle_state = 0
 
-" Allows to use Ctrl+t ESC to send ESC to program in terminal. This is useful in
-" nested Neovim (running Neovim inside Neovim). For example when you in Neovim
-" ssh to another server and run Neovim there.
-tnoremap <C-t><Esc> <Esc>
+function! ToggleJJ()
+	if g:jj_toggle_state == 0
+		" Edit mode configuration. Good for a lot of editing. Default on new
+		" terminal.
+		
+		" Allow jj to exit insert-mode in Terminal. 
+		tmap jj <C-\><C-n>
+		
+		" Allows to use Esc to exit insert-mode in Terminal.
+		tnoremap <Esc> <C-\><C-n>
+		
+		" Allows to use Ctrl+t Esc to forward Esc to application in Terminal.
+		" This is useful in nested Neovim (running Neovim inside Neovim). For
+		" example when you in Neovim ssh to another server and run Neovim there.
+		tnoremap <C-t><Esc> <Esc>
+
+		let g:jj_toggle_state = 1
+		echo "Edit mode: jj and Esc mapped to exit insert-mode, Ctrl+t Esc to forward Esc to application."
+	else
+		" App mode configuration: Good for interactive applications with Vim
+		" bindings. For example k9s.
+		
+		silent! tunmap jj
+		
+		silent! tunmap <Esc>
+		
+		" Allows to use Ctrl+t Esc to exit insert-mode in Terminal.
+		tnoremap <C-t><Esc> <C-\><C-n>
+		
+		let g:jj_toggle_state = 0
+		echo "App mode: jj and Esc mappings removed, Ctrl+t Esc mapped to exit insert-mode."
+	endif
+endfunction
+
+" Create user command to toggle the mappings
+command! Jj call ToggleJJ()
+
+" Automatically run ToggleJJ when opening a terminal window
+augroup AutoToggleJJ
+  autocmd!
+  autocmd TermOpen * call ToggleJJ()
+augroup END
 
 
 " Navigate between buffers with Ctrl+l and Ctrl+h in normal mode.

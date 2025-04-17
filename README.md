@@ -97,6 +97,7 @@ These requires program [Microsoft PowerToys](https://github.com/microsoft/PowerT
 |-------------------|-------------|
 | i                 | Enter insert mode |
 | jj                | Press quickly in insert mode to exit to normal-mode. Not enabled in Terminal as that would break nested Neovim (running Neovim inside Neovim) |
+| :Jj               | Command to toggle between Edit and App mode in terminal. Edit mode maps jj and Esc to exit insert-mode and Ctrl+t Esc to forward Esc to application. App mode removes and Esc mappings and maps Ctrl+t Esc to exit insert mode. Edit mode is default |
 | *                 | Search forward for word under cursor |
 | #                 | Search backward for word under cursor |
 | .                 | Repeat the last buffer operation. For example add same inputted text or do same manipulation as before |
