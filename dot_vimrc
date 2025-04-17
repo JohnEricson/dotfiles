@@ -317,7 +317,7 @@ imap jj <Esc>
 " Allows to use ESC to exit insert-mode in Terminal.
 tnoremap <Esc> <C-\><C-n>
 
-" Allows to use Ctrl+t ESC to exit insert-mode in Terminal. This is useful in
+" Allows to use Ctrl+t ESC to send ESC to program in terminal. This is useful in
 " nested Neovim (running Neovim inside Neovim). For example when you in Neovim
 " ssh to another server and run Neovim there.
 tnoremap <C-t><Esc> <Esc>
