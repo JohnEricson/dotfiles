@@ -238,6 +238,30 @@ Only configured to be used in OneNote.
 | Ctrl+Alt+Shift+s  | Suspend/restart vim_ahk |
 | jj                | Press quickly in insert-mode to exit to normal-mode |
 
+### Vimium
+
+[Vimium](https://vimium.github.io) is a browser extension for Brave/Chrome/Edge to emulate Vim bindings in the browser. 
+
+| Keyboard Shortcut      | Description |
+|----------------------- |-------------|
+| Ctrl + e               | Exit insert mode without sending ESC key to page |
+| 1gt                    | Go to first tab |
+| g$                     | Go to last tab |
+| ?                      | Show help |
+| yt                     | Duplicate current tab |
+| Ctrl + PgUp, Shift + j | Go to left tab |
+| Ctrl + PgDn, Shift + k | Go to right tab |
+| Shift + h              | Go back in history |
+| Shift + l              | Go forward in history |
+| Ctrl + Shift + PgUp    | Move tab left |
+| Ctrl + Shift + PgDn    | Move tab right |
+| f                      | Open hints to go to link in same tab |
+| F                      | Open hints to go to link in new tab |
+| Shift + Alt + f        | Open hints to go to new link in new tab and switch focus to that tab |
+| o                      | Open Omnibar. Use search engine with p or g in beginning of search. Picked choice with up or down is opened in same tab |
+| O                      | Open Omnibar. Use search engine with p or g in beginning of search. Picked choice with up or down is opened in new tab |
+| T                      | Open Omnibar and show all tabs to switch focus to tab |
+
 ## Git aliases
 
 ### Install
