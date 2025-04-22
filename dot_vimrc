@@ -314,13 +314,14 @@ imap jj <Esc>
 
 " Terminal settings
 
-" Define a variable to track toggle state
-let g:jj_toggle_state = 0
-
 function! ToggleJJ()
-	if g:jj_toggle_state == 0
-		" Edit mode configuration. Good for a lot of editing. Default on new
-		" terminal.
+    " Initialize buffer-local toggle state if it doesn't exist
+    if !exists('b:jj_toggle_state')
+        let b:jj_toggle_state = 0
+    endif
+
+	 if b:jj_toggle_state == 0
+		" Edit mode configuration. Good for a lot of editing. Default on new terminal.
 		
 		" Allow jj to exit insert-mode in Terminal. 
 		tmap jj <C-\><C-n>
@@ -333,11 +334,11 @@ function! ToggleJJ()
 		" example when you in Neovim ssh to another server and run Neovim there.
 		tnoremap <C-t><Esc> <Esc>
 
-		let g:jj_toggle_state = 1
+		let b:jj_toggle_state = 1
 		echo "Edit mode: jj and Esc mapped to exit insert-mode, Ctrl+t Esc to forward Esc to application."
 	else
-		" App mode configuration: Good for interactive applications with Vim
-		" bindings. For example k9s.
+		" App mode configuration: Good for interactive applications with Vim bindings.
+		" For example k9s.
 		
 		silent! tunmap jj
 		
@@ -346,7 +347,7 @@ function! ToggleJJ()
 		" Allows to use Ctrl+t Esc to exit insert-mode in Terminal.
 		tnoremap <C-t><Esc> <C-\><C-n>
 		
-		let g:jj_toggle_state = 0
+		let b:jj_toggle_state = 0
 		echo "App mode: jj and Esc mappings removed, Ctrl+t Esc mapped to exit insert-mode."
 	endif
 endfunction
