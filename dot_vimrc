@@ -537,6 +537,16 @@ lua << EOF
 	-- Bind keyboard shortcut g$ to go to last tab. Same binding as in Vimium for this.
 	vim.api.nvim_set_keymap('n', 'g$', ':$tabnext<CR>', { noremap = true, silent = true })
 
+
+	-- Neovim script to remove .EXE from terminals tab names.
+
+	vim.api.nvim_create_autocmd("TermOpen", {
+	  callback = function()
+		 local shell = vim.fn.expand("<afile>"):match("[^/\\]+$")  -- Get executable name
+		 local name = shell:gsub("%.EXE$", "")                     -- Remove .EXE (case-sensitive)
+		 vim.cmd("TabooRename " .. name)
+	  end
+	})
 EOF
 endif
 
