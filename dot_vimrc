@@ -282,8 +282,11 @@ call plug#end()
 " Copies to System wide clipboard on Windows.
 ":noremap <LeftRelease> "*y<LeftRelease>
 
-" Method 2 (works only on ms-windows vim63):
-:set guioptions+=a
+" This hidden option is no longer accepted in Neovim starting from version 0.11.0.
+if exists("+guioptions")
+	" Method 2 (works only on ms-windows vim63):
+	set guioptions+=a
+endif
 
 " Disable annoying beeping
 set noerrorbells
