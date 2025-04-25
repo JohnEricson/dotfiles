@@ -355,12 +355,6 @@ endfunction
 " Create user command to toggle the mappings
 command! Jj call ToggleJJ()
 
-" Automatically run ToggleJJ when opening a terminal window
-augroup AutoToggleJJ
-  autocmd!
-  autocmd TermOpen * call ToggleJJ()
-augroup END
-
 
 " Navigate between buffers with Ctrl+l and Ctrl+h in normal mode.
 map <C-l> :bn!<CR> " Doesn't override Ctrl+l in terminal to reset screen.
@@ -418,6 +412,14 @@ if has('nvim')
 			autocmd CursorHold * call VSCodeNotify('nvim-theme.normal')
 		augroup END
 	endif
+
+
+	" Automatically run ToggleJJ when opening a terminal window
+	augroup AutoToggleJJ
+	  autocmd!
+	  autocmd TermOpen * call ToggleJJ()
+	augroup END
+
 endif
 
 " Remove the "How-to disable mouse" in right click popup menu item and the separator above it.
