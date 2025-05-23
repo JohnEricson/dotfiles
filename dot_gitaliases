@@ -13,7 +13,7 @@
 	c = commit --verbose
 	ca = commit -a --verbose
 	cm = commit -m
-	cmp = "!sh -c 'git commit -m \"$1\" && git push' -"
+	cmp = "!f() { git commit -m \"$1\" $2 $3 $4 $5 $6 $7 $8 $9 && git push; }; f"
 	cam = commit -a -m
 	camp = "!sh -c 'git commit -a -m \"$1\" && git push' -"
 	m = commit --amend --verbose
