@@ -597,6 +597,9 @@ if exists('g:vscode')
 	" Tab navigation in the same way as buffer navigation in my normal Vim.
 	map <C-l> :call VSCodeNotify('workbench.action.nextEditor')<CR>
 	map <C-h> :call VSCodeNotify('workbench.action.previousEditor')<CR>
+
+	" Map gr to go to references just like in LSP setups in Neovim.
+	nnoremap gr :call VSCodeNotify('editor.action.referenceSearch.trigger')<CR>
 endif
 
 " Remove white background from tabline when several tabs are open.

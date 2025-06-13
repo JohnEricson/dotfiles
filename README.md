@@ -118,6 +118,7 @@ These requires program [Microsoft PowerToys](https://github.com/microsoft/PowerT
 | f                 | Navigate forward to first matching character pressed after f |
 | t                 | Navigate forward to one character before first matching character pressed after f |
 | gd                | Go to definition. For example go to function in Python |
+| gr                | Go to references. Only added in VS Code for now |
 | Shift+k           | Enter link in :help |
 | Enter             | Enter link in :help (only in help) |
 | Ctrl+o            | Go backward |
