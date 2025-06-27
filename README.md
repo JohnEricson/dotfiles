@@ -228,6 +228,15 @@ These requires program [Microsoft PowerToys](https://github.com/microsoft/PowerT
 | Hold Alt and click| To place multiple cursors |
 | z=                | Open quickfix menu for spelling corrections and refactoring |
 
+### Windows Terminal
+
+| Keyboard Shortcut               | Description |
+|---------------------------------|-------------|
+| Shift + select with mouse       | Select text and copy it |
+| Shift + Alt + select with mouse | Block select text and copy it |
+| Ctrl + Tab                      | Switch between tabs |
+| Ctrl + Shift + p                | Show palette |
+| Ctrl + Shift + Space            | Open new tab dropdown |
 
 ### vim_ahk
 
