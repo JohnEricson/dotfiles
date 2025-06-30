@@ -126,8 +126,8 @@ These requires program [Microsoft PowerToys](https://github.com/microsoft/PowerT
 | ":p                | Paste last command ran on command line. From: https://stackoverflow.com/questions/7047618/how-to-copy-text-from-command-line-mode-in-vim |
 | Ctrl+f (Command Line mode) | Opens the history of all commands you have ran in Command Line. Here you can paste the one you want. From: https://stackoverflow.com/questions/7047618/how-to-copy-text-from-command-line-mode-in-vim |
 | :tabnew \| term   | Open a new terminal in a new tab. From: https://stackoverflow.com/questions/64584698/how-to-open-a-terminal-in-new-tab-in-neovim-with-only-one-command-without-remap |
-| [[                | Navigate up to your previous prompt in the terminal. Requires you have OSC 133 escape sequence configured in your prompt in your shell. See https://neovim.io/doc/user/terminal.html#terminal-osc133 |
-| ]]                | Navigate down to your next prompt in the terminal. Requires you have OSC 133 escape sequence configured in your prompt in your shell. See https://neovim.io/doc/user/terminal.html#terminal-osc133 |
+| [[                | Navigate up to your previous prompt in the terminal. Requires you have OSC 133 escape sequence configured in your prompt in your shell. Works in bash and PowerShell. See https://neovim.io/doc/user/terminal.html#terminal-osc133 |
+| ]]                | Navigate down to your next prompt in the terminal. Requires you have OSC 133 escape sequence configured in your prompt in your shell. Works in bash and PowerShell. See https://neovim.io/doc/user/terminal.html#terminal-osc133 |
 | :tcd              | Like :cd, but only set the directory for the current tab |
 | Ctrl+g            | Get filename and row for current buffer |
 | Ctrl+d            | Half page down. In VS Code this also works in hover opened with gh and focused using shift+k |
