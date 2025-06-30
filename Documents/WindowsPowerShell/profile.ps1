@@ -129,6 +129,23 @@ if (Test-Path("$documents_path\Scripts\set_environment_for_network_devices.ps1")
 	. $documents_path\Scripts\set_environment_for_network_devices.ps1
 }
 
+# Implement OSC 133.
+# See https://learn.microsoft.com/en-us/windows/terminal/tutorials/shell-integration
+# TODO: This doesn't work in PowerShell Core and Neovim Terminal when resizing the window.
+$Global:__LastHistoryId = -1
+
+function Global:__Terminal-Get-LastExitCode {
+  if ($? -eq $True) {
+    return 0
+  }
+  $LastHistoryEntry = $(Get-History -Count 1)
+  $IsPowerShellError = $Error[0].InvocationInfo.HistoryId -eq $LastHistoryEntry.Id
+  if ($IsPowerShellError) {
+    return -1
+  }
+  return $LastExitCode
+}
+
 # Set the same prompt as on Linux.
 # Based on: https://ss64.com/ps/syntax-prompt.html
 function prompt {
@@ -142,12 +159,44 @@ function prompt {
 	$prompt = $Env:USERNAME + '@' + $pwd_last_dir + '$ '
 	$host.ui.RawUI.WindowTitle = "PS $prompt"
 	
+	# First, emit a mark for the _end_ of the previous command.
+
+	$gle = $(__Terminal-Get-LastExitCode);
+	$LastHistoryEntry = $(Get-History -Count 1)
+	# Skip finishing the command if the first command has not yet started
+	if ($Global:__LastHistoryId -ne -1) {
+		if ($LastHistoryEntry.Id -eq $Global:__LastHistoryId) {
+			# Don't provide a command line or exit code if there was no history entry (eg. ctrl+c, enter on no command)
+			$out += "`e]133;D`a"
+		} else {
+			$out += "`e]133;D;$gle`a"
+		}
+	}
+
+
+	$loc = $($executionContext.SessionState.Path.CurrentLocation);
+
+	# Prompt started
+	$out += "`e]133;A$([char]07)";
+
+	# CWD
+	$out += "`e]9;9;`"$loc`"$([char]07)";
+
+	# (your prompt here)
+	# $out += "PWSH $loc$('>' * ($nestedPromptLevel + 1)) ";
 	# To Print prompt with colors.
 	# https://stackoverflow.com/questions/6297072/color-for-the-prompt-just-the-prompt-proper-in-cmd-exe-and-powershell
-	Write-Host "$Env:USERNAME@" -NoNewLine -ForegroundColor White
-	Write-Host "$pwd_last_dir" -NoNewLine -ForegroundColor Magenta
-	Write-Host '$' -NoNewLine -ForegroundColor White
-	return ' '
+	# Source: ttps://superuser.com/a/1259916
+	# Color codes: https://learn.microsoft.com/en-us/windows/console/console-virtual-terminal-sequences#text-formatting
+	$ESC = [char]27
+	$out += "$ESC[1m$ESC[37m$Env:USERNAME@$ESC[35m$pwd_last_dir$ESC[37m$ " 
+
+	# Prompt ended, Command started
+	$out += "`e]133;B$([char]07)";
+
+	$Global:__LastHistoryId = $LastHistoryEntry.Id
+
+	return $out
 }
 
 # Autosize text in Format-Table by default.
