@@ -11,7 +11,11 @@
         "defaults": 
         {
             "closeOnExit": "graceful",
-            "colorScheme": "Johns Campbell",
+            "colorScheme":
+            {
+                "light": "One Half Light",
+                "dark": "Johns Campbell"
+            },
             "font": 
             {
                 "face": "Consolas",
