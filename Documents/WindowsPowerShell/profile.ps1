@@ -189,7 +189,7 @@ function prompt {
 	# $out += "PWSH $loc$('>' * ($nestedPromptLevel + 1)) ";
 	# To Print prompt with colors.
 	# https://stackoverflow.com/questions/6297072/color-for-the-prompt-just-the-prompt-proper-in-cmd-exe-and-powershell
-	# Source: ttps://superuser.com/a/1259916
+	# Source: https://superuser.com/a/1259916
 	# Color codes: https://learn.microsoft.com/en-us/windows/console/console-virtual-terminal-sequences#text-formatting
 	$ESC = [char]27
 	$out += "$ESC[0m$ESC[1m$ESC[39m$Env:USERNAME@$ESC[35m$pwd_last_dir$ESC[39m$ESC[0m$ " 
