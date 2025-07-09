@@ -192,7 +192,7 @@ function prompt {
 	# Source: ttps://superuser.com/a/1259916
 	# Color codes: https://learn.microsoft.com/en-us/windows/console/console-virtual-terminal-sequences#text-formatting
 	$ESC = [char]27
-	$out += "$ESC[1m$ESC[37m$Env:USERNAME@$ESC[35m$pwd_last_dir$ESC[37m$ " 
+	$out += "$ESC[0m$ESC[1m$ESC[39m$Env:USERNAME@$ESC[35m$pwd_last_dir$ESC[39m$ESC[0m$ " 
 
 	# Prompt ended, Command started
 	$out += "$ESC]133;B$([char]07)";
