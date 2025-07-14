@@ -74,7 +74,7 @@ set sw=3          " number of spaces used for each step of (auto)indent
 set nosta sta     " a <Tab> in an indent inserts 'shiftwidth' spaces
 "set noet	et       " expand <Tab> to spaces in Insert mode
 set nosi	si       " do clever autoindenting
-set nocin cin     " enable specific indenting for C code 
+set nocin cin     " enable specific indenting for C code
 
 if IsWSL() || exists("$SSH_CONNECTION")
   set mouse=v        " Use visual selection when not running locally, such as WSL/SSH.
@@ -103,7 +103,7 @@ set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.i
 " " Do not enable when Neovim is used in VS Code.
 if !exists('g:vscode')
 	if has("syntax")
-		syntax on		 
+		syntax on
 	endif
 else
 	if has('nvim')
@@ -188,7 +188,7 @@ endif " has ("autocmd")
 " different from regular vi. They are highly recommended though.
 "set showcmd		" Show (partial) command in status line.
 "set showmatch		" Show matching brackets.
-set ruler		" Show the line and column numbers of the cursor 
+set ruler		" Show the line and column numbers of the cursor
 "set ignorecase		" Do case insensitive matching
 "set incsearch		" Incremental search
 "set autowrite		" Automatically save before commands like :next and :make
@@ -241,7 +241,7 @@ call plug#begin()
 " Enable autocompletion, intellisense functionality.
 " Recommended by https://www.youtube.com/watch?v=h4g0m0Iwmys and used by
 " LazyVim (https://www.lazyvim.org/plugins/coding#nvim-cmp).
-" Config based on: https://github.com/hrsh7th/nvim-cmp#recommended-configuration 
+" Config based on: https://github.com/hrsh7th/nvim-cmp#recommended-configuration
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
@@ -274,7 +274,7 @@ call plug#end()
 " Auto copy the mouse selection
 " https://vim.fandom.com/wiki/Auto_copy_the_mouse_selection
 
-" Not pleased with how Method 1 works. Method 2 works a lot better. 
+" Not pleased with how Method 1 works. Method 2 works a lot better.
 " Method 1 (for Xwindows and mswindows), this map is different from the one shown in vim documentation:
 
 " Only copies in Vim not, to System wide clipboard on Windows.
@@ -325,13 +325,13 @@ function! ToggleJJ()
 
 	 if b:jj_toggle_state == 0
 		" Edit mode configuration. Good for a lot of editing. Default on new terminal.
-		
-		" Allow jj to exit insert-mode in Terminal. 
+
+		" Allow jj to exit insert-mode in Terminal.
 		tmap jj <C-\><C-n>
-		
+
 		" Allows to use Esc to exit insert-mode in Terminal.
 		tnoremap <Esc> <C-\><C-n>
-		
+
 		" Allows to use Ctrl+t Esc to forward Esc to application in Terminal.
 		" This is useful in nested Neovim (running Neovim inside Neovim). For
 		" example when you in Neovim ssh to another server and run Neovim there.
@@ -342,14 +342,14 @@ function! ToggleJJ()
 	else
 		" App mode configuration: Good for interactive applications with Vim bindings.
 		" For example k9s.
-		
+
 		silent! tunmap jj
-		
+
 		silent! tunmap <Esc>
-		
+
 		" Allows to use Ctrl+t Esc to exit insert-mode in Terminal.
 		tnoremap <C-t><Esc> <C-\><C-n>
-		
+
 		let b:jj_toggle_state = 0
 		echo "App mode: jj and Esc mappings removed, Ctrl+t Esc mapped to exit insert-mode."
 	endif
@@ -446,7 +446,7 @@ lua << EOF
 	-- Enable autocompletion, intellisense functionality.
 	-- Recommended by https://www.youtube.com/watch?v=h4g0m0Iwmys and used by
 	-- LazyVim (https://www.lazyvim.org/plugins/coding#nvim-cmp).
-	-- Config based on: https://github.com/hrsh7th/nvim-cmp#recommended-configuration 
+	-- Config based on: https://github.com/hrsh7th/nvim-cmp#recommended-configuration
 
 	-- Set up nvim-cmp.
 	local cmp = require'cmp'
