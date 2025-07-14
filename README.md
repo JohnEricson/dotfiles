@@ -213,14 +213,17 @@ These requires program [Microsoft PowerToys](https://github.com/microsoft/PowerT
 
 #### Explorer sidebar
 
-| Keyboard Shortcut | Description |
-|-------------------|-------------|
-| Ctrl+e            | Focus Explorer sidebar |
-| Ctrl+Left         | Collapse all directories in Explorer |
-| /                 | Start searching |
-| up, down          | Next or previous search result after searching |
-| Enter             | Open file in new editor |
-| Space             | Preview file in preview editor. Uses same preview editor for all files |
+| Keyboard Shortcut   | Description |
+|---------------------|-------------|
+| Ctrl+e              | Focus Explorer sidebar |
+| Ctrl+Left           | Collapse all directories in Explorer |
+| /                   | Start searching |
+| up, down            | Next or previous search result after searching |
+| Enter               | Open file in new editor |
+| Space               | Preview file in preview editor. Uses same preview editor for all files |
+| Ctrl+k Ctrl+Shift+c | Copy relative path to selected file/dir |
+| Shift+Alt+c         | Copy absolute path to selected file/dir |
+
 
 #### VS Code Neovim extension
 
