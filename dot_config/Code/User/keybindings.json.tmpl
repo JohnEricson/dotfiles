@@ -90,6 +90,38 @@
             }
         ]
     }
+},
+// GitHub CoPilot.
+{
+    "key": "shift+alt+p",
+    "command": "workbench.action.chat.attachFile"
+},
+{
+    "key": "shift+alt+i",
+    "command": "-editor.action.insertCursorAtEndOfEachLineSelected",
+    "when": "editorTextFocus"
+},
+{
+    "key": "shift+alt+i",
+    "command": "inlineChat.start",
+    "when": "editorFocus && inlineChatHasProvider && inlineChatPossible && !editorReadonly && !editorSimpleInput"
+},
+{
+    "key": "ctrl+i",
+    "command": "-inlineChat.start",
+    "when": "editorFocus && inlineChatHasProvider && inlineChatPossible && !editorReadonly && !editorSimpleInput"
+},
+// Make Copilot Next Edit Suggestions work with Neovim.
+// https://github.com/vscode-neovim/vscode-neovim/discussions/2381
+{
+    "key": "tab",
+    "command": "-vscode-neovim.send",
+    "when": "neovim.init && neovim.recording || editorTextFocus && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
+},
+{
+    "key": "escape",
+    "command": "-vscode-neovim.send",
+    "when": "neovim.init && neovim.recording || editorTextFocus && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
 }{{- if stat (joinPath .chezmoi.homeDir ".chezmoi_local_machine/.config/Code/User/keybindings.json") }},
 
 {{ include (joinPath .chezmoi.homeDir ".chezmoi_local_machine/.config/Code/User/keybindings.json") }}
