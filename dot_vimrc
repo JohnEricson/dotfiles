@@ -100,14 +100,9 @@ set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.i
 
 " Syntax highlighting of files.
 " Default to off in Vim and on in Neovim.
-" " Do not enable when Neovim is used in VS Code.
 if !exists('g:vscode')
 	if has("syntax")
 		syntax on
-	endif
-else
-	if has('nvim')
-		syntax off
 	endif
 endif
 
@@ -377,6 +372,9 @@ if has('nvim')
 	let g:my_cmdheight = 1
 	if exists('g:vscode')
 		let g:my_cmdheight = 2
+
+		" Disable Neovim built-in syntax highlighting and use VS Code's instead.
+		syntax off
 	endif
 
 	" To make VS Code understand the terminal better.
