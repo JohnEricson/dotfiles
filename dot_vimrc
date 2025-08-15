@@ -575,16 +575,16 @@ if exists('g:vscode')
 
 	" Add Vim fold keybindings to VS Code.
 	" Based on: https://github.com/vscode-neovim/vscode-neovim/issues/58#issuecomment-1229279216
-	nnoremap zM :call VSCodeNotify('editor.foldAll')<CR>
-	nnoremap zR :call VSCodeNotify('editor.unfoldAll')<CR>
-	nnoremap zc :call VSCodeNotify('editor.fold')<CR>
-	nnoremap zC :call VSCodeNotify('editor.foldRecursively')<CR>
-	nnoremap zo :call VSCodeNotify('editor.unfold')<CR>
-	nnoremap zO :call VSCodeNotify('editor.unfoldRecursively')<CR>
-	nnoremap za :call VSCodeNotify('editor.toggleFold')<CR>
+	nnoremap zM <Cmd>call VSCodeNotify('editor.foldAll')<CR>
+	nnoremap zR <Cmd>call VSCodeNotify('editor.unfoldAll')<CR>
+	nnoremap zc <Cmd>call VSCodeNotify('editor.fold')<CR>
+	nnoremap zC <Cmd>call VSCodeNotify('editor.foldRecursively')<CR>
+	nnoremap zo <Cmd>call VSCodeNotify('editor.unfold')<CR>
+	nnoremap zO <Cmd>call VSCodeNotify('editor.unfoldRecursively')<CR>
+	nnoremap za <Cmd>call VSCodeNotify('editor.toggleFold')<CR>
 
 	" Go to last tab. Same as in Vimium.
-	nnoremap g$ :call VSCodeNotify('workbench.action.lastEditorInGroup')<CR>
+	nnoremap g$ <Cmd>call VSCodeNotify('workbench.action.lastEditorInGroup')<CR>
 
 	" Fixes so you can navigate pass closed folds without VS Code opening them.
 	function! MoveCursor(direction) abort
@@ -606,7 +606,7 @@ if exists('g:vscode')
 	map <C-h> <Cmd>call VSCodeNotify('workbench.action.previousEditor')<CR>
 
 	" Map gr to go to references just like in LSP setups in Neovim.
-	nnoremap gr :call VSCodeNotify('editor.action.referenceSearch.trigger')<CR>
+	nnoremap gr <Cmd>call VSCodeNotify('editor.action.referenceSearch.trigger')<CR>
 endif
 
 " Remove white background from tabline when several tabs are open.
