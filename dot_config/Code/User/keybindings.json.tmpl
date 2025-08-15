@@ -122,6 +122,28 @@
     "key": "escape",
     "command": "-vscode-neovim.send",
     "when": "neovim.init && neovim.recording || editorTextFocus && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
+},
+// Make Ctrl + h and Ctrl + l use native VS Code functionality for navigating tabs instead of Neovim's.
+// Neovim's tab navigation causes VS Code to quickly show VIM input box, which causes flicker on screen and it's a bit slower.
+{
+    "key": "ctrl+l",
+    "command": "-vscode-neovim.send",
+    "when": "editorTextFocus && neovim.ctrlKeysNormal.l && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
+},
+{
+    "key": "ctrl+h",
+    "command": "-vscode-neovim.send",
+    "when": "editorTextFocus && neovim.ctrlKeysNormal.h && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
+},
+{
+    "key": "ctrl+h",
+    "command": "workbench.action.previousEditor",
+    "when": "neovim.init && neovim.mode != 'insert' && !terminalFocus"
+},
+{
+    "key": "ctrl+l",
+    "command": "workbench.action.nextEditor",
+    "when": "neovim.init && neovim.mode != 'insert' && !terminalFocus"
 }{{- if stat (joinPath .chezmoi.homeDir ".chezmoi_local_machine/.config/Code/User/keybindings.json") }},
 
 {{ include (joinPath .chezmoi.homeDir ".chezmoi_local_machine/.config/Code/User/keybindings.json") }}
