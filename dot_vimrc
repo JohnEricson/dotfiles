@@ -602,8 +602,8 @@ if exists('g:vscode')
 	nmap <expr> <Down> MoveCursor('j')
 
 	" Tab navigation in the same way as buffer navigation in my normal Vim.
-	map <C-l> :call VSCodeNotify('workbench.action.nextEditor')<CR>
-	map <C-h> :call VSCodeNotify('workbench.action.previousEditor')<CR>
+	map <C-l> <Cmd>call VSCodeNotify('workbench.action.nextEditor')<CR>
+	map <C-h> <Cmd>call VSCodeNotify('workbench.action.previousEditor')<CR>
 
 	" Map gr to go to references just like in LSP setups in Neovim.
 	nnoremap gr :call VSCodeNotify('editor.action.referenceSearch.trigger')<CR>
