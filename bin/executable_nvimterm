@@ -1,0 +1,16 @@
+#!/bin/sh
+# Script to start Neovim in terminal mode.
+# Works with Copilot in VS Code for agent to start new terminal and run commands.
+#
+# Add to VS Code like this:
+#    "terminal.integrated.profiles.linux": {
+#        "neovim": {
+#            "path": "nvimterm",
+#            "overrideName": true,
+#            "icon": "vm"
+#        }
+#    },
+#    "terminal.integrated.defaultProfile.linux": "neovim",
+
+$HOME/bin/nvim.appimage -c startinsert +terminal $@
+
