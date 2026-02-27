@@ -155,7 +155,7 @@ These requires program [Microsoft PowerToys](https://github.com/microsoft/PowerT
 | Keyboard Shortcut | Description |
 |-------------------|-------------|
 | Ctrl+w m          | Maximize editor |
-| Ctrl+k Ctrl+z     | Maximize editor by hiding other editor groups |
+| Ctrl+k Ctrl+z , Ctrl+k k | Maximize editor by hiding other editor groups |
 | Ctrl+k Ctrl+m     | Maximize editor by hiding other editor groups (a bit slower) |
 | Ctrl+k Ctrl+w     | Maximize editor by hiding other editor groups (less reliable) |
 | Ctrl+PgUp or Ctrl+h | Go to left tab |
