@@ -6,15 +6,21 @@
     "copyFormatting": "html",
     "copyOnSelect": true,
     "defaultProfile": "{d9586111-1520-439f-b785-ad29a6d101ad}",
+    "newTabMenu": 
+    [
+        {
+            "type": "remainingProfiles"
+        }
+    ],
     "profiles": 
     {
         "defaults": 
         {
             "closeOnExit": "graceful",
-            "colorScheme":
+            "colorScheme": 
             {
-                "light": "One Half Light",
-                "dark": "Johns Campbell"
+                "dark": "Johns Campbell",
+                "light": "One Half Light"
             },
             "font": 
             {
@@ -91,12 +97,54 @@
                 "startingDirectory": "%USERPROFILE%"
             },
             {
-                "commandline": "\"C:\\Program Files (x86)\\Google\\Cloud SDK\\google-cloud-sdk\\bin\\gcloud.cmd\" beta interactive",
+                "commandline": "%USERPROFILE%\\AppData\\Local\\Google\\Cloud SDK\\google-cloud-sdk\\bin\\gcloud.cmd beta interactive",
                 "guid": "{740fee19-28ed-5302-afa4-a16d2ab98b77}",
                 "hidden": false,
-                "icon": "C:\\Program Files (x86)\\Google\\Cloud SDK\\supercloud-16x16.ico",
+                "icon": "%USERPROFILE%\\AppData\\Local\\Google\\Cloud SDK\\supercloud-16x16.ico",
                 "name": "Google Cloud Shell",
                 "startingDirectory": "%USERPROFILE%"
+            },
+            {
+                "guid": "{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}",
+                "hidden": false,
+                "name": "Git Bash",
+                "source": "Git"
+            },
+            {
+                "guid": "{51855cb2-8cce-5362-8f54-464b92b32386}",
+                "hidden": false,
+                "name": "Ubuntu",
+                "source": "CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc"
+            },
+            {
+                "guid": "{92373bf0-4ef1-5b1c-b8a6-1c943abdd7ea}",
+                "hidden": false,
+                "name": "wsl-vpnkit",
+                "source": "Microsoft.WSL"
+            },
+            {
+                "guid": "{9336bf95-ae57-523e-8577-ec1dad81024f}",
+                "hidden": false,
+                "name": "wsl-vpnkit",
+                "source": "Microsoft.WSL"
+            },
+            {
+                "guid": "{17bf3de4-5353-5709-bcf9-835bd952a95e}",
+                "hidden": true,
+                "name": "Ubuntu-22.04",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "guid": "{4ff56d04-d9cf-57ea-bae2-ad396374e7e3}",
+                "hidden": false,
+                "name": "Ubuntu 22.04.5 LTS",
+                "source": "CanonicalGroupLimited.Ubuntu22.04LTS_79rhkp1fndgsc"
+            },
+            {
+                "guid": "{5fb123f1-af88-5b5c-8953-d14a8def1978}",
+                "hidden": false,
+                "name": "PowerShell 7",
+                "source": "Windows.Terminal.PowershellCore"
             }
         ]
     },
@@ -118,30 +166,7 @@
             "cyan": "#3A96DD",
             "foreground": "#F2F2F2",
             "green": "#13A10E",
-            "name": "Campbell",
-            "purple": "#881798",
-            "red": "#C50F1F",
-            "selectionBackground": "#FFFFFF",
-            "white": "#CCCCCC",
-            "yellow": "#C19C00"
-        },
-        {
-            "background": "#012456",
-            "black": "#0C0C0C",
-            "blue": "#0037DA",
-            "brightBlack": "#767676",
-            "brightBlue": "#3B78FF",
-            "brightCyan": "#61D6D6",
-            "brightGreen": "#16C60C",
-            "brightPurple": "#B4009E",
-            "brightRed": "#E74856",
-            "brightWhite": "#F2F2F2",
-            "brightYellow": "#F9F1A5",
-            "cursorColor": "#FFFFFF",
-            "cyan": "#3A96DD",
-            "foreground": "#CCCCCC",
-            "green": "#13A10E",
-            "name": "Campbell Powershell",
+            "name": "Campbell (modified)",
             "purple": "#881798",
             "red": "#C50F1F",
             "selectionBackground": "#FFFFFF",
@@ -172,6 +197,29 @@
             "yellow": "#C19C00"
         },
         {
+            "background": "#012456",
+            "black": "#0C0C0C",
+            "blue": "#0037DA",
+            "brightBlack": "#767676",
+            "brightBlue": "#3B78FF",
+            "brightCyan": "#61D6D6",
+            "brightGreen": "#16C60C",
+            "brightPurple": "#B4009E",
+            "brightRed": "#E74856",
+            "brightWhite": "#F2F2F2",
+            "brightYellow": "#F9F1A5",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#3A96DD",
+            "foreground": "#CCCCCC",
+            "green": "#13A10E",
+            "name": "Campbell Powershell",
+            "purple": "#881798",
+            "red": "#C50F1F",
+            "selectionBackground": "#FFFFFF",
+            "white": "#CCCCCC",
+            "yellow": "#C19C00"
+        },
+        {
             "background": "#0C0C0C",
             "black": "#0C0C0C",
             "blue": "#61AFEF",
@@ -187,7 +235,7 @@
             "cyan": "#56B6C2",
             "foreground": "#DCDFE4",
             "green": "#98C379",
-            "name": "One Half Dark",
+            "name": "One Half Dark (modified)",
             "purple": "#C678DD",
             "red": "#E06C75",
             "selectionBackground": "#FFFFFF",
@@ -233,7 +281,7 @@
             "cyan": "#2AA198",
             "foreground": "#FDF6E3",
             "green": "#859900",
-            "name": "Solarized Dark",
+            "name": "Solarized Dark (modified)",
             "purple": "#D33682",
             "red": "#D30102",
             "selectionBackground": "#FFFFFF",
@@ -256,87 +304,23 @@
             "cyan": "#2AA198",
             "foreground": "#073642",
             "green": "#859900",
-            "name": "Solarized Light",
+            "name": "Solarized Light (modified)",
             "purple": "#D33682",
             "red": "#D30102",
             "selectionBackground": "#FFFFFF",
             "white": "#EEE8D5",
             "yellow": "#B58900"
-        },
-        {
-            "background": "#000000",
-            "black": "#000000",
-            "blue": "#3465A4",
-            "brightBlack": "#555753",
-            "brightBlue": "#729FCF",
-            "brightCyan": "#34E2E2",
-            "brightGreen": "#8AE234",
-            "brightPurple": "#AD7FA8",
-            "brightRed": "#EF2929",
-            "brightWhite": "#EEEEEC",
-            "brightYellow": "#FCE94F",
-            "cursorColor": "#FFFFFF",
-            "cyan": "#06989A",
-            "foreground": "#D3D7CF",
-            "green": "#4E9A06",
-            "name": "Tango Dark",
-            "purple": "#75507B",
-            "red": "#CC0000",
-            "selectionBackground": "#FFFFFF",
-            "white": "#D3D7CF",
-            "yellow": "#C4A000"
-        },
-        {
-            "background": "#FFFFFF",
-            "black": "#000000",
-            "blue": "#3465A4",
-            "brightBlack": "#555753",
-            "brightBlue": "#729FCF",
-            "brightCyan": "#34E2E2",
-            "brightGreen": "#8AE234",
-            "brightPurple": "#AD7FA8",
-            "brightRed": "#EF2929",
-            "brightWhite": "#EEEEEC",
-            "brightYellow": "#FCE94F",
-            "cursorColor": "#000000",
-            "cyan": "#06989A",
-            "foreground": "#555753",
-            "green": "#4E9A06",
-            "name": "Tango Light",
-            "purple": "#75507B",
-            "red": "#CC0000",
-            "selectionBackground": "#FFFFFF",
-            "white": "#D3D7CF",
-            "yellow": "#C4A000"
-        },
-        {
-            "background": "#000000",
-            "black": "#000000",
-            "blue": "#000080",
-            "brightBlack": "#808080",
-            "brightBlue": "#0000FF",
-            "brightCyan": "#00FFFF",
-            "brightGreen": "#00FF00",
-            "brightPurple": "#FF00FF",
-            "brightRed": "#FF0000",
-            "brightWhite": "#FFFFFF",
-            "brightYellow": "#FFFF00",
-            "cursorColor": "#FFFFFF",
-            "cyan": "#008080",
-            "foreground": "#C0C0C0",
-            "green": "#008000",
-            "name": "Vintage",
-            "purple": "#800080",
-            "red": "#800000",
-            "selectionBackground": "#FFFFFF",
-            "white": "#C0C0C0",
-            "yellow": "#808000"
         }
     ],
+    "theme": "system",
+    "themes": [],
     "actions":
     [
         // Remove Page scroll up and down so I instead can use these in Neovim to move tabs.
         // In Neovim I can use PgUp and PgDn or Ctrl+u and Ctrl+d to do the same thing.
+        // Bug https://github.com/microsoft/terminal/issues/9301 prevents this from being doable
+        // only in my Neovim profile so instead I must set this globally, which prevents me from
+        // being able to scroll up and down in other terminals like cmd.
         { "command": "unbound", "keys": "ctrl+shift+pgdn" },
         { "command": "unbound", "keys": "ctrl+shift+pgup" }
     ]
