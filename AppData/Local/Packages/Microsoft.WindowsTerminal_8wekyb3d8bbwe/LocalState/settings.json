@@ -8,6 +8,11 @@
     "defaultProfile": "{d9586111-1520-439f-b785-ad29a6d101ad}",
     "keybindings": 
     [
+        // Remove Page scroll up and down so I instead can use these in Neovim to move tabs.
+        // In Neovim I can use PgUp and PgDn or Ctrl+u and Ctrl+d to do the same thing.
+        // Bug https://github.com/microsoft/terminal/issues/9301 prevents this from being doable
+        // only in my Neovim profile so instead I must set this globally, which prevents me from
+        // being able to scroll up and down in other terminals like cmd.
         {
             "id": null,
             "keys": "ctrl+shift+pgup"
