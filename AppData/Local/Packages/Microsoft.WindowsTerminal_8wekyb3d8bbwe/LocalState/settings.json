@@ -36,7 +36,7 @@
             "colorScheme": 
             {
                 "dark": "Johns Campbell",
-                "light": "One Half Light"
+                "light": "Johns Light"
             },
             "font": 
             {
@@ -211,6 +211,32 @@
             "selectionBackground": "#FFFFFF",
             "white": "#CCCCCC",
             "yellow": "#C19C00"
+        },
+        {
+            "name": "Johns Light",
+            "background": "#FAFAFA",
+            "foreground": "#1F1F1F",
+
+            "black": "#000000",
+            "red": "#C50F1F",
+            "green": "#0B6E0B",
+            "yellow": "#8A6D00",
+            "blue": "#0037DA",
+            "purple": "#7A3E9D",
+            "cyan": "#006A6A",
+            "white": "#666666",
+
+            "brightBlack": "#808080",
+            "brightRed": "#E74856",
+            "brightGreen": "#13A10E",
+            "brightYellow": "#B38F00",
+            "brightBlue": "#4F8FFF",
+            "brightPurple": "#B87AFF",
+            "brightCyan": "#3AAFAF",
+            "brightWhite": "#000000",
+
+            "cursorColor": "#000000",
+            "selectionBackground": "#ADD6FF"
         },
         {
             "background": "#0C0C0C",
